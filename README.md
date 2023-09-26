@@ -1,6 +1,4 @@
 # IE4717-Project
-EE4717 Project Report
-
 ## Design project group number: F32-DG12
 ## Team members: ALESSANDRO BUDIDHARMA, NG WEI JIE JESSIE
 ## Project Title: A Web Portal for Car Rentals

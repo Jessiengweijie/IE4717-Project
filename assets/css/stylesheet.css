@@ -1,0 +1,159 @@
+/* Style the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-width: 800px;
+}
+
+#wrapper {
+    margin: auto;
+    min-width: 800px;
+}
+
+/* Style the header */
+header {
+    /* position: fixed;
+    top: 0; */
+    /*future development: to make top navbar stick to top*/
+
+    width: 100%;
+    background-color: rgb(32, 96, 190);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0 15px 0;
+    z-index: 1000;
+    /* Set a high z-index to ensure it appears above other content */
+}
+
+.logo {
+    margin: 0 0 0 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* navigation panel */
+.navbar {
+    margin-right: 50px;
+}
+
+nav b a {
+    color: #fff;
+    margin-right: 35px;
+    /* space between each nav button */
+    text-decoration: none;
+}
+
+/* general use */
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.center {
+    text-align: center;
+}
+
+.container {
+    border: 1px solid black;
+}
+
+.flex {
+    display: flex;
+}
+
+.space-around {
+    justify-content: space-around
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-evenly {
+    justify-content: space-evenly;
+}
+
+/* Style the footer */
+footer {
+    background-color: rgb(32, 96, 190);
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: left;
+}
+
+/* Buttons */
+.book-now-button {
+    padding: 5px 15px;
+    background-color: #3907ec;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.subscribe-button, .login-button {
+    padding: 5px 15px;
+    background-color: green;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Login Panel */
+.login {
+    background-color: rgb(185, 226, 252);
+    height: 70%;
+    width: 30%;
+    margin: 50px 50px 0 auto;
+    border: 1px solid rgb(97, 172, 233);
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.login-font {
+    font-size: 75px;
+    font-weight: bold;
+    margin: 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-input {
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.login-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
