@@ -2,7 +2,7 @@
 EE4717 Project Report
 
 Design project group number: F32-DG12
-Team members: ALESSANDRO BUDIDHARMA, NG WEI JIE JESSIE
+Team members: ALESSANDRO BUDIDHARMA, NG WEI JIE JESSIE \n
 Project Title: A Web Portal for Car Rentals
 Summary of Project: 
 Our proposed project (ConviGo) aims to develop a user-friendly web application for a car-sharing service, offering convenient services for individuals to rent vehicles. This innovative platform provides a flexible transportation solution that allows users to select cars that are available at their preferred location and rent them for short-term or full day. Users can choose from a wide range of cars, including standard, premium, sedans, SUVs, and electric vehicles, with transparent hourly pricing for easy comparison. Once the user has selected their desired location and car of preference, they can proceed to book it online and an electronic transaction of the details will be sent to their email. Furthermore, there will be a comprehensive FAQ section for users to check for commonly asked questions. And for more specific inquiries, contact information is readily accessible on the website as well. Overall, our website is designed with the primary goal of providing users with the simplest navigation and the greatest convenience when booking cars, hoping to save the hassle and give the user a seamless experience.
