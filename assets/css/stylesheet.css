@@ -157,3 +157,29 @@ footer {
     flex-direction: column;
     align-items: flex-start;
 }
+
+/* About page */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-body {
+    margin: 20px 0 20px 100px;
+}
+
+/* Car page */
+.car {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Split page */
+.left-section {
+    width: 30%;
+}
+
+.right-section {
+    width: 70%;
+}
