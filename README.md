@@ -120,3 +120,13 @@ Our proposed project (ConviGo) aims to develop a user-friendly web application f
 •	Develop a well-organized Frequently Asked Questions (FAQ) page with categorized questions and clear answers.
 •	Include a query form that allows users to submit queries via email if their question is not addressed in the FAQ section.
 •	Implement server-side validation for form submissions and email functionality to send queries to the company email address.
+
+### Assessment
+• PA1: 15marks
+• PA2: 15marks
+• Project Report (Design) document: 20marks
+• Project Report: 20marks (Due in week 12/13)
+• Project Demo: 30marks
+• Total 50%
+
+
