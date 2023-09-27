@@ -3,6 +3,7 @@
 
 <head>
     <title>Cars</title>
+    <script type="text/javascript" src="assets/scripts/cars.js"></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
 </head>
@@ -29,7 +30,21 @@
         </header>
         <div class="car" style="background-color: lightskyblue; padding: 20px;">
             <div class="left-section">
-                <input type="text" class="car-location-filter" placeholder="Location">
+                <select id="car-location-filter">
+                    <option value="" hidden disabled selected>Select Location</option>
+                    <option value="Bedok">Bedok</option>
+                    <option value="Changi">Changi</option>
+                    <option value="Choa Chu Kang">Choa Chu Kang</option>
+                    <option value="Jurong">Jurong</option>
+                    <option value="Nee Soon">Nee Soon</option>
+                    <option value="Seletar">Seletar</option>
+                    <option value="Sembawang">Sembawang</option>
+                    <option value="Serangoon">Serangoon</option>
+                    <option value="Tuas">Tuas</option>
+                    <option value="Woodlands">Woodlands</option>
+                    <!-- Add more preset options as needed -->
+                </select>
+                <!-- <input type="text" class="car-location-filter" placeholder="Location"> -->
                 <h1>Our Cars</h1>
                 <div class="car-filter">
                     <h1>Vehicle Category</h1>
@@ -59,18 +74,19 @@
                     </ul>
                 </div>
             </div>
+                                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
 
             <div class="right-section">
                 <input type="text" class="car-search-filter" placeholder="Search for cars">
-                <div class="car-container">
-                    <div class="car-template">
+                <div class="car-container" id="car-container">
+
+                    <!-- <div class="car-template">
                         <div class="car-body">
                             <div class="car-name">
                                 <span>BMW 318i</span>
                                 <a href="car_information.html" onclick="">
                                     <img src="assets/images/Icons/questionmark-icon.png" height="16px" width="16px"
                                         alt="Question Mark">
-                                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
                                 </a>
                             </div>
                             <div class="car-type">
@@ -81,197 +97,8 @@
                                     alt="Sample Car 3">
                             </div>
                         </div>
-                        <a class="center book-now-button" href="booking.html">Book Now</a> <br />
-                    </div>
-
-                    <div class="car-template">
-                        <div class="car-body">
-                            <div class="car-name">
-                                <span>Audi Q3</span>
-                                <a href="car_information.html" onclick="">
-                                    <img src="assets/images/Icons/questionmark-icon.png" height="16px" width="16px"
-                                        alt="Question Mark">
-                                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                Premium - SUV
-                            </div>
-                            <div class="car-image">
-                                <img src="assets/images/Cars/Brands/Audi/SUV/Audi_Q3.png" height="auto" width="100%"
-                                    alt="Sample Car 3">
-                            </div>
-                        </div>
-                        <a class="center book-now-button" href="booking.html">Book Now</a> <br />
-                    </div>
-
-                    <div class="car-template">
-                        <div class="car-body">
-                            <div class="car-name">
-                                <span>Tesla Model 3</span>
-                                <a href="car_information.html" onclick="">
-                                    <img src="assets/images/Icons/questionmark-icon.png" height="16px" width="16px"
-                                        alt="Question Mark">
-                                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                Premium - Electric
-                            </div>
-                            <div class="car-image">
-                                <img src="assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png" height="auto" width="100%"
-                                    alt="Sample Car 3">
-                            </div>
-                        </div>
-                        <a class="center book-now-button" href="booking.html">Book Now</a> <br />
-                    </div>
-
-                    <div class="car-template">
-                        <div class="car-body">
-                            <div class="car-name">
-                                <span>BMW 318i</span>
-                                <a href="car_information.html" onclick="">
-                                    <img src="assets/images/Icons/questionmark-icon.png" height="16px" width="16px"
-                                        alt="Question Mark">
-                                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                Premium - Sedan
-                            </div>
-                            <div class="car-image">
-                                <img src="assets/images/Cars/Brands/BMW/Sedan/BMW_318i.png" height="auto" width="100%"
-                                    alt="Sample Car 3">
-                            </div>
-                        </div>
-                        <a class="center book-now-button" href="booking.html">Book Now</a> <br />
-                    </div>
-
-                    <div class="car-template">
-                        <div class="car-body">
-                            <div class="car-name">
-                                <span>Tesla Model 3</span>
-                                <a href="car_information.html" onclick="">
-                                    <img src="assets/images/Icons/questionmark-icon.png" height="16px" width="16px"
-                                        alt="Question Mark">
-                                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                Premium - Electric
-                            </div>
-                            <div class="car-image">
-                                <img src="assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png" height="auto" width="100%"
-                                    alt="Sample Car 3">
-                            </div>
-                        </div>
-                        <a class="center book-now-button" href="booking.html">Book Now</a> <br />
-                    </div>
-
-                    <div class="car-template">
-                        <div class="car-body">
-                            <div class="car-name">
-                                <span>Tesla Model 3</span>
-                                <a href="car_information.html" onclick="">
-                                    <img src="assets/images/Icons/questionmark-icon.png" height="16px" width="16px"
-                                        alt="Question Mark">
-                                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                Premium - Electric
-                            </div>
-                            <div class="car-image">
-                                <img src="assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png" height="auto" width="100%"
-                                    alt="Sample Car 3">
-                            </div>
-                        </div>
-                        <a class="center book-now-button" href="booking.html">Book Now</a> <br />
-                    </div>
-
-                    <div class="car-template">
-                        <div class="car-body">
-                            <div class="car-name">
-                                <span>Tesla Model 3</span>
-                                <a href="car_information.html" onclick="">
-                                    <img src="assets/images/Icons/questionmark-icon.png" height="16px" width="16px"
-                                        alt="Question Mark">
-                                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                Premium - Electric
-                            </div>
-                            <div class="car-image">
-                                <img src="assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png" height="auto" width="100%"
-                                    alt="Sample Car 3">
-                            </div>
-                        </div>
-                        <a class="center book-now-button" href="booking.html">Book Now</a> <br />
-                    </div>
-
-                    <div class="car-template">
-                        <div class="car-body">
-                            <div class="car-name">
-                                <span>Tesla Model 3</span>
-                                <a href="car_information.html" onclick="">
-                                    <img src="assets/images/Icons/questionmark-icon.png" height="16px" width="16px"
-                                        alt="Question Mark">
-                                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                Premium - Electric
-                            </div>
-                            <div class="car-image">
-                                <img src="assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png" height="auto" width="100%"
-                                    alt="Sample Car 3">
-                            </div>
-                        </div>
-                        <a class="center book-now-button" href="booking.html">Book Now</a> <br />
-                    </div>
-
-                    <div class="car-template">
-                        <div class="car-body">
-                            <div class="car-name">
-                                <span>Tesla Model 3</span>
-                                <a href="car_information.html" onclick="">
-                                    <img src="assets/images/Icons/questionmark-icon.png" height="16px" width="16px"
-                                        alt="Question Mark">
-                                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                Premium - Electric
-                            </div>
-                            <div class="car-image">
-                                <img src="assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png" height="auto" width="100%"
-                                    alt="Sample Car 3">
-                            </div>
-                        </div>
-                        <a class="center book-now-button" href="booking.html">Book Now</a> <br />
-                    </div>
-
-                    <div class="car-template">
-                        <div class="car-body">
-                            <div class="car-name">
-                                <span>Tesla Model 3</span>
-                                <a href="car_information.html" onclick="">
-                                    <img src="assets/images/Icons/questionmark-icon.png" height="16px" width="16px"
-                                        alt="Question Mark">
-                                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
-                                </a>
-                            </div>
-                            <div class="car-type">
-                                Premium - Electric
-                            </div>
-                            <div class="car-image">
-                                <img src="assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png" height="auto" width="100%"
-                                    alt="Sample Car 3">
-                            </div>
-                        </div>
-                        <a class="center book-now-button" href="booking.html">Book Now</a> <br />
-                    </div>  
+                        <a class="center book-now-button" href="booking.php">Book Now</a> <br />
+                    </div> -->
 
                 </div>
             </div>
@@ -301,6 +128,7 @@
             <br />
         </footer>
     </div>
+    <script type="text/javascript" src="assets/scripts/carsr.js"></script>
 </body>
 
 </html>

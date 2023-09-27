@@ -290,7 +290,7 @@ footer {
     color: #000;
 }
 
-.car-location-filter {
+#car-location-filter {
     width: 70%;
     padding: 5px 5px 5px 40px;
     border: 1px solid #ccc;
@@ -301,9 +301,10 @@ footer {
     background-position: 10px center;
     background-repeat: no-repeat;
     margin: 20px 0 20px 0;
+    cursor: pointer;
 }
 
-.car-location-filter::placeholder {
+#car-location-filter::placeholder {
     font-size: 16px;
 }
 
@@ -356,7 +357,8 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     width: 80%;
-    margin-left: auto; /* Push it to the right (align to the left edge) */
+    margin-left: auto;
+    /* Push it to the right (align to the left edge) */
     margin-bottom: 20px;
 }
 
@@ -379,4 +381,43 @@ footer {
     border-radius: 10px;
     cursor: pointer;
     padding: 5px;
+}
+
+/* Booking page */
+.booking {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+.booking-type {
+    margin-bottom: 10px;
+}
+
+.toggle-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #b3b3b3;
+    border-radius: 5px;
+    color: #242424;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.toggle-button.active {
+    background-color: #0d99ff;
+    color: white;
+}
+
+.hourly {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.hourly table, td {
+    border: none;
 }
