@@ -122,11 +122,11 @@ Our proposed project (ConviGo) aims to develop a user-friendly web application f
 •	Implement server-side validation for form submissions and email functionality to send queries to the company email address.
 
 ### Assessment
-PA1: 15marks
-PA2: 15marks
-Project Report (Design) document: 20marks
-Project Report: 20marks (Due in week 12/13)
-Project Demo: 30marks
-Total 50%
+• PA1: 15marks
+• PA2: 15marks
+• Project Report (Design) document: 20marks
+• Project Report: 20marks (Due in week 12/13)
+• Project Demo: 30marks
+• Total 50%
 
 
