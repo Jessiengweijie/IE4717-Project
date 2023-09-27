@@ -115,12 +115,20 @@ footer {
     cursor: pointer;
 }
 
+.book-now-button:hover {
+    background-color: #2e04c7
+}
+
 .subscribe-button, .login-button {
     padding: 5px 15px;
     background-color: green;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.subscribe-button:hover, .login-button:hover {
+    background-color: rgb(1, 83, 1)
 }
 
 /* Login Panel */
@@ -173,6 +181,36 @@ footer {
 .car {
     display: flex;
     flex-direction: row;
+}
+
+.car-body {
+    width: 30%;
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    margin: 10px; 
+    text-align: center; 
+    background-color: lightblue;
+}
+
+/* Style the car-name */
+.car-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px; 
+}
+
+/* Style the car-type */
+.car-type {
+    font-size: 14px;
+    margin-bottom: 10px; 
+}
+
+/* Style the car-image */
+.car-image img {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+    margin: 0 auto;
 }
 
 /* Split page */
