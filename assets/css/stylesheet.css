@@ -11,41 +11,6 @@ body {
     min-width: 800px;
 }
 
-/* Style the header */
-header {
-    /* position: fixed;
-    top: 0; */
-    /*future development: to make top navbar stick to top*/
-
-    width: 100%;
-    background-color: rgb(32, 96, 190);
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0 15px 0;
-    z-index: 1000;
-    /* Set a high z-index to ensure it appears above other content */
-}
-
-.logo {
-    margin: 0 0 0 50px;
-    display: flex;
-    align-items: center;
-}
-
-/* navigation panel */
-.navbar {
-    margin-right: 50px;
-}
-
-nav b a {
-    color: #fff;
-    margin-right: 35px;
-    /* space between each nav button */
-    text-decoration: none;
-}
-
 /* general use */
 .left {
     float: left;
@@ -83,6 +48,96 @@ nav b a {
     justify-content: space-evenly;
 }
 
+/* Buttons */
+.book-now-button {
+    padding: 5px 15px;
+    background-color: #3907ec;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.book-now-button:hover {
+    background-color: #2e04c7
+}
+
+.book-now-button-big {
+    padding: 10px 30px 10px 30px;
+    background-color: #3907ec;
+    color: #fff;
+    border-radius: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.book-now-button:hover {
+    background-color: #2e04c7
+}
+
+.subscribe-button,
+.login-button {
+    padding: 5px 15px;
+    background-color: green;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subscribe-button:hover,
+.login-button:hover {
+    background-color: rgb(1, 83, 1)
+}
+
+/* Style the header */
+header {
+    /* position: fixed;
+    top: 0; */
+    /*future development: to make top navbar stick to top*/
+
+    width: 100%;
+    background-color: rgb(32, 96, 190);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0 15px 0;
+    z-index: 1000;
+    /* Set a high z-index to ensure it appears above other content */
+}
+
+.logo {
+    margin: 0 0 0 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* navigation panel */
+.navbar {
+    margin-right: 50px;
+}
+
+nav b a {
+    color: #fff;
+    margin-right: 35px;
+    /* space between each nav button */
+    text-decoration: none;
+}
+
+/* Table config */
+table {
+    border: 1px solid #000;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #000;
+}
+
 /* Style the footer */
 footer {
     background-color: rgb(32, 96, 190);
@@ -105,33 +160,7 @@ footer {
     text-align: left;
 }
 
-/* Buttons */
-.book-now-button {
-    padding: 5px 15px;
-    background-color: #3907ec;
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-}
 
-.book-now-button:hover {
-    background-color: #2e04c7
-}
-
-.subscribe-button,
-.login-button {
-    padding: 5px 15px;
-    background-color: green;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.subscribe-button:hover,
-.login-button:hover {
-    background-color: rgb(1, 83, 1)
-}
 
 /* Login Panel */
 .login {
@@ -226,6 +255,14 @@ footer {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.car-name img {
+    margin-left: auto;
 }
 
 .car-type {
@@ -283,4 +320,63 @@ footer {
     margin: 20px 0 20px 0;
 }
 
+/* Car Info page */
 
+.car-info {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px 0 20px;
+}
+
+.car-info-selected {
+    display: flex;
+    flex-direction: column;
+}
+
+.car-info-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.car-info-name {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.car-info-type {
+    font-size: 30px;
+}
+
+.car-info-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    margin-left: auto; /* Push it to the right (align to the left edge) */
+    margin-bottom: 20px;
+}
+
+.car-info-desc table {
+    font-size: 30px;
+}
+
+.car-info-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.car-info-row p {
+    font-size: 30px;
+}
+
+#preset-options {
+    font-size: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
