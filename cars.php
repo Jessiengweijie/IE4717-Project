@@ -242,27 +242,28 @@ if ($resultCountAudiCars) {
         </header>
         <div class="car" style="background-color: lightskyblue; padding: 20px;">
             <div class="left-section">
-                <select id="car-location-filter" name="location_name">
-                    <option value="">All Locations</option>
+                <div class="car-location-filter-container">
+                    <select id="car-location-filter" name="location_name">
+                        <option value="">All Locations</option>
 
-                    <!-- php -->
-                    <?php foreach ($locationData as $location) : ?>
-                        <option value="<?php echo $location['name']; ?>" <?php if (isset($_GET['location_name']) && $_GET['location_name'] == $location['name']) echo 'selected'; ?>><?php echo $location['name']; ?></option>
-                    <?php endforeach; ?>
+                        <!-- php -->
+                        <?php foreach ($locationData as $location) : ?>
+                            <option value="<?php echo $location['name']; ?>" <?php if (isset($_GET['location_name']) && $_GET['location_name'] == $location['name']) echo 'selected'; ?>><?php echo $location['name']; ?></option>
+                        <?php endforeach; ?>
 
-                </select>
-                <a class="center reset-button" style="cursor: pointer;" onclick="reset()">Reset</a>
-
+                    </select>
+                    <a class="center reset-button" onclick="reset()">Reset</a>
+                </div>
                 <h1>Our Cars</h1>
                 <div class="car-filter">
                     <h1>Vehicle Category</h1>
                     <label>
-                        <input type="radio" name="categoryFilter" value="Standard" onclick="categoryFilter(event)" <?php echo ($category === 'Standard') ? 'checked' : ''; ?>/>
+                        <input type="radio" name="categoryFilter" value="Standard" onclick="categoryFilter(event)" <?php echo ($category === 'Standard') ? 'checked' : ''; ?> />
                         Standard (<?php echo $standardCarCount; ?>)
                     </label>
                     <br />
                     <label>
-                        <input type="radio" name="categoryFilter" value="Premium" onclick="categoryFilter(event)" <?php echo ($category === 'Premium') ? 'checked' : ''; ?>/>
+                        <input type="radio" name="categoryFilter" value="Premium" onclick="categoryFilter(event)" <?php echo ($category === 'Premium') ? 'checked' : ''; ?> />
                         Premium (<?php echo $premiumCarCount; ?>)
                     </label>
                 </div>
@@ -270,17 +271,17 @@ if ($resultCountAudiCars) {
                 <div class="car-filter">
                     <h1>Vehicle type</h1>
                     <label>
-                        <input type="radio" name="typeFilter" value="Electric" onclick="typeFilter(event)" <?php echo ($type === 'Electric') ? 'checked' : ''; ?>/>
+                        <input type="radio" name="typeFilter" value="Electric" onclick="typeFilter(event)" <?php echo ($type === 'Electric') ? 'checked' : ''; ?> />
                         Electric (<?php echo $electricCarCount; ?>)
                     </label>
                     <br />
                     <label>
-                        <input type="radio" name="typeFilter" value="Sedan" onclick="typeFilter(event)" <?php echo ($type === 'Sedan') ? 'checked' : ''; ?>/>
+                        <input type="radio" name="typeFilter" value="Sedan" onclick="typeFilter(event)" <?php echo ($type === 'Sedan') ? 'checked' : ''; ?> />
                         Sedan (<?php echo $sedanCarCount; ?>)
                     </label>
                     <br />
                     <label>
-                        <input type="radio" name="typeFilter" value="SUV" onclick="typeFilter(event)" <?php echo ($type === 'SUV') ? 'checked' : ''; ?>/>
+                        <input type="radio" name="typeFilter" value="SUV" onclick="typeFilter(event)" <?php echo ($type === 'SUV') ? 'checked' : ''; ?> />
                         SUV (<?php echo $suvCarCount; ?>)
                     </label>
                 </div>
@@ -288,27 +289,27 @@ if ($resultCountAudiCars) {
                 <div class="car-filter">
                     <h1>Brand</h1>
                     <label>
-                        <input type="radio" name="brandFilter" value="Honda" onclick="brandFilter(event)" <?php echo ($brand === 'Honda') ? 'checked' : ''; ?>/>
+                        <input type="radio" name="brandFilter" value="Honda" onclick="brandFilter(event)" <?php echo ($brand === 'Honda') ? 'checked' : ''; ?> />
                         Honda (<?php echo $hondaCarCount; ?>)
                     </label>
                     <br />
                     <label>
-                        <input type="radio" name="brandFilter" value="Hyundai" onclick="brandFilter(event)" <?php echo ($brand === 'Hyundai') ? 'checked' : ''; ?>/>
+                        <input type="radio" name="brandFilter" value="Hyundai" onclick="brandFilter(event)" <?php echo ($brand === 'Hyundai') ? 'checked' : ''; ?> />
                         Hyundai (<?php echo $hyundaiCarCount; ?>)
                     </label>
                     <br />
                     <label>
-                        <input type="radio" name="brandFilter" value="Tesla" onclick="brandFilter(event)" <?php echo ($brand === 'Tesla') ? 'checked' : ''; ?>/>
+                        <input type="radio" name="brandFilter" value="Tesla" onclick="brandFilter(event)" <?php echo ($brand === 'Tesla') ? 'checked' : ''; ?> />
                         Tesla (<?php echo $teslaCarCount; ?>)
                     </label>
                     <br />
                     <label>
-                        <input type="radio" name="brandFilter" value="BMW" onclick="brandFilter(event)" <?php echo ($brand === 'BMW') ? 'checked' : ''; ?>/>
+                        <input type="radio" name="brandFilter" value="BMW" onclick="brandFilter(event)" <?php echo ($brand === 'BMW') ? 'checked' : ''; ?> />
                         BMW (<?php echo $bmwCarCount; ?>)
                     </label>
                     <br />
                     <label>
-                        <input type="radio" name="brandFilter" value="Audi" onclick="brandFilter(event)" <?php echo ($brand === 'Audi') ? 'checked' : ''; ?>/>
+                        <input type="radio" name="brandFilter" value="Audi" onclick="brandFilter(event)" <?php echo ($brand === 'Audi') ? 'checked' : ''; ?> />
                         Audi (<?php echo $audiCarCount; ?>)
                     </label>
                 </div>
@@ -335,7 +336,7 @@ if ($resultCountAudiCars) {
                                     <img src="assets/images/Cars/Brands/<?php echo $car['brand']; ?>/<?php echo $car['type']; ?>/<?php echo $car['imageURL']; ?>" height="auto" width="100%" alt="<?php echo $car['name']; ?>">
                                 </div>
                             </div>
-                            <a class="center book-now-button" style="cursor: pointer;" onclick="bookNow('<?php echo $car['id']; ?>');">Book Now</a>
+                            <a class="center book-now-button" onclick="bookNow('<?php echo $car['id']; ?>');">Book Now</a>
                         </div>
                     <?php endforeach; ?>
 

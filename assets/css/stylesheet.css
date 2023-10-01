@@ -97,6 +97,7 @@ body {
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
+    width: max-content;
 }
 
 .reset-button:hover {
@@ -298,8 +299,14 @@ footer {
     margin-bottom: 10px;
 }
 
+.car-location-filter-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 #car-location-filter {
-    width: 70%;
+    width: 60%;
     padding: 5px 5px 5px 40px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -308,7 +315,7 @@ footer {
     background-size: 16px 16px;
     background-position: 10px center;
     background-repeat: no-repeat;
-    margin: 20px 0 20px 0;
+    margin: 20px 10px 20px 0;
     cursor: pointer;
 }
 
