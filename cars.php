@@ -107,7 +107,7 @@ if ($resultCountPremiumCars) {
 
 
 // Count the number of cars in the 'electric' type
-$queryCountElectricCars = "SELECT COUNT(*) AS electricCount FROM (" . $queryCar . ") AS subquery WHERE category = 'electric'";
+$queryCountElectricCars = "SELECT COUNT(*) AS electricCount FROM (" . $queryCar . ") AS subquery WHERE type = 'electric'";
 $resultCountElectricCars = $db->query($queryCountElectricCars);
 
 // Check if the query was successful
