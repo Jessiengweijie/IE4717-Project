@@ -9,6 +9,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 // Retrieve the URL parameters
 const locationParam = urlParams.get('location_name');
+const nameParam = urlParams.get('car_name');
 const carCategoryParam = urlParams.get('category');
 const carTypeParam = urlParams.get('type');
 const carBrandParam = urlParams.get('brand');
@@ -21,13 +22,12 @@ function locationFilter() {
 }
 
 function categoryFilter(event) {
-    console.log(event.target.checked, event.target.value)
     let category = event.target.value;
     // If the clicked radio button is checked, uncheck it
     if (carCategoryParam == category) {
         category = '';
     }
-    filter(locationParam, category, carTypeParam, carBrandParam, carNameParam);
+    filter(locationParam, nameParam, category, carTypeParam, carBrandParam, carNameParam);
 }
 
 function typeFilter(event) {
@@ -36,7 +36,7 @@ function typeFilter(event) {
     if (carTypeParam == type) {
         type = '';
     }
-    filter(locationParam, carCategoryParam, type, carBrandParam, carNameParam);
+    filter(locationParam, nameParam, carCategoryParam, type, carBrandParam, carNameParam);
 }
 
 function brandFilter(event) {
@@ -45,19 +45,23 @@ function brandFilter(event) {
     if (carBrandParam == brand) {
         brand = '';
     }
-    filter(locationParam, carCategoryParam, carTypeParam, brand, carNameParam);
+    filter(locationParam, nameParam, carCategoryParam, carTypeParam, brand, carNameParam);
 }
 
 function reset() {
     filter(null);
 }
 
-function filter(location, category, type, brand) {
+function filter(location, name, category, type, brand) {
     // Construct the URL with the selected value
     let url = 'cars.php?';
 
     if (location) {
         url += `location_name=${location}&`;
+    }
+
+    if (name) {
+        url += `car_name=${name}&`;
     }
 
     if (category) {

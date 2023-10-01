@@ -14,6 +14,7 @@ if (mysqli_connect_errno()) {
 $carData = array();
 $queryCar = "SELECT * FROM car";
 $locationName = '';
+$carName = '';
 $category = '';
 $type = '';
 $brand = '';
@@ -33,6 +34,14 @@ if (isset($_GET['location_name']) && $_GET['location_name'] != '') {
     // Add a condition for location_id to the base query
     $queryCar .= " INNER JOIN car_location ON car.id = car_location.car_id
                    WHERE car_location.location_id = $locationId";
+}
+
+// Check for carName parameter
+if (isset($_GET['car_name']) && $_GET['car_name'] != '') {
+    $carName = $_GET['car_name'];
+    // Add a condition for car_name to the query
+    $queryCar .= (strpos($queryCar, 'WHERE') === false) ? ' WHERE' : ' AND';
+    $queryCar .= " car.name LIKE '%$carName%'";
 }
 
 // Check for category parameter
@@ -58,6 +67,7 @@ if (isset($_GET['brand']) && $_GET['brand'] != '') {
     $queryCar .= (strpos($queryCar, 'WHERE') === false) ? ' WHERE' : ' AND';
     $queryCar .= " car.brand = '$brand'";
 }
+
 // Execute the final query 
 $resultCar = $db->query($queryCar);
 
@@ -317,7 +327,9 @@ if ($resultCountAudiCars) {
             <!-- image retrieved from https://www.flaticon.com/search?word=question -->
 
             <div class="right-section">
-                <input type="text" class="car-search-filter" placeholder="Search for cars">
+                <form method="" action="">
+                    <input type="text" class="car-search-filter" name="car_name" placeholder="Search for cars" value="<?php if (isset($_GET['car_name']) && $_GET['car_name']) echo $carName; ?>">
+                </form>
                 <div class="car-container" id="car-container">
                     <!-- php -->
                     <?php foreach ($carData as $car) : ?>
