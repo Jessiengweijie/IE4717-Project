@@ -6,9 +6,5 @@
 //  the event handlers
 
 var locationNode = document.getElementById("car-location-filter");
-locationNode.addEventListener("change", dropdown, false)
+locationNode.addEventListener("change", locationFilter, false);
 
-// Call the generateCarData() function when the page is loaded
-document.addEventListener("DOMContentLoaded", function () {
-    generateCarData();
-});

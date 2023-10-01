@@ -9,10 +9,10 @@ function generateInfo() {
     const urlParams = new URLSearchParams(window.location.search);
 
     // Retrieve the 'location' parameter
-    const locationParam = urlParams.get('location');
+    const locationParam = urlParams.get('location_name');
 
     // Retrieve the 'car' parameter
-    const carParam = urlParams.get('car');
+    const carParam = urlParams.get('car_id');
 
     // Set location dropdown
     if (locationParam) {
@@ -25,7 +25,7 @@ function generateInfo() {
     else {
         // Kick back to choose location in case code breaks
         alert('You have not selected a location, please select a location.');
-        window.location.href = 'cars.html';
+        window.location.href = 'cars.php';
     }
 
     const rentalRate = 12;
@@ -121,10 +121,10 @@ function bookNow() {
     const urlParams = new URLSearchParams(window.location.search);
 
     // Retrieve the 'location' parameter
-    const locationParam = urlParams.get('location');
+    const locationParam = urlParams.get('location_name');
 
     // Retrieve the 'car' parameter
-    const carParam = urlParams.get('car');
+    const carParam = urlParams.get('car_id');
 
     // Set the location and car
     document.getElementById("booking-location").value = locationParam;

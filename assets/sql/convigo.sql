@@ -36,8 +36,8 @@ VALUES (
     (
         'BMW 318i',
         'Premium',
-        'Electric',
-        'Tesla',
+        'Sedan',
+        'BMW',
         'BMW_318i.png'
     ),
     (
@@ -57,8 +57,8 @@ VALUES (
     (
         'BMW 318i',
         'Premium',
-        'Electric',
-        'Tesla',
+        'Sedan',
+        'BMW',
         'BMW_318i.png'
     ),
     (
@@ -78,8 +78,8 @@ VALUES (
     (
         'BMW 318i',
         'Premium',
-        'Electric',
-        'Tesla',
+        'Sedan',
+        'BMW',
         'BMW_318i.png'
     ),
     (
@@ -99,8 +99,8 @@ VALUES (
     (
         'BMW 318i',
         'Premium',
-        'Electric',
-        'Tesla',
+        'Sedan',
+        'BMW',
         'BMW_318i.png'
     ),
     (

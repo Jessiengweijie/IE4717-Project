@@ -9,14 +9,17 @@ function generateInfo() {
     const urlParams = new URLSearchParams(window.location.search);
 
     // Retrieve the 'location' parameter
-    const locationParam = urlParams.get('location');
+    const locationParam = urlParams.get('location_name');
 
     // Retrieve the 'car' parameter
-    const carParam = urlParams.get('car');
+    const carParam = urlParams.get('car_id');
 
     // Set location dropdown
     if (locationParam) {
         document.getElementById('preset-options').value = locationParam
+    }
+    else {
+        document.getElementById('preset-options').value = '';
     }
 
     console.log('Location:', locationParam);
@@ -29,7 +32,7 @@ function bookNow() {
      const urlParams = new URLSearchParams(window.location.search);
  
      // Retrieve the 'car' parameter
-     const carParam = urlParams.get('car');
+     const carParam = urlParams.get('car_id');
     
     const dropdown = document.getElementById("preset-options");
     const selectedOption = dropdown.value;
@@ -41,7 +44,7 @@ function bookNow() {
     }
     else {
         // Construct the URL with the selectedOption parameter
-        const bookingUrl = `booking.php?location=${selectedOption}&car=${selectedCar}`;
+        const bookingUrl = `booking.php?location_name=${selectedOption}&car_id=${selectedCar}`;
 
         // Redirect to the constructed URL
         window.location.href = bookingUrl;

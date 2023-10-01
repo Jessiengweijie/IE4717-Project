@@ -1,3 +1,52 @@
+<?php
+// create short variable names
+
+@$db = new mysqli('localhost', 'root', '', 'convigo');
+
+if (mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database.  Please try again later.';
+    exit;
+}
+
+// Fetch car data from the database
+if (isset($_GET['location_name']) && $_GET['location_name'] != '') {
+$locationName = $_GET['location_name'];
+
+// Query to fetch the location_id based on location_name
+$queryLocationId = "SELECT id FROM location WHERE name = '$locationName'";
+$resultLocationId = $db->query($queryLocationId);
+
+// Fetch the location_id from the result object
+$locationIdArray = $resultLocationId->fetch_assoc();
+$locationId = $locationIdArray['id'];
+}
+// Query to fetch the entire row from the 'car' table based on 'car_id'
+$carId = $_GET['car_id'];
+$queryCar = "SELECT * FROM car WHERE id = $carId";
+$resultCar = $db->query($queryCar);
+$carData = $resultCar->fetch_assoc();
+
+// Query to fetch available locations for the selected car_id from the car_location table
+$queryAvailableLocations = "SELECT location.id, location.name
+    FROM location
+    INNER JOIN car_location ON location.id = car_location.location_id
+    WHERE car_location.car_id = $carId";
+
+$resultAvailableLocations = $db->query($queryAvailableLocations);
+
+// Create an array to store available location data
+$availableLocations = array();
+
+if ($resultAvailableLocations) {
+    while ($rowLocation = $resultAvailableLocations->fetch_assoc()) {
+        $availableLocations[] = $rowLocation;
+    }
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,15 +62,14 @@
         <header>
             <a href="/ConviGo" style="text-decoration: none; color: inherit;">
                 <h1 class="logo">ConviGo
-                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo"
-                        style="margin-left: 5px;">
+                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
                 </h1>
             </a>
 
             <nav class="navbar">
                 <b>
                     <a href="about.html">About</a> &nbsp;
-                    <a href="cars.html">Cars</a> &nbsp;
+                    <a href="cars.php">Cars</a> &nbsp;
                     <a href="locations.html">Locations</a> &nbsp;
                     <a href="faqs.html">FAQs</a> &nbsp;
                     <a href="my_account.html">My Account</a>
@@ -33,15 +81,14 @@
                 <div class="car-info-head">
                     <div>
                         <div class="car-info-name">
-                            Tesla Model 3
+                            <?php echo $carData['name']; ?>
                         </div>
                         <div class="car-info-type">
-                            Premium - Electric
+                            <?php echo $carData['category']; ?> - <?php echo $carData['type']; ?>
                         </div>
                     </div>
                     <div class="car-info-image">
-                        <img src="assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png" height="auto" width="100%"
-                            alt="Sample Car 3">
+                        <img src="assets/images/Cars/Brands/<?php echo $carData['brand']; ?>/<?php echo $carData['type']; ?>/<?php echo $carData['imageURL']; ?>" height="auto" width="100%" alt="<?php echo $carData['name']; ?>">
                     </div>
                 </div>
             </div>
@@ -69,18 +116,12 @@
                 <div class="car-info-row">
                     <h1>Location Available:&nbsp;</h1>
                     <select id="preset-options">
-                        <option value="" hidden disabled selected>Select Location</option>
-                        <option value="Bedok">Bedok</option>
-                        <option value="Changi">Changi</option>
-                        <option value="Choa Chu Kang">Choa Chu Kang</option>
-                        <option value="Jurong">Jurong</option>
-                        <option value="Nee Soon">Nee Soon</option>
-                        <option value="Seletar">Seletar</option>
-                        <option value="Sembawang">Sembawang</option>
-                        <option value="Serangoon">Serangoon</option>
-                        <option value="Tuas">Tuas</option>
-                        <option value="Woodlands">Woodlands</option>
-                        <!-- Add more preset options as needed -->
+
+                        <!-- php -->
+                        <?php foreach ($availableLocations as $location) : ?>
+                            <option value="<?php echo $location['name']; ?>" <?php if (isset($_GET['location_name']) && $_GET['location_name'] == $location['name']) echo 'selected'; ?>><?php echo $location['name']; ?></option>
+                        <?php endforeach; ?>
+
                     </select>
                 </div>
             </div>
@@ -102,8 +143,7 @@
                     <h2 class="underline">Register for our newsletter</h2>
                     <p>Get the latest news about ConviGo</p>
                     <form method="post" action="assets/php/show_post.php">
-                        <input type="email" name="email" id="email" required placeholder="your email here"
-                            style="padding: 5px 15px; border-radius: 5px;">
+                        <input type="email" name="email" id="email" required placeholder="your email here" style="padding: 5px 15px; border-radius: 5px;">
                         <input class="subscribe-button" type="submit" value="Subscribe">
                     </form>
                 </div>
@@ -117,3 +157,8 @@
 </body>
 
 </html>
+
+<?php
+// Close the database connection
+$db->close();
+?>

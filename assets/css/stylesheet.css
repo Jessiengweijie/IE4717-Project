@@ -90,6 +90,19 @@ body {
     background-color: rgb(1, 83, 1)
 }
 
+.reset-button {
+    padding: 5px 15px;
+    background-color: #e30606;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background-color: #b50101;
+}
+
 /* Style the header */
 header {
     /* position: fixed;
@@ -281,13 +294,8 @@ footer {
     font-size: large;
 }
 
-.car-filter ul li {
-    margin-bottom: 5px;
-}
-
-.car-filter ul li a {
-    text-decoration: none;
-    color: #000;
+.car-filter label input {
+    margin-bottom: 10px;
 }
 
 #car-location-filter {

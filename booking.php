@@ -1,3 +1,25 @@
+<?php
+// create short variable names
+
+@$db = new mysqli('localhost', 'root', '', 'convigo');
+
+if (mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database.  Please try again later.';
+    exit;
+}
+
+// Fetch car data from the database
+
+$locationName = $_GET['location_name'];
+
+// Query to fetch the entire row from the 'car' table based on 'car_id'
+$carId = $_GET['car_id'];
+$queryCar = "SELECT * FROM car WHERE id = $carId";
+$resultCar = $db->query($queryCar);
+$carData = $resultCar->fetch_assoc();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +42,7 @@
             <nav class="navbar">
                 <b>
                     <a href="about.html">About</a> &nbsp;
-                    <a href="cars.html">Cars</a> &nbsp;
+                    <a href="cars.php">Cars</a> &nbsp;
                     <a href="locations.html">Locations</a> &nbsp;
                     <a href="faqs.html">FAQs</a> &nbsp;
                     <a href="my_account.html">My Account</a>
@@ -33,14 +55,14 @@
                     <div class="car-info-head">
                         <div>
                             <div class="car-info-name">
-                                Tesla Model 3
+                                <?php echo $carData['name']; ?>
                             </div>
                             <div class="car-info-type">
-                                Premium - Electric
+                            <?php echo $carData['category']; ?> - <?php echo $carData['type']; ?>
                             </div>
                         </div>
                         <div class="car-info-image">
-                            <img src="assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png" height="auto" width="100%" alt="Sample Car 3">
+                        <img src="assets/images/Cars/Brands/<?php echo $carData['brand']; ?>/<?php echo $carData['type']; ?>/<?php echo $carData['imageURL']; ?>" height="auto" width="100%" alt="<?php echo $carData['name']; ?>">
                         </div>
                     </div>
                 </div>
@@ -123,7 +145,6 @@
                 </div>
 
                 <div style="margin-left: auto; margin-bottom: 20px; width: 55%;">
-                    <!-- <a class="center book-now-button-big" onclick="bookNow();">Book Now</a>  -->
                     <input type="submit" class="center book-now-button-big" onclick="bookNow();" value="Book Now">
                     <br />
                 </div>
@@ -162,3 +183,8 @@
 </body>
 
 </html>
+
+<?php
+// Close the database connection
+$db->close();
+?>

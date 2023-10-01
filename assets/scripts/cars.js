@@ -4,122 +4,98 @@
 // ********************************************************** //
 // The event handler function for the location dropdown
 
-function dropdown() {
-    const dropdown = document.getElementById("car-location-filter");
-    const selectedOption = dropdown.value;
-    if (!selectedOption) {
-        alert('Please choose a location');
-        return false
-    }
-    else {
-        alert('you have chosen the location: ' + selectedOption + '.')
-    }
-    console.log(dropdown, selectedOption, 'test');
+// Get the URL search parameters
+const urlParams = new URLSearchParams(window.location.search);
+
+// Retrieve the URL parameters
+const locationParam = urlParams.get('location_name');
+const carCategoryParam = urlParams.get('category');
+const carTypeParam = urlParams.get('type');
+const carBrandParam = urlParams.get('brand');
+const carNameParam = urlParams.get('car_name');
+
+function locationFilter() {
+    const locationSelect = document.getElementById("car-location-filter");
+    const selectedOption = locationSelect.value;
+    filter(selectedOption, carCategoryParam, carTypeParam, carBrandParam, carNameParam);
 }
 
-function generateCarData() {
-    const carData = [
-        {
-            name: "Tesla Model 3",
-            type: "Premium - Electric",
-            imageUrl: "assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png",
-            infoLink: "car_information.html",
-        },
-        {
-            name: "BMW 318i",
-            type: "Premium - Sedan",
-            imageUrl: "assets/images/Cars/Brands/BMW/Sedan/BMW_318i.png",
-            infoLink: "car_information.html",
-        },
-        {
-            name: "Audi Q3",
-            type: "Premium - SUV",
-            imageUrl: "assets/images/Cars/Brands/Audi/SUV/Audi_Q3.png",
-            infoLink: "car_information.html",
-        },
-        {
-            name: "Tesla Model 3",
-            type: "Premium - Electric",
-            imageUrl: "assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png",
-            infoLink: "car_information.html",
-        },
-        {
-            name: "Tesla Model 3",
-            type: "Premium - Electric",
-            imageUrl: "assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png",
-            infoLink: "car_information.html",
-        },
-        {
-            name: "Tesla Model 3",
-            type: "Premium - Electric",
-            imageUrl: "assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png",
-            infoLink: "car_information.html",
-        },
-        {
-            name: "Tesla Model 3",
-            type: "Premium - Electric",
-            imageUrl: "assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png",
-            infoLink: "car_information.html",
-        },
-        {
-            name: "Tesla Model 3",
-            type: "Premium - Electric",
-            imageUrl: "assets/images/Cars/Brands/Tesla/Electric/Tesla_Model3.png",
-            infoLink: "car_information.html",
-        },
-        // Add more car objects as needed
-    ];
+function categoryFilter(event) {
+    console.log(event.target.checked, event.target.value)
+    let category = event.target.value;
+    // If the clicked radio button is checked, uncheck it
+    if (carCategoryParam == category) {
+        category = '';
+    }
+    filter(locationParam, category, carTypeParam, carBrandParam, carNameParam);
+}
 
-    // Assuming you have a container element where you want to append the car templates
-    const container = document.getElementById("car-container"); // Replace with the actual container ID
+function typeFilter(event) {
+    let type = event.target.value;
+    // If the clicked radio button is checked, uncheck it
+    if (carTypeParam == type) {
+        type = '';
+    }
+    filter(locationParam, carCategoryParam, type, carBrandParam, carNameParam);
+}
 
-    // Loop through the car data array
-    carData.forEach((car) => {
-        // Create a car template element
-        const carTemplate = document.createElement("div");
-        carTemplate.className = "car-template";
+function brandFilter(event) {
+    let brand = event.target.value;
+    // If the clicked radio button is checked, uncheck it
+    if (carBrandParam == brand) {
+        brand = '';
+    }
+    filter(locationParam, carCategoryParam, carTypeParam, brand, carNameParam);
+}
 
-        // Generate the HTML structure for the car template
-        carTemplate.innerHTML = `
-        <div class="car-body">
-            <div class="car-name">
-                <span>${car.name}</span>
-                <a style="cursor: pointer;" onclick="inquiry('${car.name}');">
-                    <img src="assets/images/Icons/questionmark-icon.png" height="16px" width="16px" alt="Question Mark">
-                    <!-- image retrieved from https://www.flaticon.com/search?word=question -->
-                </a>
-            </div>
-            <div class="car-type">
-                ${car.type}
-            </div>
-            <div class="car-image">
-                <img src="${car.imageUrl}" height="auto" width="100%" alt="${car.name}">
-            </div>
-        </div>
-        <a class="center book-now-button" style="cursor: pointer;" onclick="bookNow('${car.name}');">Book Now</a>
-    `;
+function reset() {
+    filter(null);
+}
 
-        // Append the car template to the container
-        container.appendChild(carTemplate);
-    });
+function filter(location, category, type, brand) {
+    // Construct the URL with the selected value
+    let url = 'cars.php?';
 
+    if (location) {
+        url += `location_name=${location}&`;
+    }
 
+    if (category) {
+        url += `category=${category}&`;
+    }
+
+    if (type) {
+        url += `type=${type}&`;
+    }
+
+    if (brand) {
+        url += `brand=${brand}&`;
+    }
+
+    // Remove the trailing '&' character, if any
+    if (url.endsWith('&')) {
+        url = url.slice(0, -1);
+    }
+
+    // Navigate to the URL
+    console.log(url)
+    window.location.href = url;
 }
 
 function inquiry(selectedCar) {
-    const dropdown = document.getElementById("car-location-filter");
-    const selectedOption = dropdown.value;
+    const locationSelect = document.getElementById("car-location-filter");
+    const selectedOption = locationSelect.value;
 
     // Construct the URL with parameters
-    const carInfoUrl = `car_information.html?location=${selectedOption}&car=${selectedCar}`;
+    const carInfoUrl = `car_information.php?location_name=${selectedOption}&car_id=${selectedCar}`;
 
     // Redirect to the constructed URL
     window.location.href = carInfoUrl;
 }
 
 function bookNow(selectedCar) {
-    const dropdown = document.getElementById("car-location-filter");
-    const selectedOption = dropdown.value;
+    const locationSelect = document.getElementById("car-location-filter");
+    const selectedOption = locationSelect.value;
 
     if (!selectedOption) {
         alert('Please choose a location');
@@ -127,7 +103,7 @@ function bookNow(selectedCar) {
     }
     else {
         // Construct the URL with parameters
-        const bookingUrl = `booking.php?location=${selectedOption}&car=${selectedCar}`;
+        const bookingUrl = `booking.php?location_name=${selectedOption}&car_id=${selectedCar}`;
 
         // Redirect to the constructed URL
         window.location.href = bookingUrl;
