@@ -244,7 +244,7 @@ if ($resultCountAudiCars) {
                 <b>
                     <a href="about.html">About</a> &nbsp;
                     <a href="cars.php">Cars</a> &nbsp;
-                    <a href="locations.html">Locations</a> &nbsp;
+                    <a href="locations.php">Locations</a> &nbsp;
                     <a href="faqs.html">FAQs</a> &nbsp;
                     <a href="my_account.html">My Account</a>
                 </b>
@@ -327,9 +327,7 @@ if ($resultCountAudiCars) {
             <!-- image retrieved from https://www.flaticon.com/search?word=question -->
 
             <div class="right-section">
-                <form method="" action="">
-                    <input type="text" class="car-search-filter" name="car_name" placeholder="Search for cars" value="<?php if (isset($_GET['car_name']) && $_GET['car_name']) echo $carName; ?>">
-                </form>
+                <input type="text" class="car-search-filter" name="car_name" id="car-name" placeholder="Search for cars" value="<?php if (isset($_GET['car_name']) && $_GET['car_name']) echo $carName; ?>">
                 <div class="car-container" id="car-container">
                     <!-- php -->
                     <?php foreach ($carData as $car) : ?>

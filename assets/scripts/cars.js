@@ -2,14 +2,12 @@
 //   Note: This document does not work with IE8
 
 // ********************************************************** //
-// The event handler function for the location dropdown
 
 // Get the URL search parameters
 const urlParams = new URLSearchParams(window.location.search);
 
 // Retrieve the URL parameters
 const locationParam = urlParams.get('location_name');
-const nameParam = urlParams.get('car_name');
 const carCategoryParam = urlParams.get('category');
 const carTypeParam = urlParams.get('type');
 const carBrandParam = urlParams.get('brand');
@@ -18,7 +16,11 @@ const carNameParam = urlParams.get('car_name');
 function locationFilter() {
     const locationSelect = document.getElementById("car-location-filter");
     const selectedOption = locationSelect.value;
-    filter(selectedOption, carCategoryParam, carTypeParam, carBrandParam, carNameParam);
+    filter(selectedOption, carNameParam, carCategoryParam, carTypeParam, carBrandParam);
+}
+
+function nameFilter(name) {
+    filter(locationParam, name, carCategoryParam, carTypeParam, carBrandParam);
 }
 
 function categoryFilter(event) {
@@ -27,7 +29,7 @@ function categoryFilter(event) {
     if (carCategoryParam == category) {
         category = '';
     }
-    filter(locationParam, nameParam, category, carTypeParam, carBrandParam, carNameParam);
+    filter(locationParam, carNameParam, category, carTypeParam, carBrandParam);
 }
 
 function typeFilter(event) {
@@ -36,7 +38,7 @@ function typeFilter(event) {
     if (carTypeParam == type) {
         type = '';
     }
-    filter(locationParam, nameParam, carCategoryParam, type, carBrandParam, carNameParam);
+    filter(locationParam, carNameParam, carCategoryParam, type, carBrandParam);
 }
 
 function brandFilter(event) {
@@ -45,7 +47,7 @@ function brandFilter(event) {
     if (carBrandParam == brand) {
         brand = '';
     }
-    filter(locationParam, nameParam, carCategoryParam, carTypeParam, brand, carNameParam);
+    filter(locationParam, carNameParam, carCategoryParam, carTypeParam, brand);
 }
 
 function reset() {

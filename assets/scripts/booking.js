@@ -2,7 +2,6 @@
 //   Note: This document does not work with IE8
 
 // ********************************************************** //
-// The event handler function for the location dropdown
 
 function generateInfo() {
     // Get the URL search parameters

@@ -77,16 +77,21 @@ body {
 }
 
 .subscribe-button,
-.login-button {
+.login-button,
+.search-button,
+.submit-button {
     padding: 5px 15px;
     background-color: green;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    border-width: 1px;
 }
 
 .subscribe-button:hover,
-.login-button:hover {
+.login-button:hover,
+.search-button:hover,
+.submit-button:hover {
     background-color: rgb(1, 83, 1)
 }
 
@@ -433,6 +438,58 @@ footer {
     border-radius: 5px;
 }
 
-.hourly table, td {
+.hourly table,
+td {
     border: none;
+}
+
+/* Locations page */
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location .car-location-filter-container {
+    justify-content: center;
+    width: 50%;
+}
+
+.location #car-location-filter {
+    width: 100%;
+    font-size: 16px;
+}
+
+.location-header {
+    font-size: 50px;
+    margin-block-end: 0;
+}
+
+.location-subheader {
+    font-size: 30px;
+    margin-block-start: 0;
+}
+
+.map-info,
+.location-query {
+    width: 80%;
+}
+
+.map-header,
+.location-query-header {
+    font-size: 50px;
+    text-align: left;
+}
+
+.location-query-subheader {
+    font-size: 30px;
+    text-align: left;
+}
+
+.location-query-form {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    font-size: 20px;
+    margin-bottom: 10px;
 }

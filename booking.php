@@ -43,7 +43,7 @@ $carData = $resultCar->fetch_assoc();
                 <b>
                     <a href="about.html">About</a> &nbsp;
                     <a href="cars.php">Cars</a> &nbsp;
-                    <a href="locations.html">Locations</a> &nbsp;
+                    <a href="locations.php">Locations</a> &nbsp;
                     <a href="faqs.html">FAQs</a> &nbsp;
                     <a href="my_account.html">My Account</a>
                 </b>
