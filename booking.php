@@ -58,11 +58,11 @@ $carData = $resultCar->fetch_assoc();
                                 <?php echo $carData['name']; ?>
                             </div>
                             <div class="car-info-type">
-                            <?php echo $carData['category']; ?> - <?php echo $carData['type']; ?>
+                                <?php echo $carData['category']; ?> - <?php echo $carData['type']; ?>
                             </div>
                         </div>
                         <div class="car-info-image">
-                        <img src="assets/images/Cars/Brands/<?php echo $carData['brand']; ?>/<?php echo $carData['type']; ?>/<?php echo $carData['imageURL']; ?>" height="auto" width="100%" alt="<?php echo $carData['name']; ?>">
+                            <img src="assets/images/Cars/Brands/<?php echo $carData['brand']; ?>/<?php echo $carData['type']; ?>/<?php echo $carData['imageURL']; ?>" height="auto" width="100%" alt="<?php echo $carData['name']; ?>">
                         </div>
                     </div>
                 </div>
@@ -72,20 +72,25 @@ $carData = $resultCar->fetch_assoc();
                     <table>
                         <tr>
                             <td>Seats:</td>
-                            <td>5</td>
+                            <td><?php echo $carData['seats']; ?></td>
                         </tr>
                         <tr>
                             <td>Fuel type:</td>
-                            <td>Diesel</td>
+                            <td><?php echo $carData['fuel_type']; ?></td>
                         </tr>
                         <tr>
                             <td>Boot space:</td>
-                            <td>2 large luggage</td>
+                            <td><?php echo $carData['boot_space']; ?></td>
+                        </tr>
+                        <tr>
+                            <td>Description:</td>
+                            <td><?php echo $carData['description']; ?></td>
                         </tr>
                     </table>
                     <div class="car-info-row">
                         <h1>Price:&nbsp;</h1>
-                        <p id="rental-rate"></p>
+                        <p>$<?php echo $carData['price']; ?> per hour</p>
+                        <input type="hidden" name="rental-rate" id="rental-rate" value="<?php echo $carData['price']; ?>">
                     </div>
                     <div class="car-info-row">
                         <h1>Location Selected:&nbsp;</h1>
@@ -152,7 +157,6 @@ $carData = $resultCar->fetch_assoc();
                 <input type="hidden" name="booking-car" id="booking-car">
                 <input type="hidden" name="booking-fee" id="booking-fee-final">
                 <input type="hidden" name="booking-end" id="booking-end-final">
-                <input type="hidden" name="rental-rate" id="rental-rate-final">
 
             </form>
         </div>

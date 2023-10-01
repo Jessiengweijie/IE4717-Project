@@ -28,22 +28,6 @@ function generateInfo() {
         window.location.href = 'cars.php';
     }
 
-    const rentalRate = 12;
-    document.getElementById("rental-rate").value = rentalRate;
-    const container = document.getElementById("rental-rate"); // Replace with the actual container ID
-
-    // Create a price template element
-    const priceTemplate = document.createElement("p");
-    priceTemplate.className = "rental-rate";
-    // Generate the HTML structure for the parameters
-    priceTemplate.innerHTML = `
-   <p>$${rentalRate} per hour</p>
-    `;
-
-    // Append the price template to the container
-    container.appendChild(priceTemplate);
-
-
     console.log('Location:', locationParam);
     console.log('Car:', carParam,);
 }
@@ -108,7 +92,6 @@ function calculateFeeAndEndTime() {
     if (selectedDate && selectedTime && selectedDuration) {
         document.getElementById("booking-fee-final").value = fee;
         document.getElementById("booking-end-final").value = formattedEndTime;
-        document.getElementById("rental-rate-final").value = rentalRate;
 
         feeDisplay.textContent = "$" + fee.toFixed(2); // Format as currency
         endDisplay.textContent = formattedEndTime;

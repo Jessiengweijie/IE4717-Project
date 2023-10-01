@@ -98,20 +98,24 @@ if ($resultAvailableLocations) {
                 <table>
                     <tr>
                         <td>Seats:</td>
-                        <td>5</td>
+                        <td><?php echo $carData['seats']; ?></td>
                     </tr>
                     <tr>
                         <td>Fuel type:</td>
-                        <td>Diesel</td>
+                        <td><?php echo $carData['fuel_type']; ?></td>
                     </tr>
                     <tr>
                         <td>Boot space:</td>
-                        <td>2 large luggage</td>
+                        <td><?php echo $carData['boot_space']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td><?php echo $carData['description']; ?></td>
                     </tr>
                 </table>
                 <div class="car-info-row">
                     <h1>Price:&nbsp;</h1>
-                    <p>$12 per hour</p>
+                    <p>$<?php echo $carData['price']; ?> per hour</p>
                 </div>
                 <div class="car-info-row">
                     <h1>Location Available:&nbsp;</h1>

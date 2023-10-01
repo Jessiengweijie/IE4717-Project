@@ -3,6 +3,9 @@
   $date = $_POST['booking-date'];
   $time = $_POST['booking-time'];
   $duration = $_POST['booking-duration'];
+  $rate = $_POST['rental-rate'];
+  $fee = $_POST['booking-fee'];
+  $end = $_POST['booking-end'];
 ?>
 <html>
 <head>
@@ -20,7 +23,11 @@
 
 	echo "Booking Date: ".$date."<br />";
 	echo "Booking Time: ".$time."<br />";
+	echo "Booking Rate: $".$rate."/Hour<br />";
 	echo "Booking Duration: ".$duration." Hours<br />";
+	echo "Booking Fee: $".$fee."<br />";
+	echo "Booking End: ".$end."<br />";
+
 
 ?>
 </body>

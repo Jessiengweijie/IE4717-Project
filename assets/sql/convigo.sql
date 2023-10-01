@@ -5,7 +5,12 @@ CREATE TABLE IF NOT EXISTS car (
     category VARCHAR(50) NOT NULL,
     type VARCHAR(50) NOT NULL,
     brand VARCHAR(50) NOT NULL,
-    imageURL VARCHAR(50) NOT NULL
+    imageURL VARCHAR(50) NOT NULL,
+    seats INT NOT NULL,
+    fuel_type VARCHAR(50) NOT NULL,
+    boot_space VARCHAR(50) NOT NULL,
+    description TEXT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS location (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -18,188 +23,329 @@ CREATE TABLE IF NOT EXISTS car_location (
     FOREIGN KEY (car_id) REFERENCES car(id),
     FOREIGN KEY (location_id) REFERENCES location(id)
 );
-INSERT INTO car (name, category, type, brand, imageURL)
+INSERT INTO car (
+        name,
+        category,
+        type,
+        brand,
+        imageURL,
+        seats,
+        fuel_type,
+        boot_space,
+        description,
+        price
+    )
 VALUES (
         'Tesla Model 3',
         'Premium',
         'Electric',
         'Tesla',
-        'Tesla_Model3.png'
+        'Tesla_Model3.png',
+        5,
+        'Electric',
+        '2 large luggage',
+        'car description',
+        20.00
     ),
     (
         'Audi Q3',
         'Premium',
         'SUV',
         'Audi',
-        'Audi_Q3.png'
+        'Audi_Q3.png',
+        7,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        25.00
     ),
     (
         'BMW 318i',
         'Premium',
         'Sedan',
         'BMW',
-        'BMW_318i.png'
+        'BMW_318i.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        15.00
     ),
     (
         'Audi S3 Sedan',
         'Premium',
         'Sedan',
         'Audi',
-        'S3_Sedan.png'
+        'S3_Sedan.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        15.00
     ),
     (
         'Audi A3 Sedan',
         'Premium',
         'Sedan',
         'Audi',
-        'A3_Sedan.png'
+        'A3_Sedan.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        15.00
     ),
     (
         'Audi A6 Sedan',
         'Premium',
         'Sedan',
         'Audi',
-        'A6_Sedan.png'
+        'A6_Sedan.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        15.00
     ),
     (
         'Audi Q5',
         'Premium',
         'SUV',
         'Audi',
-        'Audi_Q5.png'
+        'Audi_Q5.png',
+        7,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        25.00
     ),
     (
         'Audi A6 e-tron',
         'Premium',
         'Electric',
         'Audi',
-        'A6_e-tron.png'
+        'A6_e-tron.png',
+        5,
+        'Electric',
+        '2 large luggage',
+        'car description',
+        20.00
     ),
     (
         'Tesla Model S',
         'Premium',
         'Electric',
         'Tesla',
-        'Tesla_ModelS.png'
+        'Tesla_ModelS.png',
+        5,
+        'Electric',
+        '2 large luggage',
+        'car description',
+        20.00
     ),
     (
         'Tesla Model S Performance',
         'Premium',
         'Electric',
         'Tesla',
-        'Tesla_ModelS_Performance.png'
+        'Tesla_ModelS_Performance.png',
+        5,
+        'Electric',
+        '2 large luggage',
+        'car description',
+        20.00
     ),
     (
         'Tesla Model S Plaid',
         'Premium',
         'Electric',
         'Tesla',
-        'Tesla_ModelS_Plaid.png'
+        'Tesla_ModelS_Plaid.png',
+        5,
+        'Electric',
+        '2 large luggage',
+        'car description',
+        20.00
     ),
     (
         'BMW 530i',
         'Premium',
         'Sedan',
         'BMW',
-        'BMW_530i.png'
+        'BMW_530i.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        15.00
     ),
     (
         'BMW X3',
         'Premium',
         'SUV',
         'BMW',
-        'BMW_X3.png'
+        'BMW_X3.png',
+        7,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        25.00
     ),
     (
         'BMW X4',
         'Premium',
         'SUV',
         'BMW',
-        'BMW_X4.png'
+        'BMW_X4.png',
+        7,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        25.00
     ),
     (
         'BMW i5',
         'Premium',
         'Electric',
         'BMW',
-        'BMW_i5.png'
+        'BMW_i5.png',
+        5,
+        'Electric',
+        '2 large luggage',
+        'car description',
+        20.00
     ),
     (
         'Hyundai Accent',
         'Standard',
         'Sedan',
         'Hyundai',
-        'Hyundai_Accent.png'
+        'Hyundai_Accent.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        15.00
     ),
     (
         'Hyundai Sonata',
         'Standard',
         'Sedan',
         'Hyundai',
-        'Hyundai_Sonata.png'
+        'Hyundai_Sonata.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        15.00
     ),
     (
         'Hyundai Venue',
         'Standard',
         'SUV',
         'Hyundai',
-        'Hyundai_Venue.png'
+        'Hyundai_Venue.png',
+        7,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        25.00
     ),
     (
         'Hyundai Tucson',
         'Standard',
         'SUV',
         'Hyundai',
-        'Hyundai_Tucson.png'
+        'Hyundai_Tucson.png',
+        7,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        25.00
     ),
     (
         'Hyundai Ionic 6',
         'Premium',
         'Electric',
         'Hyundai',
-        'Hyundai_Ioniq_6.png'
+        'Hyundai_Ioniq_6.png',
+        5,
+        'Electric',
+        '2 large luggage',
+        'car description',
+        20.00
     ),
     (
         'Honda Civic Sedan',
         'Standard',
         'Sedan',
         'Honda',
-        'Honda_Civic_Sedan.png'
+        'Honda_Civic_Sedan.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        15.00
     ),
     (
         'Honda Insight',
         'Standard',
         'Sedan',
         'Honda',
-        'Honda_Insight.png'
+        'Honda_Insight.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        15.00
     ),
     (
         'Honda Accord',
         'Standard',
         'Sedan',
         'Honda',
-        'Honda_Accord.png'
+        'Honda_Accord.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        15.00
     ),
     (
         'Honda HR-V',
         'Standard',
         'SUV',
         'Honda',
-        'Honda_HR-V.png'
+        'Honda_HR-V.png',
+        7,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        25.00
     ),
     (
         'Honda Passport',
         'Standard',
         'SUV',
         'Honda',
-        'Honda_Passport.png'
+        'Honda_Passport.png',
+        7,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        25.00
     ),
     (
         'Honda Prologue',
         'Standard',
         'SUV',
         'Honda',
-        'Honda_Prologue.png'
+        'Honda_Prologue.png',
+        7,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        25.00
     );
 INSERT INTO location(name)
 VALUES('Jurong'),
