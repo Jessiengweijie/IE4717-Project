@@ -250,7 +250,7 @@ if ($resultCountAudiCars) {
                 </b>
             </nav>
         </header>
-        <div class="car" style="background-color: lightskyblue; padding: 20px;">
+        <div class="car">
             <div class="left-section">
                 <div class="car-location-filter-container">
                     <select id="car-location-filter" name="location_name">

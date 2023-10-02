@@ -1,3 +1,5 @@
+CREATE database convigo;
+USE convigo;
 -- Import inside convigo DB
 CREATE TABLE IF NOT EXISTS car (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,

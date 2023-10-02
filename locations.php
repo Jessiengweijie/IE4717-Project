@@ -51,7 +51,7 @@ if ($resultLocation->num_rows > 0) {
                 </b>
             </nav>
         </header>
-        <div class="center location" style="background-color: lightskyblue; padding: 20px;">
+        <div class="center location">
             <p class="location-header">Pick a location!</p>
             <p class="location-subheader">ConviGo has cars Island-wide</p>
             <div class="car-location-filter-container">

@@ -76,7 +76,7 @@ if ($resultAvailableLocations) {
                 </b>
             </nav>
         </header>
-        <div class="car-info" style="background-color: lightskyblue;">
+        <div class="car-info">
             <div class="car-info-selected">
                 <div class="car-info-head">
                     <div>

@@ -49,7 +49,7 @@ $carData = $resultCar->fetch_assoc();
                 </b>
             </nav>
         </header>
-        <div class="car-info" style="background-color: lightskyblue;">
+        <div class="car-info">
             <form action="assets/php/processorder.php" method="post">
                 <div class="car-info-selected">
                     <div class="car-info-head">

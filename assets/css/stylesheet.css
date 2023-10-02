@@ -1,3 +1,20 @@
+/* Define colors for standardization */
+:root {
+    /* Base layout */
+    --background-color: lightskyblue;
+    --header-footer-color: mediumblue;
+    --primary-color: dodgerblue;
+    --secondary-color: #BDE3FF;
+
+    /* Buttons */
+    --purple-button: #3907ec;
+    --purple-button-hover: #2e04c7;
+    --green-button: green;
+    --green-button-hover: rgb(1, 83, 1);
+    --red-button: #e30606;
+    --red-button-hover: #b50101;
+}
+
 /* Style the body */
 body {
     font-family: Arial, sans-serif;
@@ -47,20 +64,16 @@ body {
 /* Buttons */
 .book-now-button {
     padding: 5px 15px;
-    background-color: #3907ec;
+    background-color: var(--purple-button);
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
 }
 
-.book-now-button:hover {
-    background-color: #2e04c7
-}
-
 .book-now-button-big {
     padding: 10px 30px 10px 30px;
-    background-color: #3907ec;
+    background-color: var(--purple-button);
     color: #fff;
     border-radius: 15px;
     text-decoration: none;
@@ -68,16 +81,18 @@ body {
     font-size: 30px;
 }
 
-.book-now-button:hover {
-    background-color: #2e04c7
+.book-now-button:hover,
+.book-now-button-big:hover {
+    background-color: var(--purple-button-hover);
 }
+
 
 .subscribe-button,
 .login-button,
 .search-button,
 .submit-button {
     padding: 5px 15px;
-    background-color: green;
+    background-color: var(--green-button);
     color: #fff;
     border-radius: 10px;
     cursor: pointer;
@@ -87,13 +102,33 @@ body {
 .subscribe-button:hover,
 .login-button:hover,
 .search-button:hover,
-.submit-button:hover {
-    background-color: rgb(1, 83, 1)
+.submit-button:hover,
+.save-button:hover {
+    background-color: var(--green-button-hover);
+}
+
+.save-button {
+    padding: 5px 15px;
+    background-color: var(--green-button);
+    color: #000;
+    border-radius: 10px;
+    cursor: pointer;
+    border-width: 1px;
+}
+
+.edit-button {
+    padding: 5px 15px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    cursor: pointer;
+    border-width: 1px;
+    border: 1px solid black;
 }
 
 .reset-button {
     padding: 5px 15px;
-    background-color: #e30606;
+    background-color: var(--red-button);
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
@@ -102,7 +137,7 @@ body {
 }
 
 .reset-button:hover {
-    background-color: #b50101;
+    background-color: var(--red-button-hover);
 }
 
 /* Style the header */
@@ -112,7 +147,7 @@ header {
     /*future development: to make top navbar stick to top*/
 
     width: 100%;
-    background-color: rgb(32, 96, 190);
+    background-color: var(--header-footer-color);
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -155,7 +190,7 @@ th {
 
 /* Style the footer */
 footer {
-    background-color: rgb(32, 96, 190);
+    background-color: var(--header-footer-color);
     color: #fff;
     text-align: center;
     width: 100%;
@@ -175,24 +210,36 @@ footer {
     text-align: left;
 }
 
-
+/* Home Page */
+.home {
+    background-color: var(--background-color);
+}
 
 /* Login Panel */
+.home-login {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 50px;
+}
+
 .login {
-    background-color: rgb(185, 226, 252);
+    background-color: var(--secondary-color);
     height: 70%;
-    width: 30%;
-    margin: 50px 50px 0 auto;
-    border: 1px solid rgb(97, 172, 233);
+    width: 20%;
+    margin: 0 50px 0 auto;
+    /* border: 1px solid rgb(97, 172, 233); */
+    border: 1px solid var(--primary-color);
     border-radius: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 30px;
+    align-items: center;
 }
 
 .login-font {
     font-size: 75px;
     font-weight: bold;
-    margin: 30px;
+    margin: 0 30px 30px 30px;
 }
 
 .login-form {
@@ -214,9 +261,11 @@ footer {
 
 /* About page */
 .about {
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 20px;
 }
 
 .about-body {
@@ -240,6 +289,8 @@ footer {
 /* Car page */
 
 .car {
+    background-color: var(--background-color);
+    padding: 20px;
     display: flex;
     flex-direction: row;
 }
@@ -257,7 +308,8 @@ footer {
     padding: 20px 20px 10px 20px;
     margin: 10px;
     text-align: center;
-    background-color: lightblue;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
 }
 
 .car-body {
@@ -340,6 +392,7 @@ footer {
 /* Car Info page */
 
 .car-info {
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     padding: 50px 20px 0 20px;
@@ -425,7 +478,7 @@ footer {
 }
 
 .toggle-button.active {
-    background-color: #0d99ff;
+    background-color: var(--primary-color);
     color: white;
 }
 
@@ -441,9 +494,11 @@ td {
 
 /* Locations page */
 .location {
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 .location .car-location-filter-container {
@@ -496,6 +551,7 @@ td {
 
 /* FAQs page */
 .faq {
+    background-color: var(--background-color);
     padding: 50px;
 }
 
@@ -545,4 +601,147 @@ td {
     resize: none;
     font-size: 20px;
     margin-bottom: 10px;
+}
+
+/* My Account Page */
+.account {
+    background-color: var(--background-color);
+    padding: 5%;
+}
+
+.account-information {
+    padding: 20px 100px 50px 50px;
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.account-information-header {
+    font-size: 50px;
+}
+
+.account-information-body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.account-information-subheader {
+    font-size: 30px;
+}
+
+.account-information-content {
+    color: #000;
+    margin-block-end: 0;
+}
+
+.line {
+    border-top: 1px solid black;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+/* Sign Up Page */
+.signup-header {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.signup-subheader {
+    font-size: 30px;
+}
+
+/* Sign Up Confirmation Page */
+.signup-confirmation {
+    padding: 20px 100px 50px 50px;
+    background-color: #fff;
+}
+
+.signup-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.signup-box-scroll {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 30px;
+    max-height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.checkbox-label {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.disclaimer {
+    font-weight: bold;
+}
+
+#accept-terms-checkbox {
+    width: 20px;
+    /* Adjust the width as needed */
+    height: 20px;
+    /* Adjust the height as needed */
+    margin: 10px 5px 0 0;
+}
+
+.signup-information {
+    margin-left: 25px;
+}
+
+.signup-contact {
+    margin-bottom: 100px;
+}
+
+.signup-password {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-password-section {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.right-password-section {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.right-password-section ul {
+    margin-block-start: 0;
+}
+
+.right-password-section ul li {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
 }

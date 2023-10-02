@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Account</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <a href="/ConviGo" style="text-decoration: none; color: inherit;">
+                <h1 class="logo">ConviGo
+                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo"
+                        style="margin-left: 5px;">
+                </h1>
+            </a>
+
+            <nav class="navbar">
+                <b>
+                    <a href="about.html">About</a> &nbsp;
+                    <a href="cars.php">Cars</a> &nbsp;
+                    <a href="locations.php">Locations</a> &nbsp;
+                    <a href="faqs.html">FAQs</a> &nbsp;
+                    <a href="my_account.html">My Account</a>
+                </b>
+            </nav>
+        </header>
+        <div class="account">
+            <div class="account-information">
+                <p class="account-information-header">My Personal Information</p>
+                <div class="account-information-body">
+                    <p class="account-information-subheader">Identity</p>
+                    <div>
+                        <p class="account-information-content">Surname:</p>
+                        <div class="line"></div>
+                        <p class="account-information-content">First name:</p>
+                        <div class="line"></div>
+                        <p class="account-information-content">Date of birth:</p>
+                        <div class="line"></div>
+                        <p class="account-information-content">License class:</p>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <div class="account-information-body">
+                    <p class="account-information-subheader">Contact Details</p>
+                    <div>
+                        <p class="account-information-content">Mobile number:</p>
+                        <div class="line"></div>
+                        <p class="account-information-content">Email:</p>
+                        <div class="line"></div>
+                        <p class="account-information-content">Spoken language:</p>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <div class="account-information-body">
+                    <p class="account-information-subheader">Address</p>
+                    <div>
+                        <p class="account-information-content">Address:</p>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <div class="account-information-body">
+                    <p class="account-information-subheader">Payment Information</p>
+                    <div>
+                        <p class="account-information-content">Payment mode:</p>
+                        <div class="line"></div>
+                        <p class="account-information-content">Bank account number:</p>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <input type="submit" class="edit-button" value="Edit">
+                <input type="submit" class="save-button" value="Save">
+
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-left">
+                    <h2 class="underline">Contact Us</h2>
+                    <p>Email: ConviGo@localhost</p>
+                    <p>Contact: +65 9876 5432</p>
+                </div>
+                <div class="footer-right">
+                    <h2 class="underline">Register for our newsletter</h2>
+                    <p>Get the latest news about ConviGo</p>
+                    <form method="post" action="assets/php/show_post.php">
+                        <input type="email" name="email" id="email" required placeholder="your email here"
+                            style="padding: 5px 15px; border-radius: 5px;">
+                        <input class="subscribe-button" type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+            Copyright &copy; 2023 ConviGo. All Rights Reserved.
+            <br />
+            <br />
+        </footer>
+    </div>
+</body>
+
+</html>
