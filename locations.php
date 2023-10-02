@@ -26,7 +26,7 @@ if ($resultLocation->num_rows > 0) {
 <html lang="en">
 
 <head>
-    <title>Cars</title>
+    <title>Locations</title>
     <script type="text/javascript" src="assets/scripts/locations.js"></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
@@ -64,15 +64,14 @@ if ($resultLocation->num_rows > 0) {
                     <?php endforeach; ?>
 
                 </select>
-                <!-- id="car-location-filter" causes function to activate from carsr.js -->
                 <a class="center search-button" onclick="searchLocation()">Search</a>
             </div>
             <br />
 
             <div class="map-info">
                 <p class="map-header">ConviGo Locations</p>
-
                 <img src="assets/images/Map/sg_map.png" height="auto" width="100%" alt="map">
+                <!-- image retrieved from google maps -->
             </div>
 
             <div class="location-query">

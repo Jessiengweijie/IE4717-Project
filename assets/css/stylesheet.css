@@ -12,14 +12,6 @@ body {
 }
 
 /* general use */
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
-}
-
 .underline {
     text-decoration: underline;
 }
@@ -46,6 +38,10 @@ body {
 
 .space-evenly {
     justify-content: space-evenly;
+}
+
+.hidden {
+    display: none;
 }
 
 /* Buttons */
@@ -470,6 +466,10 @@ td {
     margin-block-start: 0;
 }
 
+.map-info img {
+    border: 2px solid black;
+}
+
 .map-info,
 .location-query {
     width: 80%;
@@ -487,6 +487,59 @@ td {
 }
 
 .location-query-form {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* FAQs page */
+.faq {
+    padding: 50px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 30px 100px;
+}
+
+.faq-header {
+    font-size: 50px;
+}
+
+.faq-body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.faq-subheader {
+    font-size: 30px;
+    width: max-content;
+    cursor: pointer;
+}
+
+.faq-query {
+    width: 80%;
+    margin: auto;
+}
+
+.faq-query-header {
+    font-size: 50px;
+    text-align: left;
+    margin-block-end: 0;
+}
+
+
+.faq-query-subheader {
+    font-size: 30px;
+    text-align: left;
+    margin-block-start: 0;
+}
+
+.faq-query-form {
     width: 100%;
     height: 100px;
     resize: none;

@@ -24,7 +24,7 @@ $carData = $resultCar->fetch_assoc();
 <html lang="en">
 
 <head>
-    <title>Car Information</title>
+    <title>Booking</title>
     <script type="text/javascript" src="assets/scripts/booking.js"></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
