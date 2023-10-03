@@ -1,8 +1,15 @@
+<?php
+// Set auth for page
+$authRequired = 0;
+include "assets/php/dbconnect.php";
+include "assets/php/check_login.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Home</title>
+    <title>Login</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
 </head>
@@ -12,45 +19,50 @@
         <header>
             <a href="/ConviGo" style="text-decoration: none; color: inherit;">
                 <h1 class="logo">ConviGo
-                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo"
-                        style="margin-left: 5px;">
+                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
                 </h1>
             </a>
 
             <nav class="navbar">
                 <b>
-                    <a href="about.html">About</a> &nbsp;
+                    <a href="about.php">About</a> &nbsp;
                     <a href="cars.php">Cars</a> &nbsp;
                     <a href="locations.php">Locations</a> &nbsp;
-                    <a href="faqs.html">FAQs</a> &nbsp;
-                    <a href="my_account.html">My Account</a>
+                    <a href="faqs.php">FAQs</a> &nbsp;
+                    <?php
+                    if ($loggedInUserID) {
+                        echo "<a href='my_account.php'>My Account</a>";
+                        echo "<a href='assets/php/logout.php'>Log Out</a>";
+                    } else {
+                        echo "<a href='signup.php'>Sign Up</a>";
+                        echo "<a href='/ConviGo'>Login</a>";
+                    }
+                    ?>
                 </b>
             </nav>
         </header>
-        <div class="center home">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            Insert something here
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+        <div class="center home-login">
+            <div class="login">
+                <p class="login-font">Log In</p>
+                <div>
+                    <form class="login-form" method="post" action="assets/php/authmain.php">
+                        <input class="login-input" type="text" name="userid" required placeholder="Email">
+                        <br />
+                        <input class="login-input" type="password" name="password" required placeholder="Password">
+                        <br />
+                        <input class="login-button" type="submit" value="Sign In">
+                    </form>
+                </div>
+                <br />
+                <div class="login-signup">
+                    <span>Don't have an account?</span>
+                    <a href="signup.php">Sign up an account, it's free</a>
+                </div>
+            </div>
 
-            <a class="book-now-button" href="cars.php">Book Now</a> <br />
+
+            <!-- <a class="book-now-button" href="cars.php">Book Now</a>  -->
+            <br />
             <br />
 
         </div>

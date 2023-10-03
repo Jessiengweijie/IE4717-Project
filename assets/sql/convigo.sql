@@ -459,3 +459,10 @@ VALUES -- Car x is available at Location y
     (25, 4),
     (25, 8),
     (25, 10);
+CREATE TABLE IF NOT EXISTS authorized_users (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL
+);
+INSERT INTO authorized_users(username, password)
+VALUES ('test', '123')

@@ -1,3 +1,10 @@
+<?php
+// Set auth for page
+$authRequired = 0;
+include "assets/php/dbconnect.php";
+include "assets/php/check_login.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,18 +20,25 @@
         <header>
             <a href="/ConviGo" style="text-decoration: none; color: inherit;">
                 <h1 class="logo">ConviGo
-                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo"
-                        style="margin-left: 5px;">
+                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
                 </h1>
             </a>
 
             <nav class="navbar">
                 <b>
-                    <a href="about.html">About</a> &nbsp;
+                    <a href="about.php">About</a> &nbsp;
                     <a href="cars.php">Cars</a> &nbsp;
                     <a href="locations.php">Locations</a> &nbsp;
-                    <a href="faqs.html">FAQs</a> &nbsp;
-                    <a href="my_account.html">My Account</a>
+                    <a href="faqs.php">FAQs</a> &nbsp;
+                    <?php
+                    if ($loggedInUserID) {
+                        echo "<a href='my_account.php'>My Account</a>";
+                        echo "<a href='assets/php/logout.php'>Log Out</a>";
+                    } else {
+                        echo "<a href='signup.php'>Sign Up</a>";
+                        echo "<a href='/ConviGo'>Login</a>";
+                    }
+                    ?>
                 </b>
             </nav>
         </header>
@@ -63,8 +77,7 @@
                 </div>
 
                 <div class="faq-body">
-                    <a class="faq-subheader" id="faq-collection"
-                        onclick="toggleContent('faq-collection-content')">Collection & Return</a>
+                    <a class="faq-subheader" id="faq-collection" onclick="toggleContent('faq-collection-content')">Collection & Return</a>
                     <div class="faq-collection-content hidden" id="faq-collection-content">
                         <ul>
                             <li>content 1</li>
@@ -95,8 +108,7 @@
                     <h2 class="underline">Register for our newsletter</h2>
                     <p>Get the latest news about ConviGo</p>
                     <form method="post" action="assets/php/show_post.php">
-                        <input type="email" name="email" id="email" required placeholder="your email here"
-                            style="padding: 5px 15px; border-radius: 5px;">
+                        <input type="email" name="email" id="email" required placeholder="your email here" style="padding: 5px 15px; border-radius: 5px;">
                         <input class="subscribe-button" type="submit" value="Subscribe">
                     </form>
                 </div>

@@ -1,13 +1,10 @@
 <?php
+// Set auth for page
+$authRequired = 0;
+
 // create short variable names
-
-@$db = new mysqli('localhost', 'root', '', 'convigo');
-
-if (mysqli_connect_errno()) {
-    echo 'Error: Could not connect to database.  Please try again later.';
-    exit;
-}
-
+include "assets/php/dbconnect.php";
+include "assets/php/check_login.php";
 // Fetch car data from the database
 
 // Initialize the base query
@@ -242,11 +239,19 @@ if ($resultCountAudiCars) {
 
             <nav class="navbar">
                 <b>
-                    <a href="about.html">About</a> &nbsp;
+                    <a href="about.php">About</a> &nbsp;
                     <a href="cars.php">Cars</a> &nbsp;
                     <a href="locations.php">Locations</a> &nbsp;
-                    <a href="faqs.html">FAQs</a> &nbsp;
-                    <a href="my_account.html">My Account</a>
+                    <a href="faqs.php">FAQs</a> &nbsp;
+                    <?php
+                    if ($loggedInUserID) {
+                        echo "<a href='my_account.php'>My Account</a>";
+                        echo "<a href='assets/php/logout.php'>Log Out</a>";
+                    } else {
+                        echo "<a href='signup.php'>Sign Up</a>";
+                        echo "<a href='/ConviGo'>Login</a>";
+                    }
+                    ?>
                 </b>
             </nav>
         </header>
