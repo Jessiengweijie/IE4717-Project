@@ -9,7 +9,7 @@ include "assets/php/check_login.php";
 <html lang="en">
 
 <head>
-    <title>About</title>
+    <title>Aboutrufnirfir</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
 </head>
