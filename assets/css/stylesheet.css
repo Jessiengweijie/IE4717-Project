@@ -45,6 +45,16 @@ body {
     display: flex;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
 .space-around {
     justify-content: space-around
 }
@@ -227,7 +237,7 @@ footer {
 .login {
     background-color: var(--secondary-color);
     height: 70%;
-    width: 20%;
+    width: 25%;
     margin: 0 50px 0 auto;
     /* border: 1px solid rgb(97, 172, 233); */
     border: 1px solid var(--primary-color);
@@ -632,11 +642,19 @@ td {
 
 .account-information-content {
     color: #000;
-    margin-block-end: 0;
+    margin-block: 0;
+}
+
+.account-information-input {
+    margin-left: 5px;
+    border: none;
+    outline: none;
+    width: 80%;
+    font-size: 16px;
 }
 
 .line {
-    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     width: 100%;
     margin-top: 5px;
     margin-bottom: 30px;
@@ -728,7 +746,7 @@ td {
 
 .right-password-section ul li {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 .circle {

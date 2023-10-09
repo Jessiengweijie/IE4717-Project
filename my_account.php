@@ -47,44 +47,62 @@ include "assets/php/check_login.php";
                 <div class="account-information-body">
                     <p class="account-information-subheader">Identity</p>
                     <div>
-                        <p class="account-information-content">Surname:</p>
-                        <div class="line"></div>
-                        <p class="account-information-content">First name:</p>
-                        <div class="line"></div>
-                        <p class="account-information-content">Date of birth:</p>
-                        <div class="line"></div>
-                        <p class="account-information-content">License class:</p>
-                        <div class="line"></div>
+                        <div class="row line">
+                            <p class="account-information-content">Surname: </p>
+                            <input class="account-information-input" type="text" value="test" readonly>
+                        </div>
+                        <div class="row line">
+                            <p class="account-information-content">First name:</p>
+                            <input class="account-information-input" type="text" value="test" readonly>
+                        </div>
+                        <div class="row line">
+                            <p class="account-information-content">Date of birth:</p>
+                            <input class="account-information-input" type="text" value="test" readonly>
+                        </div>
+                        <div class="row line">
+                            <p class="account-information-content">License class:</p>
+                            <input class="account-information-input" type="text" value="test" readonly>
+                        </div>
                     </div>
                 </div>
 
                 <div class="account-information-body">
                     <p class="account-information-subheader">Contact Details</p>
                     <div>
-                        <p class="account-information-content">Mobile number:</p>
-                        <div class="line"></div>
-                        <p class="account-information-content">Email:</p>
-                        <div class="line"></div>
-                        <p class="account-information-content">Spoken language:</p>
-                        <div class="line"></div>
+                        <div class="row line">
+                            <p class="account-information-content">Mobile number:</p>
+                            <input class="account-information-input" type="text" value="test" readonly>
+                        </div>
+                        <div class="row line">
+                            <p class="account-information-content">Email:</p>
+                            <input class="account-information-input" type="text" value="test" readonly>
+                        </div>
+                        <div class="row line">
+                            <p class="account-information-content">Spoken language:</p>
+                            <input class="account-information-input" type="text" value="test" readonly>
+                        </div>
                     </div>
                 </div>
 
                 <div class="account-information-body">
                     <p class="account-information-subheader">Address</p>
-                    <div>
+                    <div class="row line">
                         <p class="account-information-content">Address:</p>
-                        <div class="line"></div>
+                        <input class="account-information-input" type="text" value="test" readonly>
                     </div>
                 </div>
 
                 <div class="account-information-body">
                     <p class="account-information-subheader">Payment Information</p>
                     <div>
-                        <p class="account-information-content">Payment mode:</p>
-                        <div class="line"></div>
-                        <p class="account-information-content">Bank account number:</p>
-                        <div class="line"></div>
+                        <div class="row line">
+                            <p class="account-information-content">Payment mode:</p>
+                            <input class="account-information-input" type="text" value="test" readonly>
+                        </div>
+                        <div class="row line">
+                            <p class="account-information-content">Bank account number:</p>
+                            <input class="account-information-input" type="text" value="test" readonly>
+                        </div>
                     </div>
                 </div>
 
