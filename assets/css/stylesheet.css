@@ -15,7 +15,7 @@
     --red-button-hover: #b50101;
 }
 
-/* Style the body */
+/* ******************************************** Style the body ******************************************** */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -28,7 +28,7 @@ body {
     min-width: 800px;
 }
 
-/* general use */
+/* ******************************************** general use ******************************************** */
 .underline {
     text-decoration: underline;
 }
@@ -71,7 +71,7 @@ body {
     display: none;
 }
 
-/* Buttons */
+/* ******************************************** Buttons ******************************************** */
 .book-now-button {
     padding: 5px 15px;
     background-color: var(--purple-button);
@@ -150,7 +150,7 @@ body {
     background-color: var(--red-button-hover);
 }
 
-/* Style the header */
+/* ******************************************** Style the header ******************************************** */
 header {
     /* position: fixed;
     top: 0; */
@@ -173,7 +173,7 @@ header {
     align-items: center;
 }
 
-/* navigation panel */
+/* ******************************************** Navigation panel ******************************************** */
 .navbar {
     margin-right: 50px;
 }
@@ -220,12 +220,12 @@ footer {
     text-align: left;
 }
 
-/* Home Page */
+/* ******************************************** Home Page ******************************************** */
 .home {
     background-color: var(--background-color);
 }
 
-/* Login Panel */
+/* ******************************************** Login Panel ******************************************** */
 .home-login {
     background-color: var(--background-color);
     display: flex;
@@ -269,7 +269,7 @@ footer {
     align-items: flex-start;
 }
 
-/* About page */
+/* ******************************************** About page ******************************************** */
 .about {
     background-color: var(--background-color);
     display: flex;
@@ -280,9 +280,22 @@ footer {
 
 .about-body {
     margin: 20px 0 20px 100px;
+    font-size: large;
+} 
+
+
+.about-why {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-/* Split page */
+.about-body .about-why strong {
+    font-size: 20px; /* Adjust this value to change the font size of the bold text within the 'about-why' class */
+}
+
+/* ******************************************** Split page *********************************************/
 .left-section {
     width: 20%;
     display: flex;
@@ -296,7 +309,7 @@ footer {
     padding: 20px;
 }
 
-/* Car page */
+/* ******************************************** Car page ******************************************** */
 
 .car {
     background-color: var(--background-color);
@@ -399,7 +412,7 @@ footer {
     margin: 20px 0 20px 0;
 }
 
-/* Car Info page */
+/* ******************************************** Car Info page ******************************************** */
 
 .car-info {
     background-color: var(--background-color);
@@ -462,7 +475,7 @@ footer {
     padding: 5px;
 }
 
-/* Booking page */
+/* ******************************************** Booking page ******************************************** */
 .booking {
     display: flex;
     flex-direction: column;
@@ -502,7 +515,7 @@ td {
     border: none;
 }
 
-/* Locations page */
+/* ******************************************** Locations page ******************************************** */
 .location {
     background-color: var(--background-color);
     display: flex;
@@ -559,7 +572,7 @@ td {
     margin-bottom: 10px;
 }
 
-/* FAQs page */
+/* ******************************************** FAQs page ******************************************** */
 .faq {
     background-color: var(--background-color);
     padding: 50px;
@@ -613,7 +626,7 @@ td {
     margin-bottom: 10px;
 }
 
-/* My Account Page */
+/* ******************************************** My Account Page ******************************************** */
 .account {
     background-color: var(--background-color);
     padding: 5%;
@@ -660,7 +673,7 @@ td {
     margin-bottom: 30px;
 }
 
-/* Sign Up Page */
+/* ******************************************** Sign Up Page ******************************************** */
 .signup-header {
     font-size: 70px;
     font-weight: bold;
@@ -670,7 +683,7 @@ td {
     font-size: 30px;
 }
 
-/* Sign Up Confirmation Page */
+/* ******************************************** Sign Up Confirmation Page ******************************************** */
 .signup-confirmation {
     padding: 20px 100px 50px 50px;
     background-color: #fff;

@@ -5,17 +5,11 @@ include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
 ?>          
 
-
-
-
-
-<!-- test -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Aboutrufnirfir</title>
+    <title>About</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
 </head>
@@ -51,55 +45,57 @@ include "assets/php/check_login.php";
             <br />
             <div class="about-body">
                 <h1>Our Story</h1>
-                -
-                <br />
-                -
-                <br />
-                -
-                <br />
-                -
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+                <p class="story-content" style ="font-size:20px">In the vibrant heartbeat of Singapore, we recognized a distinct need: a way to cater to the ever-evolving demands 
+                of its people. This drove us to create ConviGo. More than a mere car rental, ConviGo stands as a testament to our vision 
+                of seamless urban transportation, accommodating the diverse needs of every Singaporean. Whether it's an eco-conscious ride 
+                or a stylish getaway, our platform offers quick bookings, honest pricing, and unwavering support. Have queries? Our comprehensive 
+                FAQ and attentive team stand ready. ConviGo isn't just another service; it's our pledge to reshape urban mobility in sync with the 
+                people's needs. Choose ConviGo, and journey with us towards a transformative driving experience.</p>
             </div>
 
             <div class="about-body">
-                <h1>Why choose us?</h1>
-                -
-                <br />
-                -
-                <br />
-                -
-                <br />
-                -
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+                <h1>Why Convigo?</h1>
+                <div class="flex row center">
+                    <img src="assets/images/Icons/lightning.png" height="80px" width="80px" alt="lightning icon">
+                    <div class="about-why" style="margin-left:20px; margin-top:10px">
+                        <strong> Instant Verification, Zero Delays </strong>
+                        Kickstart your journey in no time. With Convigo's swift registration process powered by MyInfo, you're set to drive in a flash. No wait. No fuss.<br><br>
+                    </div>
+                </div>
+                
+
+                <div class="flex row center">
+                    <img src="assets/images/Icons/dollars.png" height="80px" width="80px" alt="dollars icon">
+                    <div class="about-why" style="margin-left:20px; margin-top:10px">
+                        <strong> Transparent Pricing</strong>
+                        No hidden charges. You pay for what you see, making it easier for you to plan and budget.<br><br>
+                        </div>
+                </div>
+
+
+                <div class="flex row center">
+                    <img src="assets/images/Icons/car_map.png" height="80px" width="80px" alt="car map icon">
+                    <div class="about-why" style="margin-left:20px;  margin-top:10px">
+                        <strong> Easy Access Across the City</strong>
+                        Dive into Singapore's rhythms with Convigo. With many cars across the country, a Convigo car is always just around the corner.<br><br>
+                        </div>
+                </div>
+
+                <div class="flex row center">
+                    <img src="assets/images/Icons/car_time.png" height="80px" width="80px" alt="car time icon">
+                    <div class="about-why" style="margin-left:20px;  margin-top:10px" >
+                        <strong> 24/7 Availability </strong>
+                        Be it a late-night adventure or an early morning errand, our cars are available around the clock, ensuring you’re never left without wheels.<br><br>
+                        </div>
+                </div>
+
+                <div class="flex row center">
+                    <img src="assets/images/Icons/car_clean.png" height="80px" width="80px" alt="car time icon">
+                    <div class="about-why" style="margin-left:20px;" >
+                        <strong> Cleanliness in Every Drive </strong>
+                        With Convigo, pristine isn't just a standard—it's a promise. We prioritize cleanliness, ensuring each vehicle is spotless and fresh for your journey..<br><br>
+                        </div>
+                </div>
                 <br />
             </div>
 
