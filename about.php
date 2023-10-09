@@ -3,19 +3,12 @@
 $authRequired = 0;
 include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
-?>          
-
-
-
-
-
-<!-- test -->
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Abouttestest</title>
+    <title>About</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
 </head>
