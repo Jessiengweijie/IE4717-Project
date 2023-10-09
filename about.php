@@ -5,6 +5,7 @@ include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
 ?>          
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
