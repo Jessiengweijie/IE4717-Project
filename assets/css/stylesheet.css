@@ -281,18 +281,24 @@ footer {
 .about-body {
     margin: 20px 0 20px 100px;
     font-size: large;
-} 
+}
 
+.story-content {
+    font-size: 20px;
+}
 
 .about-why {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    margin-left: 20px;
+    margin-top: 10px
 }
 
 .about-body .about-why strong {
-    font-size: 20px; /* Adjust this value to change the font size of the bold text within the 'about-why' class */
+    font-size: 20px;
+    /* Adjust this value to change the font size of the bold text within the 'about-why' class */
 }
 
 /* ******************************************** Split page *********************************************/
