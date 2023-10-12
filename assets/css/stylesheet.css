@@ -71,6 +71,10 @@ body {
     display: none;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 /* ******************************************** Buttons ******************************************** */
 .book-now-button {
     padding: 5px 15px;
@@ -277,8 +281,8 @@ footer {
     align-items: flex-start;
     margin-bottom: 20px;
 }
-s
-.about-body {
+
+s .about-body {
     margin: 20px 0 20px 100px;
     font-size: large;
 }
@@ -598,6 +602,10 @@ td {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    border: 1px solid;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .faq-subheader {
@@ -606,15 +614,9 @@ td {
     cursor: pointer;
 }
 
-/* For questions HELP ME TO FIX THISSSSSSSSSSSSSSSS*/  
-.faq .faq-body ul li > div[onclick] {
-    font-size: 20px;  /* Change 20px to your desired size */
-}
-
-/* For answers */
-.faq .faq-body ul li > div:not([onclick]) {
-    font-size: 20px;  /* Change 18px to your desired size */
-    margin-left:10px
+.faq-list {
+    cursor: pointer;
+    font-size: 22px;
 }
 
 .faq-query {
