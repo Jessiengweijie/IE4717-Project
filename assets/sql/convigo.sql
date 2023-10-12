@@ -230,6 +230,18 @@ VALUES (
         15.00
     ),
     (
+        'Hyundai Elantra',
+        'Standard',
+        'Sedan',
+        'Hyundai',
+        'Hyundai_Elantra.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        15.00
+    ),
+    (
         'Hyundai Sonata',
         'Standard',
         'Sedan',
