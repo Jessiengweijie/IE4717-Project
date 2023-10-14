@@ -453,11 +453,11 @@ VALUES -- Car x is available at Location y
     (25, 3),
     (25, 7),
     (25, 1),
-    (26, 7);
+    (26, 7),
     (26, 8),
     (26, 10),
-    (27, 5);
-    (27, 9),
+    (27, 5),
+    (27, 9);
 
 CREATE TABLE IF NOT EXISTS authorized_users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
