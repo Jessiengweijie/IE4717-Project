@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS car (
     seats INT NOT NULL,
     fuel_type VARCHAR(50) NOT NULL,
     boot_space VARCHAR(50) NOT NULL,
-    pickup_and_return_at TEXT NOT NULL,
+    description TEXT NOT NULL,
     price DECIMAL(10, 2) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS location (
@@ -34,7 +34,7 @@ INSERT INTO car (
         seats,
         fuel_type,
         boot_space,
-        pickup_and_return_at,
+        description,
         price
     )
 VALUES 
