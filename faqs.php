@@ -49,7 +49,6 @@ include "assets/php/check_login.php";
                     <a class="faq-subheader" id="faq-getting_started" onclick="toggleContent('faq-getting_started-content')">Getting Started</a>
                     <div class="faq-getting_started-content hidden" id="faq-getting_started-content">
                         <ul>
-                            <!-- CAN HELP ME DO THE CURSOR AND FONT SIZE FOR ALL LIKE THIS GETTING STARTED PORTION -->
                         <li class="faq-list" onclick="toggleContent('answer1')"> 
                             How do I sign up?
                             <div class="hidden" id="answer1">Simply click on the 'Sign Up' option in the navigation bar at the top. Follow the prompts to provide necessary details like your name, IC, email, and more.</div><br>
@@ -60,7 +59,6 @@ include "assets/php/check_login.php";
                         </ul>
                     </div>
                 </div>
-
                 <div class="faq-body">
                     <a class="faq-subheader" id="faq-account" onclick="toggleContent('faq-account-content')">Account & Membership</a>
                     <div class="faq-account-content hidden" id="faq-account-content">

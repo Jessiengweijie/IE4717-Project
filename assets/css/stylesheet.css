@@ -1,8 +1,8 @@
 /* Define colors for standardization */
 :root {
     /* Theme layout */
-    --background-color: lightskyblue;
-    --header-footer-color: mediumblue;
+    --header-footer-color: rgb(13, 13, 18);
+    --background-color: rgb(39, 43, 75);
     --primary-color: dodgerblue;
     --secondary-color: #BDE3FF;
 
@@ -17,10 +17,11 @@
 
 /* ******************************************** Style the body ******************************************** */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; 
     margin: 0;
     padding: 0;
     min-width: 800px;
+    color:white;
 }
 
 #wrapper {
@@ -281,6 +282,9 @@ footer {
     align-items: flex-start;
     margin-bottom: 20px;
     padding: 20px;
+    color:white;
+    font-family: serif;
+
 }
 
 s .about-body {
@@ -290,6 +294,9 @@ s .about-body {
 
 .story-content {
     font-size: 20px;
+    line-height: 1.5;
+    font-style: Helvetica;
+    color:white;
 }
 
 .about-why {
@@ -298,7 +305,9 @@ s .about-body {
     align-items: flex-start;
     justify-content: center;
     margin-left: 20px;
-    margin-top: 10px
+    margin-top: 10px;
+    line-height: 1.5;
+
 }
 
 .about-body .about-why strong {

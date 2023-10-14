@@ -37,41 +37,19 @@ INSERT INTO car (
         description,
         price
     )
-VALUES (
-        'Tesla Model 3',
-        'Premium',
-        'Electric',
-        'Tesla',
-        'Tesla_Model3.png',
-        5,
-        'Electric',
-        '2 large luggage',
-        'car description',
-        20.00
-    ),
+VALUES 
+-- ************************************************* AUDI *************************************************
     (
         'Audi Q3',
         'Premium',
         'SUV',
         'Audi',
         'Audi_Q3.png',
-        7,
-        'Petrol/Diesel',
-        '2 large luggage',
-        'car description',
-        25.00
-    ),
-    (
-        'BMW 318i',
-        'Premium',
-        'Sedan',
-        'BMW',
-        'BMW_318i.png',
         5,
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        15.00
+        23.00
     ),
     (
         'Audi S3 Sedan',
@@ -83,7 +61,7 @@ VALUES (
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        15.00
+        23.00
     ),
     (
         'Audi A3 Sedan',
@@ -95,7 +73,7 @@ VALUES (
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        15.00
+        23.00
     ),
     (
         'Audi A6 Sedan',
@@ -105,9 +83,9 @@ VALUES (
         'A6_Sedan.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '3 large luggage',
         'car description',
-        15.00
+        26.00
     ),
     (
         'Audi Q5',
@@ -115,11 +93,11 @@ VALUES (
         'SUV',
         'Audi',
         'Audi_Q5.png',
-        7,
+        5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '3 large luggage',
         'car description',
-        25.00
+        28.00
     ),
     (
         'Audi A6 e-tron',
@@ -131,7 +109,20 @@ VALUES (
         'Electric',
         '2 large luggage',
         'car description',
-        20.00
+        30.00
+    ),
+    -- ************************************************* Tesla *************************************************
+    (
+        'Tesla Model 3',
+        'Premium',
+        'Electric',
+        'Tesla',
+        'Tesla_Model3.png',
+        5,
+        'Electric',
+        '2 large luggage',
+        'car description',
+        28.00
     ),
     (
         'Tesla Model S',
@@ -143,7 +134,7 @@ VALUES (
         'Electric',
         '2 large luggage',
         'car description',
-        20.00
+        30.00
     ),
     (
         'Tesla Model S Performance',
@@ -155,7 +146,7 @@ VALUES (
         'Electric',
         '2 large luggage',
         'car description',
-        20.00
+        35.00
     ),
     (
         'Tesla Model S Plaid',
@@ -167,7 +158,20 @@ VALUES (
         'Electric',
         '2 large luggage',
         'car description',
-        20.00
+        33.00
+    ),
+    -- ************************************************* BMW *************************************************
+    (
+        'BMW 318i',
+        'Premium',
+        'Sedan',
+        'BMW',
+        'BMW_318i.png',
+        5,
+        'Petrol/Diesel',
+        '2 large luggage',
+        'car description',
+        25.00
     ),
     (
         'BMW 530i',
@@ -177,9 +181,9 @@ VALUES (
         'BMW_530i.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '3 large luggage',
         'car description',
-        15.00
+        32.00
     ),
     (
         'BMW X3',
@@ -187,11 +191,11 @@ VALUES (
         'SUV',
         'BMW',
         'BMW_X3.png',
-        7,
+        5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '3 large luggage',
         'car description',
-        25.00
+        26.00
     ),
     (
         'BMW X4',
@@ -199,11 +203,11 @@ VALUES (
         'SUV',
         'BMW',
         'BMW_X4.png',
-        7,
+        5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '3 large luggage',
         'car description',
-        25.00
+        31.00
     ),
     (
         'BMW i5',
@@ -215,8 +219,9 @@ VALUES (
         'Electric',
         '2 large luggage',
         'car description',
-        20.00
+        33.00
     ),
+    -- ************************************************* Hyundai *************************************************
     (
         'Hyundai Accent',
         'Standard',
@@ -225,9 +230,9 @@ VALUES (
         'Hyundai_Accent.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '1 large luggage',
         'car description',
-        15.00
+        17.00
     ),
     (
         'Hyundai Elantra',
@@ -239,7 +244,7 @@ VALUES (
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        15.00
+        18.00
     ),
     (
         'Hyundai Sonata',
@@ -251,7 +256,7 @@ VALUES (
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        15.00
+        18.00
     ),
     (
         'Hyundai Venue',
@@ -259,11 +264,11 @@ VALUES (
         'SUV',
         'Hyundai',
         'Hyundai_Venue.png',
-        7,
+        5,
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        25.00
+        20.00
     ),
     (
         'Hyundai Tucson',
@@ -271,11 +276,11 @@ VALUES (
         'SUV',
         'Hyundai',
         'Hyundai_Tucson.png',
-        7,
+        5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '3 large luggage',
         'car description',
-        25.00
+        22.00
     ),
     (
         'Hyundai Ionic 6',
@@ -287,8 +292,9 @@ VALUES (
         'Electric',
         '2 large luggage',
         'car description',
-        20.00
+        22.00
     ),
+     -- ************************************************* Hyundai *************************************************
     (
         'Honda Civic Sedan',
         'Standard',
@@ -299,7 +305,7 @@ VALUES (
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        15.00
+        16.00
     ),
     (
         'Honda Insight',
@@ -311,7 +317,7 @@ VALUES (
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        15.00
+        16.00
     ),
     (
         'Honda Accord',
@@ -323,7 +329,7 @@ VALUES (
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        15.00
+        16.00
     ),
     (
         'Honda HR-V',
@@ -331,11 +337,11 @@ VALUES (
         'SUV',
         'Honda',
         'Honda_HR-V.png',
-        7,
+        5,
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        25.00
+        19.00
     ),
     (
         'Honda Passport',
@@ -343,11 +349,11 @@ VALUES (
         'SUV',
         'Honda',
         'Honda_Passport.png',
-        7,
+        5,
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        25.00
+        20.00
     ),
     (
         'Honda Prologue',
@@ -355,15 +361,15 @@ VALUES (
         'SUV',
         'Honda',
         'Honda_Prologue.png',
-        7,
+        5,
         'Petrol/Diesel',
         '2 large luggage',
         'car description',
-        25.00
+        23.00
     );
 INSERT INTO location(name)
 VALUES('Jurong'),
-    ('Nee Soon'),
+    ('Punggol'),
     ('Seletar'),
     ('Sembawang'),
     ('Serangoon'),
