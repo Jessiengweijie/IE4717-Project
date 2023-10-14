@@ -48,9 +48,9 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 large luggage',
-        'Block 315 Ang Mo Kio Avenue 1, Level 4
-         Block 209 Bedok North Street 1, Level 4
-         Block 290 Bukit Batok East Avenue 3, Level 4',
+        'Block 315 Ang Mo Kio Avenue 1, Level 4 \n
+         Block 209 Bedok North Street 1, Level 4 \n
+         Block 315A Punggol Way, Level 4',
         23.00
     ),
     (
