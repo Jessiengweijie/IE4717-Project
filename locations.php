@@ -34,7 +34,7 @@ if ($resultLocation->num_rows > 0) {
         <header>
             <a href="/ConviGo" style="text-decoration: none; color: inherit;">
                 <h1 class="logo">ConviGo
-                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
+                    <img src="assets/images/Logo/finallogo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
                 </h1>
             </a>
 
@@ -57,8 +57,8 @@ if ($resultLocation->num_rows > 0) {
             </nav>
         </header>
         <div class="center location">
-            <p class="location-header">Pick a location!</p>
-            <p class="location-subheader">ConviGo has cars Island-wide</p>
+            <p class="location-header">Pick a Location!</p>
+            <p class="location-subheader">ConviGo has cars island-wide</p>
             <div class="car-location-filter-container">
                 <select id="car-location-filter" name="location_name">
                     <option value="">All Locations</option>
@@ -80,8 +80,8 @@ if ($resultLocation->num_rows > 0) {
             </div>
 
             <div class="location-query">
-                <p class="location-query-header">Need more cars in your location?</p>
-                <p class="location-query-subheader">Submit your request in the form below.</p>
+                <!-- <p class="location-query-header">Need more cars in your location?</p> -->
+                <p class="location-query-subheader">Need more cars in your location? Submit our form below.</p>
                 <textarea class="location-query-form" name="location-query-form" id="location-query-form"></textarea>
                 <input type="submit" class="submit-button" value="Submit">
             </div>

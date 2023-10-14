@@ -233,7 +233,7 @@ if ($resultCountAudiCars) {
         <header>
             <a href="/ConviGo" style="text-decoration: none; color: inherit;">
                 <h1 class="logo">ConviGo
-                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
+                    <img src="assets/images/Logo/finallogo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
                 </h1>
             </a>
 
@@ -269,7 +269,7 @@ if ($resultCountAudiCars) {
                     </select>
                     <a class="center reset-button" onclick="reset()">Reset</a>
                 </div>
-                <h1>Our Cars</h1>
+                <h1 style= "font-size:30px" >Our Cars</h1>
                 <div class="car-filter">
                     <h1>Vehicle Category</h1>
                     <label>

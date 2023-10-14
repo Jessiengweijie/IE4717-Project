@@ -2,13 +2,13 @@
 :root {
     /* Theme layout */
     --header-footer-color: rgb(13, 13, 18);
-    --background-color: rgb(39, 43, 75);
+    --background-color: #105670;
     --primary-color: dodgerblue;
-    --secondary-color: #BDE3FF;
+    --secondary-color: #fdf8e3;
 
     /* Buttons */
-    --purple-button: #3907ec;
-    --purple-button-hover: #2e04c7;
+    --book_now-button: #e68c3a;
+    --orange-button-hover: #2e04c7;
     --green-button: green;
     --green-button-hover: rgb(1, 83, 1);
     --red-button: #e30606;
@@ -17,11 +17,11 @@
 
 /* ******************************************** Style the body ******************************************** */
 body {
-    font-family: Arial, sans-serif; 
+    font-family: garamond, Helvetica;
     margin: 0;
     padding: 0;
     min-width: 800px;
-    color:white;
+    color:#fdf8e3;
 }
 
 #wrapper {
@@ -30,9 +30,9 @@ body {
 }
 
 /* ******************************************** general use ******************************************** */
-.underline {
+/* .underline {
     text-decoration: underline;
-}
+} */
 
 .center {
     text-align: center;
@@ -79,7 +79,7 @@ body {
 /* ******************************************** Buttons ******************************************** */
 .book-now-button {
     padding: 5px 15px;
-    background-color: var(--purple-button);
+    background-color: var(--book_now-button);
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
@@ -88,7 +88,7 @@ body {
 
 .book-now-button-big {
     padding: 10px 30px 10px 30px;
-    background-color: var(--purple-button);
+    background-color: var(--book_now-button);
     color: #fff;
     border-radius: 15px;
     text-decoration: none;
@@ -98,7 +98,7 @@ body {
 
 .book-now-button:hover,
 .book-now-button-big:hover {
-    background-color: var(--purple-button-hover);
+    background-color: var(--orange-button-hover);
 }
 
 
@@ -169,6 +169,8 @@ header {
     align-items: center;
     padding: 15px 0 15px 0;
     z-index: 1000;
+    font-family: 'georgia';
+    font-style: italic;
     /* Set a high z-index to ensure it appears above other content */
 }
 
@@ -281,22 +283,27 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
-    padding: 20px;
-    color:white;
-    font-family: serif;
+    padding: 20px 110px 20px 110px;
+    /* color:white; */
+    font-family: 'garamond';
 
 }
 
 s .about-body {
     margin: 20px 0 20px 100px;
-    font-size: large;
 }
+
 
 .story-content {
     font-size: 20px;
-    line-height: 1.5;
+    line-height: 2;
     font-style: Helvetica;
-    color:white;
+    text-align: justify;
+
+}
+
+.about-why strong {
+    color: orange;
 }
 
 .about-why {
@@ -307,7 +314,8 @@ s .about-body {
     margin-left: 20px;
     margin-top: 10px;
     line-height: 1.5;
-
+    font-style: Helvetica;
+    font-size: 18px;
 }
 
 .about-body .about-why strong {
@@ -333,7 +341,7 @@ s .about-body {
 
 .car {
     background-color: var(--background-color);
-    padding: 20px;
+    padding: 20px 110px 20px 110px;
     display: flex;
     flex-direction: row;
 }
@@ -343,6 +351,7 @@ s .about-body {
     flex-wrap: wrap;
     justify-content: flex-end;
     flex-direction: row-reverse;
+    color:#000;
 }
 
 .car-template {
@@ -362,7 +371,7 @@ s .about-body {
 }
 
 .car-name {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 5px;
     display: flex;
@@ -376,7 +385,7 @@ s .about-body {
 }
 
 .car-type {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
@@ -388,12 +397,18 @@ s .about-body {
 }
 
 .car-filter {
-    font-size: large;
+    font-size: 18px;
+}
+
+.car-filter h1 {
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .car-filter label input {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
+
 
 .car-location-filter-container {
     display: flex;
@@ -438,7 +453,7 @@ s .about-body {
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
-    padding: 50px 20px 0 20px;
+    padding: 50px 20px 20px 20px;
 }
 
 .car-info-selected {
@@ -455,9 +470,10 @@ s .about-body {
 }
 
 .car-info-name {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
     margin-bottom: 10px;
+    font-style: garamond;
 }
 
 .car-info-type {
@@ -541,7 +557,8 @@ td {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 50px;
+    padding: 20px 110px 20px 110px;
+    /* padding-bottom: 50px; */
 }
 
 .location .car-location-filter-container {
@@ -551,12 +568,13 @@ td {
 
 .location #car-location-filter {
     width: 100%;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .location-header {
-    font-size: 50px;
+    font-size: 40px;
     margin-block-end: 0;
+    color:#e68c3a;
 }
 
 .location-subheader {
@@ -575,12 +593,12 @@ td {
 
 .map-header,
 .location-query-header {
-    font-size: 50px;
+    font-size: 25px;
     text-align: left;
 }
 
 .location-query-subheader {
-    font-size: 30px;
+    font-size: 25px;
     text-align: left;
 }
 
@@ -595,38 +613,40 @@ td {
 /* ******************************************** FAQs page ******************************************** */
 .faq {
     background-color: var(--background-color);
-    padding: 50px;
+    padding: 20px 110px 20px 110px;
 }
 
 .faq-container {
     display: flex;
     flex-direction: column;
-    padding: 0 0 30px 100px;
+    padding: 0px 110px 30px 110px;
 }
 
 .faq-header {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .faq-body {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 25px;
     border: 1px solid;
-    background-color: white;
+    background-color: #e68c3a;
     padding: 10px;
     border-radius: 5px;
+    color:black;
 }
 
 .faq-subheader {
-    font-size: 25px;
+    font-size: 20px;
     width: max-content;
     cursor: pointer;
 }
 
 .faq-list {
     cursor: pointer;
-    font-size: 22px;
+    font-size: 18px;
+    color:#fdf8e3;
 }
 
 .faq-query {
@@ -635,14 +655,14 @@ td {
 }
 
 .faq-query-header {
-    font-size: 50px;
+    font-size: 18px;
     text-align: left;
     margin-block-end: 0;
 }
 
 
 .faq-query-subheader {
-    font-size: 30px;
+    font-size: 25px;
     text-align: left;
     margin-block-start: 0;
 }
@@ -660,24 +680,25 @@ td {
 /* ******************************************** My Account Page ******************************************** */
 .account {
     background-color: var(--background-color);
-    padding: 5%;
+    /* padding: 5%; */
+    padding: 35px 110px 35px 110px;
 }
 
 .account-information {
-    padding: 20px 100px 50px 50px;
-    background-color: #fff;
-    color: var(--primary-color);
+    padding: 10px 100px 50px 50px;
+    background-color: #fdf8e3;
+    color: black;
 }
 
 .account-information-header {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .account-information-body {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
-    margin-left: 50px;
+    margin-top: 0px;
+    margin-left: 15px;
 }
 
 .account-information-subheader {
@@ -694,7 +715,7 @@ td {
     border: none;
     outline: none;
     width: 80%;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .line {
@@ -708,16 +729,21 @@ td {
 .signup-header {
     font-size: 70px;
     font-weight: bold;
+    color:white;
+    /* padding-bottom:20px */
 }
 
 .signup-subheader {
     font-size: 30px;
+    color:white;
+
 }
 
 /* ******************************************** Sign Up Confirmation Page ******************************************** */
 .signup-confirmation {
     padding: 20px 100px 50px 50px;
-    background-color: #fff;
+    background-color: #fdf8e3;
+    color:#000;
 }
 
 .signup-box {
@@ -791,6 +817,8 @@ td {
 .right-password-section ul li {
     display: flex;
     justify-content: space-between;
+    padding:5px;
+    float: left;
 }
 
 .circle {

@@ -59,7 +59,7 @@ if ($resultAvailableLocations) {
         <header>
             <a href="/ConviGo" style="text-decoration: none; color: inherit;">
                 <h1 class="logo">ConviGo
-                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
+                    <img src="assets/images/Logo/finallogo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
                 </h1>
             </a>
 
@@ -81,6 +81,7 @@ if ($resultAvailableLocations) {
                 </b>
             </nav>
         </header>
+
         <div class="car-info">
             <div class="car-info-selected">
                 <div class="car-info-head">
@@ -99,22 +100,22 @@ if ($resultAvailableLocations) {
             </div>
 
             <div class="car-info-desc">
-                <h1>About the car</h1>
+                <h1>Car Information</h1>
                 <table>
                     <tr>
                         <td>Seats:</td>
                         <td><?php echo $carData['seats']; ?></td>
                     </tr>
                     <tr>
-                        <td>Fuel type:</td>
+                        <td>Fuel Type:</td>
                         <td><?php echo $carData['fuel_type']; ?></td>
                     </tr>
                     <tr>
-                        <td>Boot space:</td>
+                        <td>Boot Space:</td>
                         <td><?php echo $carData['boot_space']; ?></td>
                     </tr>
                     <tr>
-                        <td>Description:</td>
+                        <td>Pick-up & Drop-off Location:</td>
                         <td><?php echo $carData['description']; ?></td>
                     </tr>
                 </table>

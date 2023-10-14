@@ -20,7 +20,7 @@ include "assets/php/check_login.php";
         <header>
             <a href="/ConviGo" style="text-decoration: none; color: inherit;">
                 <h1 class="logo">ConviGo
-                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
+                    <img src="assets/images/Logo/finallogo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
                 </h1>
             </a>
 
@@ -44,7 +44,7 @@ include "assets/php/check_login.php";
         </header>
         <div class="faq">
             <div class="faq-container">
-                <p class="faq-header">Frequently Asked Questions</p>
+                <p class="faq-header">FAQ</p>
                 <div class="faq-body">
                     <a class="faq-subheader" id="faq-getting_started" onclick="toggleContent('faq-getting_started-content')">Getting Started</a>
                     <div class="faq-getting_started-content hidden" id="faq-getting_started-content">
@@ -129,7 +129,7 @@ include "assets/php/check_login.php";
                             <li class="faq-list" onclick="toggleContent('answer13')"> What if the vehicle has damage or is dirty when I start my trip?
                                 <div class="hidden" id="answer13">Before starting your journey, inspect the car. If you find damages or cleanliness issues, snap a photo and email it to us. We'll guide you on the next steps, ensuring you have a pleasant experience. Refunds or adjustments will be made if necessary.</div><br>
                             </li>
-                            <li  onclick="toggleContent('answer14')"> How does fueling or charging work?
+                            <li  class="faq-list" onclick="toggleContent('answer14')"> How does fueling or charging work?
                                 <div class="hidden" id="answer14">Fuel and charging expenses are on us! Every car is equipped with a cash card for fuel and charging station payment</div>
                             </li>
                         </ul>
@@ -138,8 +138,8 @@ include "assets/php/check_login.php";
             </div>
 
             <div class="faq-query center">
-                <p class="faq-query-header">Your question is not here?</p>
-                <p class="faq-query-subheader">Submit your request in the form below.</p>
+                <!-- <p class="faq-query-header">Your question is not here?</p> -->
+                <p class="faq-query-subheader">Your question is not here? Submit your request form below.</p>
                 <textarea class="faq-query-form" name="faq-query-form" id="faq-query-form"></textarea>
                 <input type="submit" class="submit-button" value="Submit">
             </div>

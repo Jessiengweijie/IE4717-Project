@@ -47,7 +47,7 @@ VALUES
         'Audi_Q3.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 large luggagess',
         'Block 315 Ang Mo Kio Avenue 1; Level 4 Block 209 Bedok North Street 1; Level 4 Block 315A Punggol Way, Level 4',
         23.00
     ),
@@ -59,7 +59,7 @@ VALUES
         'S3_Sedan.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 large luggagess',
         'car description',
         23.00
     ),
@@ -71,7 +71,7 @@ VALUES
         'A3_Sedan.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 large luggages',
         'car description',
         23.00
     ),
@@ -83,7 +83,7 @@ VALUES
         'A6_Sedan.png',
         5,
         'Petrol/Diesel',
-        '3 large luggage',
+        '3 large luggagess',
         'car description',
         26.00
     ),
@@ -95,7 +95,7 @@ VALUES
         'Audi_Q5.png',
         5,
         'Petrol/Diesel',
-        '3 large luggage',
+        '3 large luggages',
         'car description',
         28.00
     ),
@@ -107,7 +107,7 @@ VALUES
         'A6_e-tron.png',
         5,
         'Electric',
-        '2 large luggage',
+        '2 large luggages',
         'car description',
         30.00
     ),
@@ -120,7 +120,7 @@ VALUES
         'Tesla_Model3.png',
         5,
         'Electric',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         28.00
     ),
@@ -132,7 +132,7 @@ VALUES
         'Tesla_ModelS.png',
         5,
         'Electric',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         30.00
     ),
@@ -144,7 +144,7 @@ VALUES
         'Tesla_ModelS_Performance.png',
         5,
         'Electric',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         35.00
     ),
@@ -156,7 +156,7 @@ VALUES
         'Tesla_ModelS_Plaid.png',
         5,
         'Electric',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         33.00
     ),
@@ -169,7 +169,7 @@ VALUES
         'BMW_318i.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         25.00
     ),
@@ -181,7 +181,7 @@ VALUES
         'BMW_530i.png',
         5,
         'Petrol/Diesel',
-        '3 large luggage',
+        '3 Large Luggages',
         'car description',
         32.00
     ),
@@ -193,7 +193,7 @@ VALUES
         'BMW_X3.png',
         5,
         'Petrol/Diesel',
-        '3 large luggage',
+        '3 Large Luggages',
         'car description',
         26.00
     ),
@@ -205,7 +205,7 @@ VALUES
         'BMW_X4.png',
         5,
         'Petrol/Diesel',
-        '3 large luggage',
+        '3 Large Luggages',
         'car description',
         31.00
     ),
@@ -217,7 +217,7 @@ VALUES
         'BMW_i5.png',
         5,
         'Electric',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         33.00
     ),
@@ -230,7 +230,7 @@ VALUES
         'Hyundai_Accent.png',
         5,
         'Petrol/Diesel',
-        '1 large luggage',
+        '1 Large Luggages',
         'car description',
         17.00
     ),
@@ -242,7 +242,7 @@ VALUES
         'Hyundai_Elantra.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         18.00
     ),
@@ -254,7 +254,7 @@ VALUES
         'Hyundai_Sonata.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         18.00
     ),
@@ -266,7 +266,7 @@ VALUES
         'Hyundai_Venue.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         20.00
     ),
@@ -278,7 +278,7 @@ VALUES
         'Hyundai_Tucson.png',
         5,
         'Petrol/Diesel',
-        '3 large luggage',
+        '3 Large Luggages',
         'car description',
         22.00
     ),
@@ -290,7 +290,7 @@ VALUES
         'Hyundai_Ioniq_6.png',
         5,
         'Electric',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         22.00
     ),
@@ -303,7 +303,7 @@ VALUES
         'Honda_Civic_Sedan.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         16.00
     ),
@@ -315,7 +315,7 @@ VALUES
         'Honda_Insight.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         16.00
     ),
@@ -327,7 +327,7 @@ VALUES
         'Honda_Accord.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         16.00
     ),
@@ -339,7 +339,7 @@ VALUES
         'Honda_HR-V.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         19.00
     ),
@@ -351,7 +351,7 @@ VALUES
         'Honda_Passport.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         20.00
     ),
@@ -363,7 +363,7 @@ VALUES
         'Honda_Prologue.png',
         5,
         'Petrol/Diesel',
-        '2 large luggage',
+        '2 Large Luggages',
         'car description',
         23.00
     );

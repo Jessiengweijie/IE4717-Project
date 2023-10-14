@@ -19,7 +19,7 @@ include "assets/php/check_login.php";
         <header>
             <a href="/ConviGo" style="text-decoration: none; color: inherit;">
                 <h1 class="logo">ConviGo
-                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
+                    <img src="assets/images/Logo/finallogo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
                 </h1>
             </a>
 
@@ -1593,11 +1593,11 @@ include "assets/php/check_login.php";
                             <div class="right-password-section">
                                 <p>Your password should be</p>
                                 <ul>
-                                    <li>Between 8 and 20 characters long. <span class="circle red"></span></li>
-                                    <li>One lowercase letter (a-z) <span class="circle red"></span></li>
-                                    <li>One uppercase letter (A-Z) <span class="circle red"></span></li>
-                                    <li>One number (0-9) <span class="circle red"></span></li>
-                                    <li>One special character (e.g., !, @, #, $, %, etc.) <span class="circle red"></span></li>
+                                    <li><span class="circle red"></span>One number (0-9)</li>
+                                    <li><span class="circle red"></span>Between 8 and 20 characters long.</li>
+                                    <li><span class="circle red"></span>One lowercase letter (a-z)</li>
+                                    <li><span class="circle red"></span>One uppercase letter (A-Z)</li>
+                                    <li><span class="circle red"></span>One special character (e.g., !, @, #, $, %, etc.)</li>
                                 </ul>
                             </div>
                         </div>

@@ -19,7 +19,7 @@ include "assets/php/check_login.php";
         <header>
             <a href="/ConviGo" style="text-decoration: none; color: inherit;">
                 <h1 class="logo">ConviGo
-                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
+                    <img src="assets/images/Logo/finallogo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
                 </h1>
             </a>
 
@@ -45,6 +45,9 @@ include "assets/php/check_login.php";
             <div class="login">
                 <p class="login-font">Log In</p>
                 <div>
+                    <p style="color:black; font-size:50px; padding-bottom:20px;"> Login </p>
+                <img src="assets/images/Logo/finallogo.png" height="200px" width="200px" alt="ConviGo_Logo" style="margin-bottom: 25px;">
+
                     <form class="login-form" method="post" action="assets/php/authmain.php">
                         <input class="login-input" type="text" name="userid" required placeholder="Email">
                         <br />

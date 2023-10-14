@@ -19,7 +19,7 @@ include "assets/php/check_login.php";
         <header>
             <a href="/ConviGo" style="text-decoration: none; color: inherit;">
                 <h1 class="logo">ConviGo
-                    <img src="assets/images/Logo/ConviGo_Logo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
+                    <img src="assets/images/Logo/finallogo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
                 </h1>
             </a>
 
@@ -43,7 +43,7 @@ include "assets/php/check_login.php";
         </header>
         <div class="account">
             <div class="account-information">
-                <p class="account-information-header">My Personal Information</p>
+                <p class="account-information-header">Account Information</p>
                 <div class="account-information-body">
                     <p class="account-information-subheader">Identity</p>
                     <div>
