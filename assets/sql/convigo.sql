@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS car (
     seats INT NOT NULL,
     fuel_type VARCHAR(50) NOT NULL,
     boot_space VARCHAR(50) NOT NULL,
-    description TEXT NOT NULL,
+    pickup_and_return_at TEXT NOT NULL,
     price DECIMAL(10, 2) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS location (
@@ -34,7 +34,7 @@ INSERT INTO car (
         seats,
         fuel_type,
         boot_space,
-        description,
+        pickup_and_return_at,
         price
     )
 VALUES 
@@ -48,7 +48,9 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 large luggage',
-        'car description',
+        'Block 315 Ang Mo Kio Avenue 1, Level 4
+         Block 209 Bedok North Street 1, Level 4
+         Block 290 Bukit Batok East Avenue 3, Level 4',
         23.00
     ),
     (
@@ -368,16 +370,16 @@ VALUES
         23.00
     );
 INSERT INTO location(name)
-VALUES('Jurong'),
-    ('Punggol'),
-    ('Seletar'),
-    ('Sembawang'),
-    ('Serangoon'),
-    ('Tuas'),
-    ('Woodlands'),
+VALUES('Ang Mo Kio'),
     ('Bedok'),
-    ('Changi'),
-    ('Choa Chu Kang');
+    ('Bukit Batok'),
+    ('Harbourfront'),
+    ('Jurong West'),
+    ('Orchard'),
+    ('Punggol'),
+    ('Sengkang'),
+    ('Tampines'),
+    ('Woodlands');
 -- Configure the car_location table to associate cars with locations
 INSERT INTO car_location (car_id, location_id)
 VALUES -- Car x is available at Location y
