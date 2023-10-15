@@ -21,7 +21,7 @@ body {
     margin: 0;
     padding: 0;
     min-width: 800px;
-    color:#fdf8e3;
+    color:var(--secondary-color);;
 }
 
 #wrapper {
@@ -378,6 +378,8 @@ s .about-body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    text-align: start;
+    height: 35px;
 }
 
 .car-name img {
@@ -646,7 +648,7 @@ td {
 .faq-list {
     cursor: pointer;
     font-size: 18px;
-    color:#fdf8e3;
+    color:var(--secondary-color);;
 }
 
 .faq-query {
@@ -686,7 +688,7 @@ td {
 
 .account-information {
     padding: 10px 100px 50px 50px;
-    background-color: #fdf8e3;
+    background-color: var(--secondary-color);;
     color: black;
 }
 
@@ -742,7 +744,7 @@ td {
 /* ******************************************** Sign Up Confirmation Page ******************************************** */
 .signup-confirmation {
     padding: 20px 100px 50px 50px;
-    background-color: #fdf8e3;
+    background-color: var(--secondary-color);;
     color:#000;
 }
 
