@@ -46,77 +46,98 @@ include "assets/php/check_login.php";
                 <p class="signup-header">Welcome to Convigo</p>
                 <p class="signup-subheader">Please fill up the form below</p>
             </div>
-            <div class="account-information">
-                <p class="account-information-header">My Personal Information</p>
-                <div class="account-information-body">
-                    <p class="account-information-subheader">Identity</p>
-                    <div>
-                        <div class="row line">
-                            <p class="account-information-content">Surname: </p>
-                            <input class="account-information-input" type="text">
-                        </div>
-                        <div class="row line">
-                            <p class="account-information-content">First name:</p>
-                            <input class="account-information-input" type="text">
-                        </div>
-                        <div class="row line">
-                            <p class="account-information-content">License class:</p>
-                            <input class="account-information-input" type="text">
-                        </div>
-                        <div class="row line">
-                            <p class="account-information-content">Date of birth:</p>
-                            <input class="account-information-input" type="text">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="account-information-body">
-                    <p class="account-information-subheader">Contact Details</p>
-                    <div>
-
-                        <div class="row line">
-                            <p class="account-information-content">Mobile number:</p>
-                            <input class="account-information-input" type="text">
-                        </div>
-                        <div class="row line">
-                            <p class="account-information-content">Email:</p>
-                            <input class="account-information-input" type="text">
-                        </div>
-                        <div class="row line">
-                            <p class="account-information-content">Spoken language:</p>
-                            <input class="account-information-input" type="text">
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="account-information-body">
-                    <p class="account-information-subheader">Address</p>
-                    <div class="row line">
-                        <p class="account-information-content">Address:</p>
-                        <input class="account-information-input" type="text">
-                    </div>
-                </div>
-
-                <div class="account-information-body">
-                    <p class="account-information-subheader">Payment Information</p>
-                    <div>
-                        <div class="row line">
-                            <p class="account-information-content">Payment mode:</p>
-                            <input class="account-information-input" type="text">
-                        </div>
-                        <div class="row line">
-                            <p class="account-information-content">Bank account number:</p>
-                            <input class="account-information-input" type="text">
+            <form method="post" action="">
+                <div class="account-information">
+                    <p class="account-information-header">My Personal Information</p>
+                    <div class="account-information-body">
+                        <p class="account-information-subheader">Identity</p>
+                        <div>
+                            <div class="row line">
+                                <p class="account-information-content">Surname: </p>
+                                <input class="account-information-input" type="text" name="surname">
+                            </div>
+                            <div class="row line">
+                                <p class="account-information-content">First name:</p>
+                                <input class="account-information-input" type="text" name="firstname">
+                            </div>
+                            <div class="row line">
+                                <p class="account-information-content">NRIC:</p>
+                                <input class="account-information-input" type="text" name="nric">
+                            </div>
+                            <div class="row line">
+                                <p class="account-information-content">Date of birth:</p>
+                                <input class="account-information-date" type="date" name="dob">
+                            </div>
+                            <div class="row line">
+                                <p class="account-information-content">License class:</p>
+                                <select class="account-information-dropdown" name="license">
+                                    <option value="" hidden selected disabled>Select License Class</option>
+                                    <option value="1">3</option>
+                                    <option value="1">3A</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="account-information-body">
+                        <p class="account-information-subheader">Contact Details</p>
+                        <div>
+
+                            <div class="row line">
+                                <p class="account-information-content">Mobile number:</p>
+                                <input class="account-information-input" type="text" name="mobile">
+                            </div>
+                            <div class="row line">
+                                <p class="account-information-content">Email:</p>
+                                <input class="account-information-input" type="text" name="email">
+                            </div>
+                            <div class="row line">
+                                <p class="account-information-content">Spoken language:</p>
+                                <!-- <input class="account-information-input" type="text"> -->
+                                <div class="multiselect-container account-information-dropdown" tabindex="0">
+                                    <div class="selected-items" id="selectedItems">
+                                    </div>
+                                    <div class="multiselect-options">
+                                        <label><input type="checkbox" name="languages[]" value="English">English</label>
+                                        <label><input type="checkbox" name="languages[]" value="Chinese">Chinese</label>
+                                        <label><input type="checkbox" name="languages[]" value="Malay">Malay</label>
+                                        <label><input type="checkbox" name="languages[]" value="Indian">Indian</label>
+                                        <label><input type="checkbox" name="languages[]" value="Others">Others</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="account-information-body">
+                        <p class="account-information-subheader">Address</p>
+                        <div class="row line">
+                            <p class="account-information-content">Address:</p>
+                            <input class="account-information-input" type="text" name="address">
+                        </div>
+                    </div>
+
+                    <div class="account-information-body">
+                        <p class="account-information-subheader">Payment Information</p>
+                        <div>
+                            <div class="row line">
+                                <p class="account-information-content">Bank name:</p>
+                                <input class="account-information-input" type="text" name="bank">
+                            </div>
+                            <div class="row line">
+                                <p class="account-information-content">Bank account number:</p>
+                                <input class="account-information-input" type="text" name="bankacc">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <input type="submit" class="save-button" value="Next"> -->
+                    <!-- temp button -->
+                    <a class="save-button" href="signup_confirmation.php">Next</a> <br />
+
                 </div>
-
-                <!-- <input type="submit" class="save-button" value="Next"> -->
-                <!-- temp button -->
-                <a class="save-button" href="signup_confirmation.php">Next</a> <br />
-
-            </div>
+            </form>
         </div>
 
         <footer>
@@ -140,6 +161,7 @@ include "assets/php/check_login.php";
             <br />
         </footer>
     </div>
+    <script type="text/javascript" src="assets/scripts/sign_upr.js"></script>
 </body>
 
 </html>

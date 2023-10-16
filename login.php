@@ -43,10 +43,9 @@ include "assets/php/check_login.php";
         </header>
         <div class="center home-login">
             <div class="login">
-                <p class="login-font">Log In</p>
                 <div>
-                    <p style="color:black; font-size:50px; padding-bottom:20px;"> Login </p>
-                <img src="assets/images/Logo/finallogo.png" height="200px" width="200px" alt="ConviGo_Logo" style="margin-bottom: 25px;">
+                    <p class="login-font"> Login </p>
+                    <img src="assets/images/Logo/finallogo.png" height="200px" width="200px" alt="ConviGo_Logo" style="margin-bottom: 25px;">
 
                     <form class="login-form" method="post" action="assets/php/authmain.php">
                         <input class="login-input" type="text" name="userid" required placeholder="Email">
@@ -124,7 +123,7 @@ include "assets/php/check_login.php";
             </div>
 
         </div>
-            
+
 
         <footer>
             <div class="footer-container">

@@ -116,7 +116,13 @@ if ($resultAvailableLocations) {
                     </tr>
                     <tr>
                         <td>Pick-up & Drop-off Location:</td>
-                        <td><?php echo $carData['description']; ?></td>
+                        <td>
+                            <?php
+                            $text = $carData['description'];
+                            $displayText = str_replace(";", "<br>", $text);
+                            echo $displayText;
+                            ?>
+                        </td>
                     </tr>
                 </table>
                 <div class="car-info-row">

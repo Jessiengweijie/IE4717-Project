@@ -21,7 +21,8 @@ body {
     margin: 0;
     padding: 0;
     min-width: 800px;
-    color:var(--secondary-color);;
+    color: var(--secondary-color);
+    ;
 }
 
 #wrapper {
@@ -254,9 +255,9 @@ footer {
 }
 
 .login-font {
-    font-size: 75px;
-    font-weight: bold;
-    margin: 0 30px 30px 30px;
+    color: black;
+    font-size: 50px;
+    margin-bottom: 15px;
 }
 
 .login-form {
@@ -351,7 +352,7 @@ s .about-body {
     flex-wrap: wrap;
     justify-content: flex-end;
     flex-direction: row-reverse;
-    color:#000;
+    color: #000;
 }
 
 .car-template {
@@ -496,6 +497,11 @@ s .about-body {
     font-size: 30px;
 }
 
+.car-info-desc table td {
+    vertical-align: top;
+}
+
+
 .car-info-row {
     display: flex;
     flex-direction: row;
@@ -576,7 +582,7 @@ td {
 .location-header {
     font-size: 40px;
     margin-block-end: 0;
-    color:#e68c3a;
+    color: #e68c3a;
 }
 
 .location-subheader {
@@ -618,6 +624,11 @@ td {
     padding: 20px 110px 20px 110px;
 }
 
+.faq ul li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
 .faq-container {
     display: flex;
     flex-direction: column;
@@ -632,11 +643,7 @@ td {
     display: flex;
     flex-direction: column;
     margin-top: 25px;
-    border: 1px solid;
-    background-color: #e68c3a;
-    padding: 10px;
-    border-radius: 5px;
-    color:black;
+    color: black;
 }
 
 .faq-subheader {
@@ -648,7 +655,13 @@ td {
 .faq-list {
     cursor: pointer;
     font-size: 18px;
-    color:var(--secondary-color);;
+    color: var(--secondary-color);
+    
+    border: 1px solid;
+    background-color: #e68c3a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 .faq-query {
@@ -688,7 +701,8 @@ td {
 
 .account-information {
     padding: 10px 100px 50px 50px;
-    background-color: var(--secondary-color);;
+    background-color: var(--secondary-color);
+    ;
     color: black;
 }
 
@@ -713,12 +727,87 @@ td {
 }
 
 .account-information-input {
+    background-color: var(--secondary-color);
     margin-left: 5px;
     border: none;
     outline: none;
     width: 80%;
-    font-size: 18px;
+    font-size: 16px;
 }
+
+.account-information-dropdown {
+    background-color: var(--secondary-color);
+    margin-left: 5px;
+    border: none;
+    outline: none;
+    width: max-content;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.account-information-date {
+    background-color: var(--secondary-color);
+    margin-left: 5px;
+    border: none;
+    outline: none;
+    width: max-content;
+    font-size: 16px;
+    cursor: text;
+}
+
+
+
+/* Style the container */
+.multiselect-container {
+    width: 80%;
+    border: none;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Style the selected items as tags */
+.selected-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.selected-item {
+    background-color: #007BFF;
+    color: #fff;
+    margin: 0 2px 1px 2px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Style the options */
+.multiselect-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.multiselect-options label {
+    display: block;
+    margin: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.multiselect-options label input {
+    cursor: pointer;
+}
+
+/* Show options when the container is clicked */
+.multiselect-container:focus .multiselect-options {
+    display: block;
+}
+
+
 
 .line {
     border-bottom: 1px solid black;
@@ -731,21 +820,22 @@ td {
 .signup-header {
     font-size: 70px;
     font-weight: bold;
-    color:white;
+    color: white;
     /* padding-bottom:20px */
 }
 
 .signup-subheader {
     font-size: 30px;
-    color:white;
+    color: white;
 
 }
 
 /* ******************************************** Sign Up Confirmation Page ******************************************** */
 .signup-confirmation {
     padding: 20px 100px 50px 50px;
-    background-color: var(--secondary-color);;
-    color:#000;
+    background-color: var(--secondary-color);
+    ;
+    color: #000;
 }
 
 .signup-box {
@@ -819,7 +909,7 @@ td {
 .right-password-section ul li {
     display: flex;
     justify-content: space-between;
-    padding:5px;
+    padding: 5px;
     float: left;
 }
 
