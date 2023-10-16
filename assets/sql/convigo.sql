@@ -48,7 +48,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 large luggagess',
-        'Block 315 Ang Mo Kio Avenue 1; Level 4 Block 209 Bedok North Street 1; Level 4 Block 315A Punggol Way, Level 4',
+        'Block 315 Ang Mo Kio Avenue 1; Level 4 Block 209 Bedok North Street 1; Block 290 Bukit Batok East Avenue 3, Level 4; Block 962 Jurong West Street 91, Level 3',
         23.00
     ),
     (
@@ -60,7 +60,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 large luggagess',
-        'car description',
+        'Block 556 Ang Mo Kio Avenue 10, Level 5; Block 85 Bedok North Road, Level 6; 3 HarbourFront Place, HarbourFront Tower Two, Level 6; Block 612D Punggol Drive, Level 3',
         23.00
     ),
     (
@@ -72,7 +72,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 large luggages',
-        'car description',
+        'Block 85 Bedok North Road, Level 6; Block 155 Sengkang East Avenue, Level 4; Block 342 Woodlands Avenue 1, Level 4',
         23.00
     ),
     (
