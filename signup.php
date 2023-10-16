@@ -3,6 +3,47 @@
 $authRequired = 0;
 include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
+
+@session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the form data from the POST request
+    $surname = $_POST['surname'];
+    $firstname = $_POST['firstname'];
+    $nric = $_POST['nric'];
+    $dob = $_POST['dob'];
+    $license = $_POST['license'];
+
+    $mobile = $_POST['mobile'];
+    $email = $_POST['email'];
+    $languages = $_POST['languages'];
+
+    $address = $_POST['address'];
+
+    $bank = $_POST['bank'];
+    $bankacc = $_POST['bankacc'];
+
+    // Save the form data to session variables
+    $_SESSION['surname'] = $surname;
+    $_SESSION['firstname'] = $firstname;
+    $_SESSION['nric'] = $nric;
+    $_SESSION['dob'] = $dob;
+    $_SESSION['license'] = $license;
+
+    $_SESSION['mobile'] = $mobile;
+    $_SESSION['email'] = $email;
+    $_SESSION['languages'] = $languages;
+
+    $_SESSION['address'] = $address;
+
+    $_SESSION['bank'] = $bank;
+    $_SESSION['bankacc'] = $bankacc;
+
+    // Redirect to the 2nd page
+    header('Location: signup_confirmation.php');
+    exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +87,7 @@ include "assets/php/check_login.php";
                 <p class="signup-header">Welcome to Convigo</p>
                 <p class="signup-subheader">Please fill up the form below</p>
             </div>
-            <form method="post" action="">
+            <form method="post" action="" autocomplete="off">
                 <div class="account-information">
                     <p class="account-information-header">My Personal Information</p>
                     <div class="account-information-body">
@@ -66,12 +107,12 @@ include "assets/php/check_login.php";
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Date of birth:</p>
-                                <input class="account-information-date" type="date" name="dob">
+                                <input class="account-information-date main-font" type="date" name="dob">
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">License class:</p>
-                                <select class="account-information-dropdown" name="license">
-                                    <option value="" hidden selected disabled>Select License Class</option>
+                                <select class="account-information-dropdown main-font" name="license">
+                                    <option class="main-font" value="" hidden selected disabled>Select License Class</option>
                                     <option value="1">3</option>
                                     <option value="1">3A</option>
                                 </select>
@@ -101,7 +142,8 @@ include "assets/php/check_login.php";
                                         <label><input type="checkbox" name="languages[]" value="English">English</label>
                                         <label><input type="checkbox" name="languages[]" value="Chinese">Chinese</label>
                                         <label><input type="checkbox" name="languages[]" value="Malay">Malay</label>
-                                        <label><input type="checkbox" name="languages[]" value="Indian">Indian</label>
+                                        <label><input type="checkbox" name="languages[]" value="Tamil">Tamil</label>
+                                        <label><input type="checkbox" name="languages[]" value="Hindi">Hindi</label>
                                         <label><input type="checkbox" name="languages[]" value="Others">Others</label>
                                     </div>
                                 </div>
@@ -123,7 +165,18 @@ include "assets/php/check_login.php";
                         <div>
                             <div class="row line">
                                 <p class="account-information-content">Bank name:</p>
-                                <input class="account-information-input" type="text" name="bank">
+                                <select class="account-information-dropdown main-font" name="bank">
+                                    <option value="" hidden selected disabled>Select bank</option>
+                                    <option value="ANZ">ANZ</option>
+                                    <option value="CIMB">CIMB</option>
+                                    <option value="Citibank">Citibank</option>
+                                    <option value="DBS">DBS</option>
+                                    <option value="HSBC">HSBC</option>
+                                    <option value="Maybank">Maybank</option>
+                                    <option value="OCBC">OCBC</option>
+                                    <option value="StandardChartered">Standard Chartered</option>
+                                    <option value="UOB">UOB</option>
+                                </select>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Bank account number:</p>
@@ -132,9 +185,10 @@ include "assets/php/check_login.php";
                         </div>
                     </div>
 
-                    <!-- <input type="submit" class="save-button" value="Next"> -->
+                    <input type="submit" class="save-button" value="Next">
                     <!-- temp button -->
-                    <a class="save-button" href="signup_confirmation.php">Next</a> <br />
+                    <!-- <a class="save-button" href="signup_confirmation.php">Next</a> -->
+                    <br />
 
                 </div>
             </form>

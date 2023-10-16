@@ -40,25 +40,17 @@ include "assets/php/check_login.php";
                 </b>
             </nav>
         </header>
-            <div class="center">
+        <div class="center">
 
-            <div class="flex space-evenly" style="background-color:black;">
-                <div class="container">
-                    <img src="assets/images/Cars/Sample/testcar2.jpg" height="auto" width="110%" alt="Sample Car 1">
-                </div>
-                <!-- <div class="container" style="height: auto; width: 20%;">
-                    <img src="assets/images/Cars/Sample/sample_car_2.png" height="auto" width="100%" alt="Sample Car 2">
-                </div>
-                <div class="container" style="height: auto; width: 20%;">
-                    <img src="assets/images/Cars/Sample/sample_car_3.png" height="auto" width="100%" alt="Sample Car 3">
-                </div> -->
+            <div class="flex space-evenly homephoto">
+                <img src="assets/images/Cars/Sample/testcar2.jpg" height="auto" width="100%" alt="Sample Car 1">
             </div>
 
         </div>
         <div class="about">
             <br />
             <div class="about-body">
-                <h1 style= "font-size:30px" >Our Story</h1>
+                <h1 style="font-size:30px">Our Story</h1>
                 <p class="story-content">In the vibrant heartbeat of Singapore, we recognized a distinct need: a way to cater to the ever-evolving demands
                     of its people. This drove us to create ConviGo. More than a mere car rental, ConviGo stands as a testament to our vision
                     of seamless urban transportation, accommodating the diverse needs of every Singaporean. Whether it's an eco-conscious ride
@@ -68,7 +60,7 @@ include "assets/php/check_login.php";
             </div>
 
             <div class="about-body">
-                <h1 style= "font-size:30px">Why Convigo?</h1>
+                <h1 style="font-size:30px">Why Convigo?</h1>
                 <div class="flex row">
                     <img src="assets/images/Icons/lightning.png" height="80px" width="80px" alt="lightning icon">
                     <div class="about-why">

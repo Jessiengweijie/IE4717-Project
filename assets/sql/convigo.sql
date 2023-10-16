@@ -459,5 +459,13 @@ CREATE TABLE IF NOT EXISTS authorized_users (
     username VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS user_info (
+    id INT,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    mobile VARCHAR(15),
+    FOREIGN KEY (id) REFERENCES authorized_users(id)
+);
 INSERT INTO authorized_users(username, password)
 VALUES ('test', '123')
