@@ -109,9 +109,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </nav>
         </header>
         <div class="account">
-            <div class="center">
-                <p class="signup-header">You're almost there!</p>
-                <p class="signup-subheader">Please review the terms and conditions below.</p>
+            <div class="center" style="background-color: var(--backgroundcolor);">
+                <p class="signup-header" style="color:#fdf8e3;">You're almost there!</p>
+                <p class="signup-subheader" style="color:#fdf8e3;">Please review the terms and conditions below.</p>
             </div>
             <form method="post" action="">
                 <div class="signup-confirmation">

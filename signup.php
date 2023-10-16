@@ -83,9 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </nav>
         </header>
         <div class="account">
-            <div class="center">
-                <p class="signup-header">Welcome to Convigo</p>
-                <p class="signup-subheader">Please fill up the form below</p>
+            <div class="center" style="background-color: var(--backgroundcolor);">
+                <p class="signup-header" style="color:#fdf8e3;">Welcome to Convigo</p>
+                <p class="signup-subheader" style="color:#fdf8e3">Please fill up the form below</p>
             </div>
             <form method="post" action="" autocomplete="off">
                 <div class="account-information">

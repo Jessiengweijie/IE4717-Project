@@ -82,11 +82,11 @@ if ($resultAvailableLocations) {
             </nav>
         </header>
 
-        <div class="car-info">
+        <div class="car-info" >
             <div class="car-info-selected">
                 <div class="car-info-head">
                     <div>
-                        <div class="car-info-name">
+                        <div class="car-info-name"style="font-size:45px">
                             <?php echo $carData['name']; ?>
                         </div>
                         <div class="car-info-type">
@@ -94,14 +94,14 @@ if ($resultAvailableLocations) {
                         </div>
                     </div>
                     <div class="car-info-image">
-                        <img src="assets/images/Cars/Brands/<?php echo $carData['brand']; ?>/<?php echo $carData['type']; ?>/<?php echo $carData['imageURL']; ?>" height="auto" width="100%" alt="<?php echo $carData['name']; ?>">
+                        <img src="assets/images/Cars/Brands/<?php echo $carData['brand']; ?>/<?php echo $carData['type']; ?>/<?php echo $carData['imageURL']; ?>" height="800px" width="100%" alt="<?php echo $carData['name']; ?>">
                     </div>
                 </div>
             </div>
 
             <div class="car-info-desc">
                 <h1>Car Information</h1>
-                <table>
+                <table style="border:none">
                     <tr>
                         <td>Seats:</td>
                         <td><?php echo $carData['seats']; ?></td>
