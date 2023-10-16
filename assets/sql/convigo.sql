@@ -48,7 +48,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 large luggagess',
-        'Block 315 Ang Mo Kio Avenue 1; Level 4 Block 209 Bedok North Street 1; Level 4 Block 315A Punggol Way, Level 4',
+        'Block 315 Ang Mo Kio Avenue 1; Level 4 Block 209 Bedok North Street 1; Block 290 Bukit Batok East Avenue 3, Level 4; Block 962 Jurong West Street 91, Level 3',
         23.00
     ),
     (
@@ -60,7 +60,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 large luggagess',
-        'car description',
+        'Block 556 Ang Mo Kio Avenue 10, Level 5; Block 85 Bedok North Road, Level 6; 3 HarbourFront Place, HarbourFront Tower Two, Level 6; Block 612D Punggol Drive, Level 3',
         23.00
     ),
     (
@@ -72,7 +72,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 large luggages',
-        'car description',
+        'Block 85 Bedok North Road, Level 6; Block 155 Sengkang East Avenue, Level 4; Block 342 Woodlands Avenue 1, Level 4',
         23.00
     ),
     (
@@ -84,7 +84,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '3 large luggagess',
-        'car description',
+        'Block 512 Bukit Batok Street 52, Level 5; 176 Orchard Road, The Centrepoint, Level 3; Block 144 Tampines Street 12, Level 5',
         26.00
     ),
     (
@@ -96,7 +96,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '3 large luggages',
-        'car description',
+        'Block 395 Bukit Batok West Avenue 5, Level 2; 81 Telok Blangah Road, Level 3; Block 342 Woodlands Avenue 1, Level 4',
         28.00
     ),
     (
@@ -108,7 +108,7 @@ VALUES
         5,
         'Electric',
         '2 large luggages',
-        'car description',
+        'Block 512 Bukit Batok Street 52, Level 5; 1 Harbourfront Walk, VivoCity, Level 4',
         30.00
     ),
     -- ************************************************* Tesla *************************************************
@@ -121,7 +121,7 @@ VALUES
         5,
         'Electric',
         '2 Large Luggages',
-        'car description',
+        'Block 292B Punggol Central, Level 5; Block 155 Sengkang East Avenue, Level 4; Block 492D Tampines Street 45, Level 3; Block 342 Woodlands Avenue 1, Level 4',
         28.00
     ),
     (
@@ -133,7 +133,7 @@ VALUES
         5,
         'Electric',
         '2 Large Luggages',
-        'car description',
+        'Block 55 Bedok South Avenue 3, Level 3; 1 Harbourfront Walk, VivoCity, Level 4; 290 Orchard Road, Paragon Shopping Centre, Level 4',
         30.00
     ),
     (
@@ -145,7 +145,7 @@ VALUES
         5,
         'Electric',
         '2 Large Luggages',
-        'car description',
+        '1092 Lower Delta Road, Level 5; Block 286 Tampines Street 22, Level 4',
         35.00
     ),
     (
@@ -157,7 +157,7 @@ VALUES
         5,
         'Electric',
         '2 Large Luggages',
-        'car description',
+        'Block 129 Ang Mo Kio Street 11, Level 3; 68 Orchard Road, Plaza Singapura, Level 5',
         33.00
     ),
     -- ************************************************* BMW *************************************************
@@ -170,7 +170,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 Large Luggages',
-        'car description',
+        'Block 512 Bukit Batok Street 52, Level 5; Block 450D Fernvale Road, Level 5; Block 492D Tampines Street 45, Level 3; Block 894C Woodlands Drive 50, Level 3',
         25.00
     ),
     (
@@ -182,7 +182,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '3 Large Luggages',
-        'car description',
+        'Block 962 Jurong West Street 91, Level 3; Block 144 Tampines Street 12, Level 5',
         32.00
     ),
     (
@@ -194,7 +194,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '3 Large Luggages',
-        'car description',
+        'Compass One Mall, Level 2; Block 6 Woodlands Centre Road, Basement 1',
         26.00
     ),
     (
@@ -206,7 +206,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '3 Large Luggages',
-        'car description',
+        'Block 318B Punggol Way, Level 2; Block 260 Sengkang Street 21, Level 3',
         31.00
     ),
     (
@@ -218,7 +218,7 @@ VALUES
         5,
         'Electric',
         '2 Large Luggages',
-        'car description',
+        'Block 501 Jurong West Street 51, Level 2; Block 495D Tampines Street 43, Level 4',
         33.00
     ),
     -- ************************************************* Hyundai *************************************************
@@ -231,7 +231,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '1 Large Luggages',
-        'car description',
+        'Block 315 Ang Mo Kio Avenue 1, Level 4; Block 220 Bedok Central, Level 3; Block 130 Bukit Batok Street 11, Level 4',
         17.00
     ),
     (
@@ -243,7 +243,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 Large Luggages',
-        'car description',
+        'Block 215 Bedok North Street 1, Level 2; Block 10 Woodlands Circle, Level 2',
         18.00
     ),
     (
@@ -255,7 +255,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 Large Luggages',
-        'car description',
+        'Block 55 Bedok South Avenue 3, Level 3; Block 512 Bukit Batok Street 52, Level 5',
         18.00
     ),
     (
@@ -267,7 +267,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 Large Luggages',
-        'car description',
+        'Block 165 Bukit Batok West Avenue 8, Level 3; Block 612D Punggol Drive, Level 3',
         20.00
     ),
     (
@@ -279,7 +279,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '3 Large Luggages',
-        'car description',
+        'Block 745 Jurong West Street 73, Level 2',
         22.00
     ),
     (
@@ -291,10 +291,10 @@ VALUES
         5,
         'Electric',
         '2 Large Luggages',
-        'car description',
+        'Block 85 Bedok North Road, Level 6; Block 402 Punggol Place, Level 2',
         22.00
     ),
-     -- ************************************************* Hyundai *************************************************
+     -- ************************************************* Honda *************************************************
     (
         'Honda Civic Sedan',
         'Standard',
@@ -304,7 +304,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 Large Luggages',
-        'car description',
+        'Block 209 Bedok North Street 1, Level 4; 3 HarbourFront Place, HarbourFront Tower Two, Level 6; Block 492D Tampines Street 45, Level 3; Block 101 Woodlands Street 13, Level 5',
         16.00
     ),
     (
@@ -316,7 +316,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 Large Luggages',
-        'car description',
+        'Block 129 Ang Mo Kio Street 11, Level 3; Block 725 Bedok Reservoir Road, Level 3; Block 265D Sengkang East Way, Level 2',
         16.00
     ),
     (
@@ -328,7 +328,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 Large Luggages',
-        'car description',
+        'Block 745 Jurong West Street 73, Level 2; Block 28A Cairnhill Road, Level 2',
         16.00
     ),
     (
@@ -340,7 +340,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 Large Luggages',
-        'car description',
+        'Block 320 Ang Mo Kio Avenue 2, Level 3; Block 215 Bedok North Street 1, Level 2; Block 315A Punggol Way, Level 4',
         19.00
     ),
     (
@@ -352,7 +352,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 Large Luggages',
-        'car description',
+        'Block 321B Punggol Central, Level 3; Block 265 Sengkang Central, Level 2; Block 1 Woodlands Street 11, Level 3',
         20.00
     ),
     (
@@ -364,7 +364,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 Large Luggages',
-        'car description',
+        'Block 512 Jurong West Street 52, Level 4; Block 500 Tampines Central 1, Level 2',
         23.00
     );
 INSERT INTO location(name)
