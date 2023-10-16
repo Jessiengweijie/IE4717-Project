@@ -60,7 +60,7 @@ VALUES
         5,
         'Petrol/Diesel',
         '2 large luggagess',
-        'Block 556 Ang Mo Kio Avenue 10, Level 5; Block 85 Bedok North Road, Level 6; 3 HarbourFront Place, HarbourFront Tower Two, Level 6; Block 612D Punggol Drive, Level 3',
+        '-Block 556 Ang Mo Kio Avenue 10, Level 5; -Block 85 Bedok North Road, Level 6; 3 HarbourFront Place, -HarbourFront Tower Two, Level 6; -Block 612D Punggol Drive, Level 3',
         23.00
     ),
     (
