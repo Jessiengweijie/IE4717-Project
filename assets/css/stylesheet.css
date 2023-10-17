@@ -266,10 +266,7 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* padding: 50px; */
-    /* min-height: 800px; */
     min-height: 610px;
-
 }
 
 .home-how {
@@ -343,10 +340,16 @@ footer {
     margin: 20px 0 20px 100px;
 }
 
-.about-photo{
+.about-photo {
+    background-color: var(--background-color);
     background-image: url(../images/Cars/Sample/testcar10.jpg);
-    height: 700px;
-    min-width: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 610px;
 }
 
 .story-content {
