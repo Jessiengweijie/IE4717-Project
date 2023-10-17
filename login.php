@@ -59,7 +59,7 @@ include "assets/php/check_login.php";
                     <br />
                     <div class="login-signup">
                         <span>Don't have an account?</span>
-                        <a href="signup.php" style="color:red;">Sign up an account, it's free</a>
+                        <a href="signup.php" style="color:white;">Sign up an account, it's free</a>
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@ include "assets/php/check_login.php";
             </div>
 
             <div class="center">
-                <h1 style="margin-bottom: 75px;">Why Convigo</h1>
+                <h1 style="margin-bottom: 55px;">Why Convigo</h1>
 
                 <div class="flex space-evenly" style="margin-bottom: 100px;">
 
@@ -104,25 +104,25 @@ include "assets/php/check_login.php";
                 </div>
                 <!----------------------------------------------------------------------------------->
 
-                <h1 style="margin-bottom: 75px;">How to use</h1>
-                <div class="flex space-evenly" style="margin-bottom: 10px;">
+                <h1 style="margin-bottom: 55px;">How to use</h1>
+                <div class="flex space-evenly" style="margin-bottom: 15px;">
                     <div class="home-how">
                         <img src="assets/images/Cars/Sample/home_search.png" width="100%">
-                        <div class="home-how-content">
+                        <div class="home-how-content" style="color:black;">
                             <h2>Search</h2>
                             <p>Discover a Convigo vehicle just moments away</p>
                         </div>
                     </div>
                     <div class="home-how">
                         <img src="assets/images/Cars/Sample/home_book.png" width="100%">
-                        <div class="home-how-content">
+                        <div class="home-how-content" style="color:black;">
                             <h2>Book</h2>
                             <p>Select the perfect car to your liking</p>
                         </div>
                     </div>
                     <div class="home-how">
                         <img src="assets/images/Cars/Sample/home_drive.png" width="100%">
-                        <div class="home-how-content">
+                        <div class="home-how-content" style="color:black;">
                             <h2>Drive</h2>
                             <p>Activate your ride with the ConviGo app</p>
                         </div>

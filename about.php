@@ -40,15 +40,18 @@ include "assets/php/check_login.php";
                 </b>
             </nav>
         </header>
-        <div class="center">
-
-            <div class="flex space-evenly homephoto">
-                <img src="assets/images/Cars/Sample/testcar6.jpg" width="1300" height="500" alt="Sample Car 1">
-            </div>
+        <!-- <div class="center">
+            <div class="center about-photo">
+                <p>test</p>
+                <img src="assets/images/Cars/Sample/testcar10.jpg" width="1500" height="600" alt="Sample Car 1">
+            </div> -->
 
         </div>
         <div class="about">
-            <br />
+            <div class="about-photo">
+                <p>test</p>
+                <!-- <img src="assets/images/Cars/Sample/testcar10.jpg" width="1600" height="700" alt="Sample Car 1"> -->
+            </div>
             <div class="about-body">
                 <h1 style="font-size:30px">Our Story</h1>
                 <p class="story-content">In the vibrant heartbeat of Singapore, we recognized a distinct need: a way to cater to the ever-evolving demands
