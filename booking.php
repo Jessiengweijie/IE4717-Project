@@ -88,7 +88,7 @@ $carData = $resultCar->fetch_assoc();
                             <td><?php echo $carData['boot_space']; ?></td>
                         </tr>
                         <tr>
-                            <td>Description:</td>
+                            <td>Pick-up & Drop-off Location:</td>
                             <td><?php echo $carData['description']; ?></td>
                         </tr>
                     </table>

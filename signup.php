@@ -8,40 +8,40 @@ include "assets/php/check_login.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the form data from the POST request
-    // $surname = $_POST['surname'];
-    // $firstname = $_POST['firstname'];
-    // $nric = $_POST['nric'];
-    // $dob = $_POST['dob'];
-    // $license = $_POST['license'];
+    $surname = $_POST['surname'];
+    $firstname = $_POST['firstname'];
+    $nric = $_POST['nric'];
+    $dob = $_POST['dob'];
+    $license = $_POST['license'];
 
-    // $mobile = $_POST['mobile'];
-    // $email = $_POST['email'];
-    // $languages = $_POST['languages'];
+    $mobile = $_POST['mobile'];
+    $email = $_POST['email'];
+    $languages = $_POST['languages'];
 
-    // $address = $_POST['address'];
+    $address = $_POST['address'];
 
-    // $bank = $_POST['bank'];
-    // $bankacc = $_POST['bankacc'];
+    $bank = $_POST['bank'];
+    $bankacc = $_POST['bankacc'];
 
     // Save the form data to session variables
-    // $_SESSION['surname'] = $surname;
-    // $_SESSION['firstname'] = $firstname;
-    // $_SESSION['nric'] = $nric;
-    // $_SESSION['dob'] = $dob;
-    // $_SESSION['license'] = $license;
+    $_SESSION['surname'] = $surname;
+    $_SESSION['firstname'] = $firstname;
+    $_SESSION['nric'] = $nric;
+    $_SESSION['dob'] = $dob;
+    $_SESSION['license'] = $license;
 
-    // $_SESSION['mobile'] = $mobile;
-    // $_SESSION['email'] = $email;
-    // $_SESSION['languages'] = $languages;
+    $_SESSION['mobile'] = $mobile;
+    $_SESSION['email'] = $email;
+    $_SESSION['languages'] = $languages;
 
-    // $_SESSION['address'] = $address;
+    $_SESSION['address'] = $address;
 
-    // $_SESSION['bank'] = $bank;
-    // $_SESSION['bankacc'] = $bankacc;
+    $_SESSION['bank'] = $bank;
+    $_SESSION['bankacc'] = $bankacc;
 
     // Redirect to the 2nd page
-    // header('Location: signup_confirmation.php');
-    // exit;
+    header('Location: signup_confirmation.php');
+    exit;
 }
 
 ?>
@@ -84,9 +84,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </nav>
         </header>
         <div class="account">
-            <div class="center">
-                <p class="signup-header">Welcome to Convigo</p>
-                <p class="signup-subheader">Please fill up the form below</p>
+            <div class="center" style="background-color: var(--backgroundcolor);">
+                <p class="signup-header" style="color:#fdf8e3;">Welcome to Convigo</p>
+                <p class="signup-subheader" style="color:#fdf8e3">Please fill up the form below</p>
             </div>
             <form method="post" action="" autocomplete="off">
                 <div class="account-information">

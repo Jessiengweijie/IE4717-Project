@@ -43,7 +43,7 @@ include "assets/php/check_login.php";
         <div class="center">
 
             <div class="flex space-evenly homephoto">
-                <img src="assets/images/Cars/Sample/testcar2.jpg" height="auto" width="100%" alt="Sample Car 1">
+                <img src="assets/images/Cars/Sample/testcar2.jpg" height="700px" width="100%" alt="Sample Car 1">
             </div>
 
         </div>
@@ -61,45 +61,48 @@ include "assets/php/check_login.php";
 
             <div class="about-body">
                 <h1 style="font-size:30px">Why Convigo?</h1>
+
+                 <!--   --------------------------  Instant Verification, Zero Delays ---------------------------->
                 <div class="flex row">
-                    <img src="assets/images/Icons/lightning.png" height="80px" width="80px" alt="lightning icon">
+                    <img src="assets/images/Icons/verification_icon.png" height="60px" width="60px">
                     <div class="about-why">
                         <strong> Instant Verification, Zero Delays </strong>
-                        Kickstart your journey in no time. With Convigo's swift registration process powered by MyInfo, you're set to drive in a flash. No wait. No fuss.<br><br>
+                        Kickstart your journey in no time. With Convigo's swift registration using Singpass, you're set to drive in a flash. No wait. No fuss.<br><br>
                     </div>
                 </div>
 
-
+                <!--   --------------------------  Transparent Pricing ---------------------------->
                 <div class="flex row">
-                    <img src="assets/images/Icons/dollars.png" height="80px" width="80px" alt="dollars icon">
+                    <img src="assets/images/Icons/price_icon.png" height="60px" width="60px" >
                     <div class="about-why">
                         <strong> Transparent Pricing</strong>
-                        No hidden charges. You pay for what you see, making it easier for you to plan and budget.<br><br>
-                    </div>
+                        Pay strictly by the hour; fuel and electricity included. No hidden fees, ensuring straightforward costs for hassle-free planning.                   </div>
                 </div>
 
-
+                <!--   --------------------------  Easy Access Across the City ---------------------------->
                 <div class="flex row">
-                    <img src="assets/images/Icons/car_map.png" height="80px" width="80px" alt="car map icon">
+                    <img src="assets/images/Icons/easyaccess_icon.png" height="60px" width="60px" >
                     <div class="about-why">
                         <strong> Easy Access Across the City</strong>
-                        Dive into Singapore's rhythms with Convigo. With many cars across the country, a Convigo car is always just around the corner.<br><br>
+                        Conveniently located near MRT stations and HDBs, Convigo cars are positioned throughout Singapore for your immediate needs. Ensuring a smooth city journey for you.<br><br>
                     </div>
                 </div>
 
+                <!--   --------------------------  24/7 Availability ---------------------------->
                 <div class="flex row">
-                    <img src="assets/images/Icons/car_time.png" height="80px" width="80px" alt="car time icon">
+                    <img src="assets/images/Icons/daynight_icon.png" height="60px" width="60px" >
                     <div class="about-why">
                         <strong> 24/7 Availability </strong>
                         Be it a late-night adventure or an early morning errand, our cars are available around the clock, ensuring you’re never left without wheels.<br><br>
                     </div>
                 </div>
 
+                <!--   --------------------------  Cleanliness in Every Drive ---------------------------->
                 <div class="flex row">
-                    <img src="assets/images/Icons/car_clean.png" height="80px" width="80px" alt="car time icon">
+                    <img src="assets/images/Icons/clean_icon.png" height="60px" width="60px">
                     <div class="about-why">
                         <strong> Cleanliness in Every Drive </strong>
-                        With Convigo, pristine isn't just a standard—it's a promise. We prioritize cleanliness, ensuring each vehicle is spotless and fresh for your journey.<br><br>
+                        At Convigo, every ride is more than just clean—it's meticulously maintained. We uphold stringent cleanliness standards, guaranteeing a refreshing journey every time.<br><br>
                     </div>
                 </div>
                 <br />
