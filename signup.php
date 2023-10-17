@@ -115,8 +115,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <p class="account-information-content">License class:</p>
                                 <select class="account-information-dropdown main-font" name="license" id="license" required>
                                     <option class="main-font" value="" hidden selected disabled>Select License Class</option>
-                                    <option value="1">3</option>
-                                    <option value="1">3A</option>
+                                    <option value="3">3</option>
+                                    <option value="3A">3A</option>
                                 </select>
                             </div>
                         </div>
@@ -175,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <option value="HSBC">HSBC</option>
                                     <option value="Maybank">Maybank</option>
                                     <option value="OCBC">OCBC</option>
-                                    <option value="StandardChartered">Standard Chartered</option>
+                                    <option value="Standard Chartered">Standard Chartered</option>
                                     <option value="UOB">UOB</option>
                                 </select>
                             </div>

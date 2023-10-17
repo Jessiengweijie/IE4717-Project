@@ -69,12 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
-
-    var_dump($_POST);
-
-    // // Redirect to the 2nd page
-    // header('Location: signup_confirmation.php');
-    // exit;
 } else {
     if (!$_SESSION) {
         header('Location: signup.php');
@@ -94,8 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $bank = $_SESSION['bank'];
         $bankacc = $_SESSION['bankacc'];
-
-        // Here, you can use the data for form submission or other actions
 
         // Clear the session variables if needed
         unset($_SESSION['surname']);
@@ -222,7 +214,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <input type="text" hidden name="mobile" value="<?php echo $mobile ?>">
                         <input type="text" hidden name="email" value="<?php echo $email ?>">
-                        <input type="text" hidden name="languages" value="<?php echo $languages ?>">
+                        <input type="text" hidden name="languages" value="<?php echo htmlspecialchars($languages) ?>">
 
                         <input type="text" hidden name="address" value="<?php echo $address ?>">
 
