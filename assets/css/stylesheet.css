@@ -251,23 +251,27 @@ footer {
 /* ******************************************** Login Panel ******************************************** */
 .home-header {
     background-color: var(--background-color);
-    background-image: url(../images/Cars/Sample/testcar.jpg);
+    background-image: url(../images/Cars/Sample/testcar9.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 50px;
-    min-height: 800px;
+    /* padding: 50px; */
+    /* min-height: 800px; */
+    min-height: 600px;
+
 }
 
 .login {
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
+    background-color: none;
     height: 70%;
     width: 25%;
     margin: 0 50px 0 auto;
     /* border: 1px solid rgb(97, 172, 233); */
-    border: 1px solid var(--primary-color);
+    /* border: 1px solid var(--primary-color); */
+    border:none;
     border-radius: 10px;
     padding: 30px;
     align-items: center;
@@ -276,8 +280,9 @@ footer {
 
 .login-font {
     color: black;
-    font-size: 50px;
-    margin-bottom: 15px;
+    font-weight:bold;
+    font-size: 42px;
+    margin-bottom: 5px;
 }
 
 .login-form {
@@ -371,6 +376,14 @@ footer {
     justify-content: flex-end;
     flex-direction: row-reverse;
     color: #000;
+}
+
+.car-info-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 450px;
 }
 
 .car-template {
@@ -726,7 +739,7 @@ td {
 }
 
 .account-information-header {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .account-information-body {
@@ -737,7 +750,7 @@ td {
 }
 
 .account-information-subheader {
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .account-information-content {

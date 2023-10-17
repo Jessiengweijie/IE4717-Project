@@ -46,7 +46,7 @@ include "assets/php/check_login.php";
                 <div class="login">
                     <div>
                         <p class="login-font"> Login </p>
-                        <img src="assets/images/Logo/finallogo.png" height="200px" width="200px" alt="ConviGo_Logo" style="margin-bottom: 25px;">
+                        <img src="assets/images/Logo/finallogo.png" height="135px" width="135px" alt="ConviGo_Logo" style="margin-bottom: 25px;">
 
                         <form class="login-form" method="post" action="assets/php/authmain.php">
                             <input class="login-input" type="text" name="userid" required placeholder="Email">
@@ -59,7 +59,7 @@ include "assets/php/check_login.php";
                     <br />
                     <div class="login-signup">
                         <span>Don't have an account?</span>
-                        <a href="signup.php">Sign up an account, it's free</a>
+                        <a href="signup.php" style="color:red;">Sign up an account, it's free</a>
                     </div>
                 </div>
 
