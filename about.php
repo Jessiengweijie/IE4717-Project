@@ -42,12 +42,10 @@ include "assets/php/check_login.php";
         </header>
 
         <div class="about-photo">
-                <p>test</p>
-                <!-- <img src="assets/images/Cars/Sample/testcar10.jpg" width="1600" height="700" alt="Sample Car 1"> -->
-            </div>
+        </div>
 
         <div class="about">
-            
+
             <div class="about-body">
                 <h1 style="font-size:30px">Our Story</h1>
                 <p class="story-content">In the vibrant heartbeat of Singapore, we recognized a distinct need: a way to cater to the ever-evolving demands
@@ -61,7 +59,7 @@ include "assets/php/check_login.php";
             <div class="about-body">
                 <h1 style="font-size:30px">Why Convigo?</h1>
 
-                 <!--   --------------------------  Instant Verification, Zero Delays ---------------------------->
+                <!--   --------------------------  Instant Verification, Zero Delays ---------------------------->
                 <div class="flex row">
                     <img src="assets/images/Icons/verification_icon.png" height="60px" width="60px">
                     <div class="about-why">
@@ -72,15 +70,16 @@ include "assets/php/check_login.php";
 
                 <!--   --------------------------  Transparent Pricing ---------------------------->
                 <div class="flex row">
-                    <img src="assets/images/Icons/price_icon.png" height="60px" width="60px" >
+                    <img src="assets/images/Icons/price_icon.png" height="60px" width="60px">
                     <div class="about-why">
                         <strong> Transparent Pricing</strong>
-                        Pay strictly by the hour; fuel and electricity included. No hidden fees, ensuring straightforward costs for hassle-free planning.                   </div>
+                        Pay strictly by the hour; fuel and electricity included. No hidden fees, ensuring straightforward costs for hassle-free planning.
+                    </div>
                 </div>
 
                 <!--   --------------------------  Easy Access Across the City ---------------------------->
                 <div class="flex row">
-                    <img src="assets/images/Icons/easyaccess_icon.png" height="60px" width="60px" >
+                    <img src="assets/images/Icons/easyaccess_icon.png" height="60px" width="60px">
                     <div class="about-why">
                         <strong> Easy Access Across the City</strong>
                         Conveniently located near MRT stations and HDBs, Convigo cars are positioned throughout Singapore for your immediate needs. Ensuring a smooth city journey for you.<br><br>
@@ -89,7 +88,7 @@ include "assets/php/check_login.php";
 
                 <!--   --------------------------  24/7 Availability ---------------------------->
                 <div class="flex row">
-                    <img src="assets/images/Icons/daynight_icon.png" height="60px" width="60px" >
+                    <img src="assets/images/Icons/daynight_icon.png" height="60px" width="60px">
                     <div class="about-why">
                         <strong> 24/7 Availability </strong>
                         Be it a late-night adventure or an early morning errand, our cars are available around the clock, ensuring you’re never left without wheels.<br><br>
