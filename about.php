@@ -43,7 +43,7 @@ include "assets/php/check_login.php";
         <div class="center">
 
             <div class="flex space-evenly homephoto">
-                <img src="assets/images/Cars/Sample/testcar2.jpg" height="700px" width="100%" alt="Sample Car 1">
+                <img src="assets/images/Cars/Sample/testcar6.jpg" width="1300" height="500" alt="Sample Car 1">
             </div>
 
         </div>
