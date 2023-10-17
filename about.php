@@ -42,6 +42,7 @@ include "assets/php/check_login.php";
         </header>
 
         <div class="about-photo">
+            <h1 style="padding-left:150px;padding-bottom:150px;">About Us</h1>
         </div>
 
         <div class="about">
@@ -73,7 +74,7 @@ include "assets/php/check_login.php";
                     <img src="assets/images/Icons/price_icon.png" height="60px" width="60px">
                     <div class="about-why">
                         <strong> Transparent Pricing</strong>
-                        Pay strictly by the hour; fuel and electricity included. No hidden fees, ensuring straightforward costs for hassle-free planning.
+                        Pay strictly by the hour; fuel and electricity included. No hidden fees, ensuring straightforward costs for hassle-free planning.<br><br>
                     </div>
                 </div>
 

@@ -73,7 +73,7 @@ $carData = $resultCar->fetch_assoc();
                 </div>
 
                 <div class="car-info-desc">
-                    <h1>About the car</h1>
+                    <h1>Car Information</h1>
                     <table>
                         <tr>
                             <td>Seats:</td>

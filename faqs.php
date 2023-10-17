@@ -47,7 +47,8 @@ include "assets/php/check_login.php";
                 <p class="faq-header">FAQ</p>
                 <div class="faq-body">
                     <a class="faq-subheader" id="faq-getting_started" onclick="toggleContent('faq-getting_started-content')">Getting Started</a>
-                        <div class="faq-getting_started-content hidden" id="faq-getting_started-content">
+                        <!-- <div class="faq-getting_started-content hidden" id="faq-getting_started-content"> -->
+                        <div class="faq-getting_started-content " id="faq-getting_started-content">
                             <ul>
                                 <li class="faq-list" onclick="toggleContent('answer1')">
                                     How do I sign up?
@@ -62,7 +63,8 @@ include "assets/php/check_login.php";
                 </div>
                 <div class="faq-body">
                     <a class="faq-subheader" id="faq-account" onclick="toggleContent('faq-account-content')">Account & Membership</a>
-                    <div class="faq-account-content  hidden" id="faq-account-content">
+                    <!-- <div class="faq-account-content  hidden" id="faq-account-content"> -->
+                    <div class="faq-account-content " id="faq-account-content">
                         <ul>
                             <li class="faq-list" onclick="toggleContent('answer3')"> How do I update my profile or payment information?
                                 <div class="hidden" id="answer3"><br>After logging in, click on the 'My Account' button in the navigation bar. From there, you can edit your personal and payment information as needed.</div><br>
@@ -76,7 +78,7 @@ include "assets/php/check_login.php";
 
                 <div class="faq-body">
                     <a class="faq-subheader" id="faq-booking" onclick="toggleContent('faq-booking-content')">Booking</a>
-                    <div class="faq-booking-content  hidden" id="faq-booking-content">
+                    <div class="faq-booking-content  " id="faq-booking-content">
                         <ul>
                             <li class="faq-list" onclick="toggleContent('answer5')"> How do I book a car?
                                 <div class="hidden" id="answer5"><br>Simply click the 'Book Now' button on our homepage. This will guide you through selecting your location and preferred car. After making your selections, you can complete your booking entirely online.</div><br>
@@ -90,7 +92,7 @@ include "assets/php/check_login.php";
 
                 <div class="faq-body">
                     <a class="faq-subheader" id="faq-payment" onclick="toggleContent('faq-payment-content')">Pricing & Payment </a>
-                    <div class="faq-payment-content  hidden" id="faq-payment-content">
+                    <div class="faq-payment-content  " id="faq-payment-content">
                         <ul>
 
                             <li class="faq-list" onclick="toggleContent('answer7')"> How does the pricing work?
@@ -108,7 +110,7 @@ include "assets/php/check_login.php";
 
                 <div class="faq-body">
                     <a class="faq-subheader" id="faq-locations" onclick="toggleContent('faq-locations-content')">Locations & Availability</a>
-                    <div class="faq-locations-content  hidden" id="faq-locations-content">
+                    <div class="faq-locations-content  " id="faq-locations-content">
                         <ul>
                             <li class="faq-list" onclick="toggleContent('answer10')"> Where can I pick up or drop off the cars?
                                 <div class="hidden" id="answer10"><br>Cars must be picked up and returned to the specific location you chose during booking. We have designated parking lots to ensure easy access for you and the next user.</div><br>
@@ -125,7 +127,7 @@ include "assets/php/check_login.php";
 
                 <div class="faq-body">
                     <a class="faq-subheader" id="vehicle" onclick="toggleContent('faq-vehicle-content')">Vehicle Usage & Maintenance</a>
-                    <div class="faq-vehicle-content  hidden" id="faq-vehicle-content">
+                    <div class="faq-vehicle-content  " id="faq-vehicle-content">
                         <ul>
                             <li class="faq-list" onclick="toggleContent('answer13')"> What if the vehicle has damage or is dirty when I start my trip?
                                 <div class="hidden" id="answer13"><br>Before starting your journey, inspect the car. If you find damages or cleanliness issues, snap a photo and email it to us. We'll guide you on the next steps, ensuring you have a pleasant experience. Refunds or adjustments will be made if necessary.</div><br>

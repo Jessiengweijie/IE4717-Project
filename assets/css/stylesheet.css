@@ -350,6 +350,8 @@ footer {
     flex-direction: row;
     align-items: center;
     min-height: 610px;
+    color:black;
+    font-size: 35px;
 }
 
 .story-content {
@@ -410,14 +412,6 @@ footer {
     justify-content: flex-end;
     flex-direction: row-reverse;
     color: #000;
-}
-
-.car-info-head {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 450px;
 }
 
 .car-template {
@@ -517,6 +511,7 @@ footer {
 
 /* ******************************************** Car Info page ******************************************** */
 
+
 .car-info {
     background-color: var(--background-color);
     display: flex;
@@ -534,13 +529,14 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    height: 450px;
 }
 
 .car-info-name {
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 10px;
-    font-style: garamond;
+    font-family: garamond;
 }
 
 .car-info-type {
@@ -591,6 +587,14 @@ footer {
     width: 80%;
     margin-left: auto;
     margin-bottom: 20px;
+}
+
+.car-info-selected {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 450px;
 }
 
 .booking-type {
