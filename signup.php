@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $mobile = $_POST['mobile'];
     $email = $_POST['email'];
-    $languages = $_POST['languages'];
+    $languages = serialize($_POST['languages']);
 
     $address = $_POST['address'];
 

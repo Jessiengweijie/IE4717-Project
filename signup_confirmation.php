@@ -89,13 +89,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mobile = $_SESSION['mobile'];
         $email = $_SESSION['email'];
         $languages = $_SESSION['languages'];
-        $serializedLanguages = serialize($languages);
 
         $address = $_SESSION['address'];
 
         $bank = $_SESSION['bank'];
         $bankacc = $_SESSION['bankacc'];
-        var_dump(($_SESSION));
 
         // Here, you can use the data for form submission or other actions
 
@@ -224,7 +222,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <input type="text" hidden name="mobile" value="<?php echo $mobile ?>">
                         <input type="text" hidden name="email" value="<?php echo $email ?>">
-                        <input type="text" hidden name="languages" value="<?php echo $serializedLanguages ?>">
+                        <input type="text" hidden name="languages" value="<?php echo $languages ?>">
 
                         <input type="text" hidden name="address" value="<?php echo $address ?>">
 
