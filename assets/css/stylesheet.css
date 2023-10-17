@@ -738,14 +738,12 @@ td {
 /* ******************************************** My Account Page ******************************************** */
 .account {
     background-color: var(--background-color);
-    /* padding: 5%; */
     padding: 35px 110px 35px 110px;
 }
 
 .account-information {
     padding: 10px 100px 50px 50px;
     background-color: var(--secondary-color);
-    ;
     color: black;
 }
 
@@ -776,6 +774,8 @@ td {
     outline: none;
     width: 80%;
     font-size: 16px;
+    font-family: var(--main-font);
+
 }
 
 .account-information-dropdown {
@@ -852,8 +852,6 @@ td {
     display: block;
 }
 
-
-
 .line {
     border-bottom: 1px solid black;
     width: 100%;
@@ -880,7 +878,6 @@ td {
 .signup-confirmation {
     padding: 20px 100px 50px 50px;
     background-color: var(--secondary-color);
-    ;
     color: #000;
 }
 

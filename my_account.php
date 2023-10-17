@@ -50,19 +50,23 @@ include "assets/php/fetch_user_info.php";
                     <div>
                         <div class="row line">
                             <p class="account-information-content">Surname: </p>
-                            <input class="account-information-input" type="text" value="test" readonly>
+                            <input class="account-information-input" type="text" value="<?php echo $surname ?>" readonly>
                         </div>
                         <div class="row line">
                             <p class="account-information-content">First name:</p>
-                            <input class="account-information-input" type="text" value="test" readonly>
+                            <input class="account-information-input" type="text" value="<?php echo $firstname ?>" readonly>
+                        </div>
+                        <div class="row line">
+                            <p class="account-information-content">NRIC:</p>
+                            <input class="account-information-input" type="text" value="<?php echo $nric ?>" readonly>
                         </div>
                         <div class="row line">
                             <p class="account-information-content">Date of birth:</p>
-                            <input class="account-information-input" type="text" value="test" readonly>
+                            <input class="account-information-input" type="date" value="<?php echo $dob ?>" readonly>
                         </div>
                         <div class="row line">
                             <p class="account-information-content">License class:</p>
-                            <input class="account-information-input" type="text" value="test" readonly>
+                            <input class="account-information-input" type="text" value="<?php echo $license ?>" readonly>
                         </div>
                     </div>
                 </div>
@@ -72,15 +76,20 @@ include "assets/php/fetch_user_info.php";
                     <div>
                         <div class="row line">
                             <p class="account-information-content">Mobile number:</p>
-                            <input class="account-information-input" type="text" value="test" readonly>
+                            <input class="account-information-input" type="text" value="<?php echo $mobile ?>" readonly>
                         </div>
                         <div class="row line">
                             <p class="account-information-content">Email:</p>
-                            <input class="account-information-input" type="text" value="test" readonly>
+                            <input class="account-information-input" type="text" value="<?php echo $email ?>" readonly>
                         </div>
                         <div class="row line">
                             <p class="account-information-content">Spoken language:</p>
-                            <input class="account-information-input" type="text" value="test" readonly>
+                            <!-- <input class="account-information-input" type="text" value="" readonly> -->
+                            <p class="account-information-content account-information-input"><?php foreach ($languages as $language) {
+                                echo $language . ', ';
+                            }
+                            ?></p>
+                            
                         </div>
                     </div>
                 </div>
@@ -89,7 +98,7 @@ include "assets/php/fetch_user_info.php";
                     <p class="account-information-subheader">Address</p>
                     <div class="row line">
                         <p class="account-information-content">Address:</p>
-                        <input class="account-information-input" type="text" value="test" readonly>
+                        <input class="account-information-input" type="text" value="<?php echo $address ?>" readonly>
                     </div>
                 </div>
 
@@ -98,11 +107,11 @@ include "assets/php/fetch_user_info.php";
                     <div>
                         <div class="row line">
                             <p class="account-information-content">Payment mode:</p>
-                            <input class="account-information-input" type="text" value="test" readonly>
+                            <input class="account-information-input" type="text" value="<?php echo $bank ?>" readonly>
                         </div>
                         <div class="row line">
                             <p class="account-information-content">Bank account number:</p>
-                            <input class="account-information-input" type="text" value="test" readonly>
+                            <input class="account-information-input" type="text" value="<?php echo $bankacc ?>" readonly>
                         </div>
                     </div>
                 </div>
