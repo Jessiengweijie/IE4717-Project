@@ -51,94 +51,59 @@ include "assets/php/check_login.php";
                 <div class="flex space-evenly" style="margin-bottom: 100px;">
 
                     <!--   --------------------------  Instant Verification, Zero Delays ---------------------------->
-                    <div class="container" style="border:none;">
-                        <img src="assets/images/Icons/verification_icon.png" height="80px" width="80px">
-                        <span>
-                            <h2 style="font-size:25px">
-                                Instant Verification, Zero Delays
-                            </h2>
-                        </span>
+                    <div class="home-content">
+                        <img src="assets/images/Icons/verification_icon.png">
+                        <h2>Instant Verification, Zero Delays</h2>
                     </div>
 
                     <!--   --------------------------  Transparent Pricing ---------------------------->
-                    <div class="container" style="border:none;">
-                        <img src="assets/images/Icons/price_icon.png" height="80px" width="80px">
-                        <span>
-                            <h2 style="font-size:25px">
-                                Transparent Pricing
-                            </h2>
-                        </span>
+                    <div class="home-content">
+                        <img src="assets/images/Icons/price_icon.png">
+                        <h2>Transparent Pricing</h2>
                     </div>
 
                     <!--   --------------------------  Easy Access Across the City ---------------------------->
-                    <div class="container" style="border:none;">
-                        <img src="assets/images/Icons/easyaccess_icon.png" height="80px" width="80px">
-                        <span>
-                            <h2 style="font-size:25px">
-                                Easy Access Across the City
-                            </h2>
-                        </span>
+                    <div class="home-content">
+                        <img src="assets/images/Icons/easyaccess_icon.png">
+                        <h2>Easy Access Across the City</h2>
                     </div>
 
                     <!--   --------------------------  24/7 Availability ---------------------------->
-                    <div class="container" style="border:none;">
-                        <img src="assets/images/Icons/daynight_icon.png" height="80px" width="80px">
-                        <span>
-                            <h2 style="font-size:25px">
-                                24/7 Availability
-                            </h2>
-                        </span>
+                    <div class="home-content">
+                        <img src="assets/images/Icons/daynight_icon.png">
+                        <h2>24/7 Availability</h2>
                     </div>
 
                     <!--   --------------------------  Cleanliness in Every Drive ---------------------------->
-                    <div class="container" style="border:none;">
-                        <img src="assets/images/Icons/clean_icon.png" height="80px" width="80px">
-                        <span>
-                            <h2 style="font-size:25px">
-                                Cleanliness in Every Drive
-                            </h2>
-                        </span>
+                    <div class="home-content">
+                        <img src="assets/images/Icons/clean_icon.png">
+                        <h2>Cleanliness in Every Drive</h2>
                     </div>
                 </div>
                 <!----------------------------------------------------------------------------------->
 
                 <h1 style="margin-bottom: 75px;">How to use</h1>
                 <div class="flex space-evenly" style="margin-bottom: 10px;">
-                    <div class="container" style="height: 200px; width: 25%; border:none;">
-                        <img src="assets/images/Cars/Sample/home_search.png" height="300px" width="100%">
+                    <div class="home-how">
+                        <img src="assets/images/Cars/Sample/home_search.png" width="100%">
+                        <div class="home-how-content">
+                            <h2>Search</h2>
+                            <p>Discover a Convigo vehicle just moments away</p>
+                        </div>
                     </div>
-                    <div class="container" style="height: 200px; width: 25%; border:none;">
-                        <img src="assets/images/Cars/Sample/home_book.png" height="300px" width="100%">
+                    <div class="home-how">
+                        <img src="assets/images/Cars/Sample/home_book.png" width="100%">
+                        <div class="home-how-content">
+                            <h2>Book</h2>
+                            <p>Select the perfect car to your liking</p>
+                        </div>
                     </div>
-                    <div class="container" style="height: 200px; width: 25%; border:none;">
-                        <img src="assets/images/Cars/Sample/home_drive.png" height="300px" width="100%">
-                    </div>
-                </div>
-
-                <div class="flex space-evenly" style="margin-bottom: 50px; margin-top:120px">
-                    <div class="container" style="height: 120px; width: 15%; background-color:var(--secondary-color);color:var(--background-color)">
-                        <span>
-                            <h2>
-                                Search
-                            </h2>
-                            <p style="font-size:20px">Discover a Convigo vehicle just moments away</p>
-                        </span>
-                    </div>
-                    <div class="container" style="height: 120px; width: 15%; background-color:var(--secondary-color);color:var(--background-color)">
-                        <span>
-                            <h2>
-                                Book
-                            </h2>
-                            <p style="font-size:20px">Select the perfect car to your liking</p>
-                        </span>
-                    </div>
-                    <div class="container" style="height: 120px; width: 15%; background-color:var(--secondary-color);color:var(--background-color)">
-                        <span>
-                            <h2>
-                                Drive
-                            </h2>
-                            <p style="font-size:20px">Activate your ride with the ConviGo app</p>
-                        </span>
+                    <div class="home-how">
+                        <img src="assets/images/Cars/Sample/home_drive.png" width="100%">
+                        <div class="home-how-content">
+                            <h2>Drive</h2>
+                            <p>Activate your ride with the ConviGo app</p>
+                        </div>
                     </div>
                 </div>
             </div>
