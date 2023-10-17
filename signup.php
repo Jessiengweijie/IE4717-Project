@@ -8,40 +8,40 @@ include "assets/php/check_login.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the form data from the POST request
-    $surname = $_POST['surname'];
-    $firstname = $_POST['firstname'];
-    $nric = $_POST['nric'];
-    $dob = $_POST['dob'];
-    $license = $_POST['license'];
+    // $surname = $_POST['surname'];
+    // $firstname = $_POST['firstname'];
+    // $nric = $_POST['nric'];
+    // $dob = $_POST['dob'];
+    // $license = $_POST['license'];
 
-    $mobile = $_POST['mobile'];
-    $email = $_POST['email'];
-    $languages = $_POST['languages'];
+    // $mobile = $_POST['mobile'];
+    // $email = $_POST['email'];
+    // $languages = $_POST['languages'];
 
-    $address = $_POST['address'];
+    // $address = $_POST['address'];
 
-    $bank = $_POST['bank'];
-    $bankacc = $_POST['bankacc'];
+    // $bank = $_POST['bank'];
+    // $bankacc = $_POST['bankacc'];
 
     // Save the form data to session variables
-    $_SESSION['surname'] = $surname;
-    $_SESSION['firstname'] = $firstname;
-    $_SESSION['nric'] = $nric;
-    $_SESSION['dob'] = $dob;
-    $_SESSION['license'] = $license;
+    // $_SESSION['surname'] = $surname;
+    // $_SESSION['firstname'] = $firstname;
+    // $_SESSION['nric'] = $nric;
+    // $_SESSION['dob'] = $dob;
+    // $_SESSION['license'] = $license;
 
-    $_SESSION['mobile'] = $mobile;
-    $_SESSION['email'] = $email;
-    $_SESSION['languages'] = $languages;
+    // $_SESSION['mobile'] = $mobile;
+    // $_SESSION['email'] = $email;
+    // $_SESSION['languages'] = $languages;
 
-    $_SESSION['address'] = $address;
+    // $_SESSION['address'] = $address;
 
-    $_SESSION['bank'] = $bank;
-    $_SESSION['bankacc'] = $bankacc;
+    // $_SESSION['bank'] = $bank;
+    // $_SESSION['bankacc'] = $bankacc;
 
     // Redirect to the 2nd page
-    header('Location: signup_confirmation.php');
-    exit;
+    // header('Location: signup_confirmation.php');
+    // exit;
 }
 
 ?>
@@ -52,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <title>Sign Up</title>
     <meta charset="utf-8">
+    <script type="text/javascript" src="assets/scripts/sign_up.js"></script>
     <link rel="stylesheet" href="assets/css/stylesheet.css">
 </head>
 
@@ -95,23 +96,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div>
                             <div class="row line">
                                 <p class="account-information-content">Surname: </p>
-                                <input class="account-information-input" type="text" name="surname">
+                                <input class="account-information-input" type="text" name="surname" id="surname" required>
+                                <span class="error" id="surnameError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">First name:</p>
-                                <input class="account-information-input" type="text" name="firstname">
+                                <input class="account-information-input" type="text" name="firstname" id="firstname" required>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">NRIC:</p>
-                                <input class="account-information-input" type="text" name="nric">
+                                <input class="account-information-input" type="text" name="nric" id="nric" required>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Date of birth:</p>
-                                <input class="account-information-date main-font" type="date" name="dob">
+                                <input class="account-information-date main-font" type="date" name="dob" id="dob" required>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">License class:</p>
-                                <select class="account-information-dropdown main-font" name="license">
+                                <select class="account-information-dropdown main-font" name="license" id="license" required>
                                     <option class="main-font" value="" hidden selected disabled>Select License Class</option>
                                     <option value="1">3</option>
                                     <option value="1">3A</option>
@@ -126,25 +128,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             <div class="row line">
                                 <p class="account-information-content">Mobile number:</p>
-                                <input class="account-information-input" type="text" name="mobile">
+                                <input class="account-information-input" type="text" name="mobile" id="mobile" required>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Email:</p>
-                                <input class="account-information-input" type="text" name="email">
+                                <input class="account-information-input" type="text" name="email" id="email" required>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Spoken language:</p>
-                                <!-- <input class="account-information-input" type="text"> -->
                                 <div class="multiselect-container account-information-dropdown" tabindex="0">
                                     <div class="selected-items" id="selectedItems">
                                     </div>
                                     <div class="multiselect-options">
-                                        <label><input type="checkbox" name="languages[]" value="English">English</label>
-                                        <label><input type="checkbox" name="languages[]" value="Chinese">Chinese</label>
-                                        <label><input type="checkbox" name="languages[]" value="Malay">Malay</label>
-                                        <label><input type="checkbox" name="languages[]" value="Tamil">Tamil</label>
-                                        <label><input type="checkbox" name="languages[]" value="Hindi">Hindi</label>
-                                        <label><input type="checkbox" name="languages[]" value="Others">Others</label>
+                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="English">English</label>
+                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="Chinese">Chinese</label>
+                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="Malay">Malay</label>
+                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="Tamil">Tamil</label>
+                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="Hindi">Hindi</label>
+                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="Others">Others</label>
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <p class="account-information-subheader">Address</p>
                         <div class="row line">
                             <p class="account-information-content">Address:</p>
-                            <input class="account-information-input" type="text" name="address">
+                            <input class="account-information-input" type="text" name="address" id="address" required>
                         </div>
                     </div>
 
@@ -165,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div>
                             <div class="row line">
                                 <p class="account-information-content">Bank name:</p>
-                                <select class="account-information-dropdown main-font" name="bank">
+                                <select class="account-information-dropdown main-font" name="bank" id="bank" required>
                                     <option value="" hidden selected disabled>Select bank</option>
                                     <option value="ANZ">ANZ</option>
                                     <option value="CIMB">CIMB</option>
@@ -180,12 +181,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Bank account number:</p>
-                                <input class="account-information-input" type="text" name="bankacc">
+                                <input class="account-information-input" type="text" name="bankacc" id="bankacc" required>
                             </div>
                         </div>
                     </div>
 
                     <input type="submit" class="save-button" value="Next">
+                    <input type="reset" class="reset-button" id="resetButton" value="Clear">
                     <!-- temp button -->
                     <!-- <a class="save-button" href="signup_confirmation.php">Next</a> -->
                     <br />

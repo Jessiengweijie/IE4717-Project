@@ -3,20 +3,20 @@ USE convigo;
 -- Import inside convigo DB
 CREATE TABLE IF NOT EXISTS car (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    category VARCHAR(50) NOT NULL,
-    type VARCHAR(50) NOT NULL,
-    brand VARCHAR(50) NOT NULL,
-    imageURL VARCHAR(50) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    type VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    imageURL VARCHAR(255) NOT NULL,
     seats INT NOT NULL,
-    fuel_type VARCHAR(50) NOT NULL,
-    boot_space VARCHAR(50) NOT NULL,
+    fuel_type VARCHAR(255) NOT NULL,
+    boot_space VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     price DECIMAL(10, 2) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS location (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
+    name VARCHAR(255) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS car_location (
     car_id INT UNSIGNED NOT NULL,
@@ -456,15 +456,24 @@ VALUES -- Car x is available at Location y
 
 CREATE TABLE IF NOT EXISTS authorized_users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS user_info (
-    id INT,
-    username VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
-    mobile VARCHAR(15),
+    id INT UNSIGNED NOT NULL PRIMARY KEY,
+    surname VARCHAR(255) NOT NULL,
+    firstname VARCHAR(255) NOT NULL,
+    nric VARCHAR(9) NOT NULL,
+    dob DATE NOT NULL,
+    license VARCHAR(255) NOT NULL,
+    mobile VARCHAR(8) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    languages VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    bank VARCHAR(255) NOT NULL,
+    bankacc VARCHAR(15) NOT NULL,
+    notification VARCHAR(255) NOT NULL,
     FOREIGN KEY (id) REFERENCES authorized_users(id)
 );
 INSERT INTO authorized_users(username, password)

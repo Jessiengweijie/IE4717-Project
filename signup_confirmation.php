@@ -22,10 +22,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $bank = $_POST['bank'];
     $bankacc = $_POST['bankacc'];
-
-    $notification = $_POST['notification'];
+    if (isset($_POST['notification']) && $_POST['notification'] != '') {
+        $notification = serialize($_POST['notification']);
+    }
     $password = $_POST['password'];
 
+
+    $queryDupe = "SELECT * FROM authorized_users WHERE username = '$email'";
+    $resultDupe = $db->query($queryDupe);
+    if ($resultDupe) {
+        // Check if any rows are returned
+        if ($resultDupe->num_rows > 0) {
+            // Duplicate found, display a warning
+            echo '<script>';
+            echo 'alert("Username already exists. Please choose a different username.");';
+            echo 'window.location.href = "signup.php";';
+            echo '</script>';
+        } else {
+            $query1 = "INSERT INTO authorized_users (username, password) VALUES ('$email', '$password')";
+            $result1 = $db->query($query1);
+
+            if ($result1) {
+                $userId = $db->insert_id;
+
+                // Step 2: Insert data into the "user_info" table
+                $query2 = "INSERT INTO user_info (id, surname, firstname, nric, dob, license, mobile, email, languages, address, bank, bankacc, notification)
+        VALUES ($userId, '$surname', '$firstname', '$nric', '$dob', '$license', '$mobile', '$email', '$languages', '$address', '$bank', '$bankacc', '$notification');";
+                $result2 = $db->query($query2);
+
+                if ($result2) {
+                    echo "Sign up is successful.";
+                    $queryLogin = 'select * from authorized_users '
+                        . "where username='$email' "
+                        . " and password='$password'";
+                    $resultLogin = $db->query($queryLogin);
+                    if ($resultLogin->num_rows > 0) {
+                        // if they are in the database register the user id
+                        $_SESSION['valid_user'] = $email;
+                        header("Location: /ConviGo"); // Redirect to the home page 
+                    }
+                } else {
+                    echo "Sign up failed, please try again.";
+                }
+            } else {
+                echo "An error has occured."; // Display the error message
+            }
+        }
+    }
 
     var_dump($_POST);
 
@@ -33,41 +76,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // header('Location: signup_confirmation.php');
     // exit;
 } else {
-    // Access the saved session variables
-    $surname = $_SESSION['surname'];
-    $firstname = $_SESSION['firstname'];
-    $nric = $_SESSION['nric'];
-    $dob = $_SESSION['dob'];
-    $license = $_SESSION['license'];
+    if (!$_SESSION) {
+        header('Location: signup.php');
+    } else {
+        // Access the saved session variables
+        $surname = $_SESSION['surname'];
+        $firstname = $_SESSION['firstname'];
+        $nric = $_SESSION['nric'];
+        $dob = $_SESSION['dob'];
+        $license = $_SESSION['license'];
 
-    $mobile = $_SESSION['mobile'];
-    $email = $_SESSION['email'];
-    $languages = $_SESSION['languages'];
-    $serializedLanguages = serialize($languages);
+        $mobile = $_SESSION['mobile'];
+        $email = $_SESSION['email'];
+        $languages = $_SESSION['languages'];
+        $serializedLanguages = serialize($languages);
 
-    $address = $_SESSION['address'];
+        $address = $_SESSION['address'];
 
-    $bank = $_SESSION['bank'];
-    $bankacc = $_SESSION['bankacc'];
-    var_dump($_SESSION);
+        $bank = $_SESSION['bank'];
+        $bankacc = $_SESSION['bankacc'];
+        var_dump(($_SESSION));
 
-    // Here, you can use the data for form submission or other actions
+        // Here, you can use the data for form submission or other actions
 
-    // Clear the session variables if needed
-    unset($_SESSION['surname']);
-    unset($_SESSION['firstname']);
-    unset($_SESSION['nric']);
-    unset($_SESSION['dob']);
-    unset($_SESSION['license']);
+        // Clear the session variables if needed
+        unset($_SESSION['surname']);
+        unset($_SESSION['firstname']);
+        unset($_SESSION['nric']);
+        unset($_SESSION['dob']);
+        unset($_SESSION['license']);
 
-    unset($_SESSION['mobile']);
-    unset($_SESSION['email']);
-    unset($_SESSION['languages']);
+        unset($_SESSION['mobile']);
+        unset($_SESSION['email']);
+        unset($_SESSION['languages']);
 
-    unset($_SESSION['address']);
+        unset($_SESSION['address']);
 
-    unset($_SESSION['bank']);
-    unset($_SESSION['bankacc']);
+        unset($_SESSION['bank']);
+        unset($_SESSION['bankacc']);
+        session_destroy();
+    }
 }
 
 ?>
