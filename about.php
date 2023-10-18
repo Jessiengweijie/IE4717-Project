@@ -106,27 +106,8 @@ include "assets/php/check_login.php";
                 </div>
                 <br />
             </div>
-
             <br />
-
         </div>
-
-        <!-- <div class="center">
-
-            <div class="flex space-evenly" style="margin-bottom: 10px;">
-                <div class="container" style="height: auto; width: 20%;">
-                    <img src="assets/images/Cars/Sample/sample_car_1.png" height="auto" width="100%" alt="Sample Car 1">
-                </div>
-                <div class="container" style="height: auto; width: 20%;">
-                    <img src="assets/images/Cars/Sample/sample_car_2.png" height="auto" width="100%" alt="Sample Car 2">
-                </div>
-                <div class="container" style="height: auto; width: 20%;">
-                    <img src="assets/images/Cars/Sample/sample_car_3.png" height="auto" width="100%" alt="Sample Car 3">
-                </div>
-            </div>
-
-        </div> -->
-
 
         <footer>
             <div class="footer-container">
@@ -139,7 +120,7 @@ include "assets/php/check_login.php";
                     <h2 class="underline">Register for our newsletter</h2>
                     <p>Get the latest news about ConviGo</p>
                     <form method="post" action="assets/php/show_post.php">
-                        <input type="email" name="email" id="email" required placeholder="your email here" style="padding: 5px 15px; border-radius: 5px;">
+                        <input type="email" name="newsletter" id="newsletter" required placeholder="your email here" style="padding: 5px 15px; border-radius: 5px;">
                         <input class="subscribe-button" type="submit" value="Subscribe">
                     </form>
                 </div>

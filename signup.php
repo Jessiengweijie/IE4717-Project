@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p class="signup-header" style="color:#fdf8e3;">Welcome to Convigo</p>
                 <p class="signup-subheader" style="color:#fdf8e3">Please fill up the form below</p>
             </div>
-            <form method="post" action="" autocomplete="off">
+            <form method="post" action="" autocomplete="off" onsubmit="return validateForm()">
                 <div class="account-information">
                     <p class="account-information-header">My Personal Information</p>
                     <div class="account-information-body">
@@ -102,14 +102,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="row line">
                                 <p class="account-information-content">First name:</p>
                                 <input class="account-information-input" type="text" name="firstname" id="firstname" required>
+                                <span class="error" id="firstnameError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">NRIC:</p>
-                                <input class="account-information-input" type="text" name="nric" id="nric" required>
+                                <input class="account-information-input" type="text" name="nric" id="nric" oninput="convertToUppercase(this)" required>
+                                <span class="error" id="nricError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Date of birth:</p>
                                 <input class="account-information-date main-font" type="date" name="dob" id="dob" required>
+                                <span class="error" id="dobError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">License class:</p>
@@ -118,6 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <option value="3">3</option>
                                     <option value="3A">3A</option>
                                 </select>
+                                <span class="error" id="licenseError"></span>
                             </div>
                         </div>
                     </div>
@@ -129,25 +133,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="row line">
                                 <p class="account-information-content">Mobile number:</p>
                                 <input class="account-information-input" type="text" name="mobile" id="mobile" required>
+                                <span class="error" id="mobileError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Email:</p>
                                 <input class="account-information-input" type="text" name="email" id="email" required>
+                                <span class="error" id="emailError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Spoken language:</p>
-                                <div class="multiselect-container account-information-dropdown" tabindex="0">
+                                <div class="multiselect-container account-information-dropdown" id="multiselectContainer" tabindex="0">
                                     <div class="selected-items" id="selectedItems">
                                     </div>
                                     <div class="multiselect-options">
-                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="English">English</label>
-                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="Chinese">Chinese</label>
-                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="Malay">Malay</label>
-                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="Tamil">Tamil</label>
-                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="Hindi">Hindi</label>
-                                        <label><input type="checkbox" name="languages[]" id="languages[]" value="Others">Others</label>
+                                        <label><input type="checkbox" name="languages[]" value="English">English</label>
+                                        <label><input type="checkbox" name="languages[]" value="Chinese">Chinese</label>
+                                        <label><input type="checkbox" name="languages[]" value="Malay">Malay</label>
+                                        <label><input type="checkbox" name="languages[]" value="Tamil">Tamil</label>
+                                        <label><input type="checkbox" name="languages[]" value="Hindi">Hindi</label>
+                                        <label><input type="checkbox" name="languages[]" value="Others">Others</label>
                                     </div>
                                 </div>
+                                <span class="error" id="languagesError"></span>
                             </div>
 
                         </div>
@@ -158,6 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="row line">
                             <p class="account-information-content">Address:</p>
                             <input class="account-information-input" type="text" name="address" id="address" required>
+                            <span class="error" id="addressError"></span>
                         </div>
                     </div>
 
@@ -178,10 +186,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <option value="Standard Chartered">Standard Chartered</option>
                                     <option value="UOB">UOB</option>
                                 </select>
+                                <span class="error" id="bankError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Bank account number:</p>
                                 <input class="account-information-input" type="text" name="bankacc" id="bankacc" required>
+                                <span class="error" id="bankaccError"></span>
                             </div>
                         </div>
                     </div>
@@ -207,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <h2 class="underline">Register for our newsletter</h2>
                     <p>Get the latest news about ConviGo</p>
                     <form method="post" action="assets/php/show_post.php">
-                        <input type="email" name="email" id="email" required placeholder="your email here" style="padding: 5px 15px; border-radius: 5px;">
+                        <input type="email" name="newsletter" id="newsletter" required placeholder="your email here" style="padding: 5px 15px; border-radius: 5px;">
                         <input class="subscribe-button" type="submit" value="Subscribe">
                     </form>
                 </div>
