@@ -2,6 +2,7 @@
 @session_start(); // Start the session if it hasn't already been started
 
 if (!isset($_SESSION['valid_user']) && $authRequired) {
+    echo '<script type="text/javascript">alert("Please log in");</script>';
     // User is not logged in, redirect to the login page or show an error message
     header("Location: /ConviGo"); // Redirect to the login page
     exit(); // Stop further execution of the current script

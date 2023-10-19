@@ -298,7 +298,7 @@ footer {
     margin: 0 50px 0 auto;
     /* border: 1px solid rgb(97, 172, 233); */
     /* border: 1px solid var(--primary-color); */
-    border:none;
+    border: none;
     border-radius: 10px;
     padding: 30px;
     align-items: center;
@@ -307,10 +307,10 @@ footer {
 
 .login-font {
     color: black;
-    font-weight:bold;
+    font-weight: bold;
     font-size: 42px;
     margin-bottom: 5px;
-    font-style:garamond;
+    font-style: garamond;
 }
 
 .login-form {
@@ -356,7 +356,7 @@ footer {
     flex-direction: row;
     align-items: center;
     min-height: 610px;
-    color:black;
+    color: black;
     font-size: 35px;
 }
 
@@ -539,7 +539,7 @@ footer {
 }
 
 .car-info-name {
-    font-size: 50px;
+    font-size: 45px;
     font-weight: bold;
     margin-bottom: 10px;
     font-family: garamond;
@@ -547,6 +547,11 @@ footer {
 
 .car-info-type {
     font-size: 30px;
+}
+
+.car-info-image img {
+    height: 800px;
+    width: 100%;
 }
 
 .car-info-desc {
@@ -561,6 +566,7 @@ footer {
 
 .car-info-desc table {
     font-size: 30px;
+    border: none;
 }
 
 .car-info-desc table td {

@@ -67,7 +67,7 @@ $carData = $resultCar->fetch_assoc();
                             </div>
                         </div>
                         <div class="car-info-image">
-                            <img src="assets/images/Cars/Brands/<?php echo $carData['brand']; ?>/<?php echo $carData['type']; ?>/<?php echo $carData['imageURL']; ?>" height="auto" width="100%" alt="<?php echo $carData['name']; ?>">
+                        <img src="assets/images/Cars/Brands/<?php echo $carData['brand']; ?>/<?php echo $carData['type']; ?>/<?php echo $carData['imageURL']; ?>" alt="<?php echo $carData['name']; ?>">
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,13 @@ $carData = $resultCar->fetch_assoc();
                         </tr>
                         <tr>
                             <td>Pick-up & Drop-off Location:</td>
-                            <td><?php echo $carData['description']; ?></td>
+                            <td>
+                            <?php
+                            $text = $carData['description'];
+                            $displayText = str_replace(";", "<br>", $text);
+                            echo $displayText;
+                            ?>
+                        </td>
                         </tr>
                     </table>
                     <div class="car-info-row">
