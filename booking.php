@@ -134,7 +134,7 @@ $carData = $resultCar->fetch_assoc();
                                 </td>
                             </tr>
                             <tr>
-                                <td>Duration:&nbsp;</td>
+                                <td>Duration (in hours):&nbsp;</td>
                                 <td>
                                     <select name="booking-duration" id="booking-duration" required>
                                         <option value="" hidden disabled selected>Select Duration</option>

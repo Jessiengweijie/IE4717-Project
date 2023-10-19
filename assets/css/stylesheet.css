@@ -42,6 +42,7 @@ body {
     font-family: var(--main-font);
 }
 
+
 .center {
     text-align: center;
 }
@@ -630,13 +631,14 @@ footer {
 }
 
 .hourly {
-    background-color: #fff;
+    background-color: var(--background-color);;
     border-radius: 5px;
+    font-size: 20px;
 }
 
 .hourly table,
 td {
-    border: none;
+    border: none;    
 }
 
 /* ******************************************** Locations page ******************************************** */
