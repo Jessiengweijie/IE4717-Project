@@ -16,32 +16,61 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $mobile = $_POST['mobile'];
     $email = $_POST['email'];
-    $languages = serialize($_POST['languages']);
+    $languages = $_POST['languages'];
 
     $address = $_POST['address'];
 
     $bank = $_POST['bank'];
     $bankacc = $_POST['bankacc'];
 
-    // Save the form data to session variables
-    $_SESSION['surname'] = $surname;
-    $_SESSION['firstname'] = $firstname;
-    $_SESSION['nric'] = $nric;
-    $_SESSION['dob'] = $dob;
-    $_SESSION['license'] = $license;
+    if (isset($_POST['notification']) && $_POST['notification'] != '') {
+        $notification = $_POST['notification'];
+    }
 
-    $_SESSION['mobile'] = $mobile;
-    $_SESSION['email'] = $email;
-    $_SESSION['languages'] = $languages;
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
 
-    $_SESSION['address'] = $address;
+    // Create an array to store user information
+    $userInfo = array(
+        'surname' => $surname,
+        'firstname' => $firstname,
+        'nric' => $nric,
+        'dob' => $dob,
+        'license' => $license,
+        'mobile' => $mobile,
+        'email' => $email,
+        'languages' => $languages,
+        'address' => $address,
+        'bank' => $bank,
+        'bankacc' => $bankacc,
+        'notification' => $notification,
+        'password' => md5($password),
+        'confirm_password' => md5($confirm_password)     
+    );
 
-    $_SESSION['bank'] = $bank;
-    $_SESSION['bankacc'] = $bankacc;
+    // Store the array in the session
+    $_SESSION['user_info'] = $userInfo;
 
-    // Redirect to the 2nd page
-    header('Location: signup_confirmation.php');
-    exit;
+    // Check Duplicate
+    $queryDupe = "SELECT * FROM authorized_users WHERE username = '$email'";
+    $resultDupe = $db->query($queryDupe);
+    if ($resultDupe) {
+        // Check if any rows are returned
+        if ($resultDupe->num_rows > 0) {
+            unset($_SESSION['user_info']['email']);
+            // Duplicate found, display a warning
+            echo '<script>';
+            echo 'alert("Username already exists. Please choose a different username.");';
+            echo 'window.location.href = "signup.php";';
+            echo '</script>';
+        } else {
+            // Redirect to the 2nd page
+            header('Location: signup_confirmation.php');
+            exit;
+        }
+    } else {
+        echo "An error has occured.";
+    }
 }
 
 ?>
@@ -96,30 +125,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div>
                             <div class="row line">
                                 <p class="account-information-content">Surname: </p>
-                                <input class="account-information-input" type="text" name="surname" id="surname" required>
+                                <input class="account-information-input" type="text" name="surname" id="surname" value="<?php echo isset($_SESSION['user_info']['surname']) ? $_SESSION['user_info']['surname'] : ''; ?>" required>
                                 <span class="error" id="surnameError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">First name:</p>
-                                <input class="account-information-input" type="text" name="firstname" id="firstname" required>
+                                <input class="account-information-input" type="text" name="firstname" id="firstname" value="<?php echo isset($_SESSION['user_info']['firstname']) ? $_SESSION['user_info']['firstname'] : ''; ?>" required>
                                 <span class="error" id="firstnameError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">NRIC:</p>
-                                <input class="account-information-input" type="text" name="nric" id="nric" oninput="convertToUppercase(this)" required>
+                                <input class="account-information-input" type="text" name="nric" id="nric" oninput="convertToUppercase(this)" value="<?php echo isset($_SESSION['user_info']['nric']) ? $_SESSION['user_info']['nric'] : ''; ?>" required>
                                 <span class="error" id="nricError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Date of birth:</p>
-                                <input class="account-information-date main-font" type="date" name="dob" id="dob" required>
+                                <input class="account-information-date main-font" type="date" name="dob" id="dob" value="<?php echo isset($_SESSION['user_info']['dob']) ? $_SESSION['user_info']['dob'] : ''; ?>" required>
                                 <span class="error" id="dobError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">License class:</p>
                                 <select class="account-information-dropdown main-font" name="license" id="license" required>
                                     <option class="main-font" value="" hidden selected disabled>Select License Class</option>
-                                    <option value="3">3</option>
-                                    <option value="3A">3A</option>
+                                    <option value="3" <?php if (isset($_SESSION['user_info']['license']) && $_SESSION['user_info']['license'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value="3A" <?php if (isset($_SESSION['user_info']['license']) && $_SESSION['user_info']['license'] == '3A') echo 'selected'; ?>>3A</option>
                                 </select>
                                 <span class="error" id="licenseError"></span>
                             </div>
@@ -132,12 +161,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             <div class="row line">
                                 <p class="account-information-content">Mobile number:</p>
-                                <input class="account-information-input" type="text" name="mobile" id="mobile" required>
+                                <input class="account-information-input" type="text" name="mobile" id="mobile" value="<?php echo isset($_SESSION['user_info']['mobile']) ? $_SESSION['user_info']['mobile'] : ''; ?>" required>
                                 <span class="error" id="mobileError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Email:</p>
-                                <input class="account-information-input" type="text" name="email" id="email" required>
+                                <input class="account-information-input" type="text" name="email" id="email" value="<?php echo isset($_SESSION['user_info']['email'] ) ? $_SESSION['user_info']['email'] : ''; ?>" required>
                                 <span class="error" id="emailError"></span>
                             </div>
                             <div class="row line">
@@ -146,12 +175,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <div class="selected-items" id="selectedItems">
                                     </div>
                                     <div class="multiselect-options">
-                                        <label><input type="checkbox" name="languages[]" value="English">English</label>
-                                        <label><input type="checkbox" name="languages[]" value="Chinese">Chinese</label>
-                                        <label><input type="checkbox" name="languages[]" value="Malay">Malay</label>
-                                        <label><input type="checkbox" name="languages[]" value="Tamil">Tamil</label>
-                                        <label><input type="checkbox" name="languages[]" value="Hindi">Hindi</label>
-                                        <label><input type="checkbox" name="languages[]" value="Others">Others</label>
+                                        <label><input type="checkbox" name="languages[]" value="English" <?php if (isset($_SESSION['user_info']['languages']) && in_array('English', $_SESSION['user_info']['languages'])) echo 'checked'; ?>>English</label>
+                                        <label><input type="checkbox" name="languages[]" value="Chinese" <?php if (isset($_SESSION['user_info']['languages']) && in_array('Chinese', $_SESSION['user_info']['languages'])) echo 'checked'; ?>>Chinese</label>
+                                        <label><input type="checkbox" name="languages[]" value="Malay" <?php if (isset($_SESSION['user_info']['languages']) && in_array('Malay', $_SESSION['user_info']['languages'])) echo 'checked'; ?>>Malay</label>
+                                        <label><input type="checkbox" name="languages[]" value="Tamil" <?php if (isset($_SESSION['user_info']['languages']) && in_array('Tamil', $_SESSION['user_info']['languages'])) echo 'checked'; ?>>Tamil</label>
+                                        <label><input type="checkbox" name="languages[]" value="Hindi" <?php if (isset($_SESSION['user_info']['languages']) && in_array('Hindi', $_SESSION['user_info']['languages'])) echo 'checked'; ?>>Hindi</label>
+                                        <label><input type="checkbox" name="languages[]" value="Others" <?php if (isset($_SESSION['user_info']['languages']) && in_array('Others', $_SESSION['user_info']['languages'])) echo 'checked'; ?>>Others</label>
                                     </div>
                                 </div>
                                 <span class="error" id="languagesError"></span>
@@ -164,7 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <p class="account-information-subheader">Address</p>
                         <div class="row line">
                             <p class="account-information-content">Address:</p>
-                            <input class="account-information-input" type="text" name="address" id="address" required>
+                            <input class="account-information-input" type="text" name="address" id="address" value="<?php echo isset($_SESSION['user_info']['address']) ? $_SESSION['user_info']['address'] : ''; ?>" required>
                             <span class="error" id="addressError"></span>
                         </div>
                     </div>
@@ -174,32 +203,78 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div>
                             <div class="row line">
                                 <p class="account-information-content">Bank name:</p>
-                                <select class="account-information-dropdown main-font" name="bank" id="bank" required>
+                                <select class="account-information-dropdown main-font" name="bank" id="bank" value="<?php echo isset($_SESSION['user_info']['bank']) ? $_SESSION['user_info']['bank'] : ''; ?>" required>
                                     <option value="" hidden selected disabled>Select bank</option>
-                                    <option value="ANZ">ANZ</option>
-                                    <option value="CIMB">CIMB</option>
-                                    <option value="Citibank">Citibank</option>
-                                    <option value="DBS">DBS</option>
-                                    <option value="HSBC">HSBC</option>
-                                    <option value="Maybank">Maybank</option>
-                                    <option value="OCBC">OCBC</option>
-                                    <option value="Standard Chartered">Standard Chartered</option>
-                                    <option value="UOB">UOB</option>
+                                    <option value="ANZ" <?php if (isset($_SESSION['user_info']['bank']) && $_SESSION['user_info']['bank'] == 'ANZ') echo 'selected'; ?>>ANZ</option>
+                                    <option value="CIMB" <?php if (isset($_SESSION['user_info']['bank']) && $_SESSION['user_info']['bank'] == 'CIMB') echo 'selected'; ?>>CIMB</option>
+                                    <option value="Citibank" <?php if (isset($_SESSION['user_info']['bank']) && $_SESSION['user_info']['bank'] == 'Citibank') echo 'selected'; ?>>Citibank</option>
+                                    <option value="DBS" <?php if (isset($_SESSION['user_info']['bank']) && $_SESSION['user_info']['bank'] == 'DBS') echo 'selected'; ?>>DBS</option>
+                                    <option value="HSBC" <?php if (isset($_SESSION['user_info']['bank']) && $_SESSION['user_info']['bank'] == 'HSBC') echo 'selected'; ?>>HSBC</option>
+                                    <option value="Maybank" <?php if (isset($_SESSION['user_info']['bank']) && $_SESSION['user_info']['bank'] == 'Maybank') echo 'selected'; ?>>Maybank</option>
+                                    <option value="OCBC" <?php if (isset($_SESSION['user_info']['bank']) && $_SESSION['user_info']['bank'] == 'OCBC') echo 'selected'; ?>>OCBC</option>
+                                    <option value="Standard Chartered" <?php if (isset($_SESSION['user_info']['bank']) && $_SESSION['user_info']['bank'] == 'Standard Chartered') echo 'selected'; ?>>Standard Chartered</option>
+                                    <option value="UOB" <?php if (isset($_SESSION['user_info']['bank']) && $_SESSION['user_info']['bank'] == 'UOB') echo 'selected'; ?>>UOB</option>
                                 </select>
                                 <span class="error" id="bankError"></span>
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Bank account number:</p>
-                                <input class="account-information-input" type="text" name="bankacc" id="bankacc" required>
+                                <input class="account-information-input" type="text" name="bankacc" id="bankacc" value="<?php echo isset($_SESSION['user_info']['bankacc']) ? $_SESSION['user_info']['bankacc'] : ''; ?>" required>
                                 <span class="error" id="bankaccError"></span>
                             </div>
                         </div>
                     </div>
 
+                    <div class="account-information-body">
+                        <p class="account-information-subheader">Notification Mode</p>
+                        <div class="signup-contact">
+                            <p>Please send me marketing and promotional materials via the following mode(s):</p>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="notification[]" value="Text Message" <?php if (isset($_SESSION['user_info']['notification']) && in_array('Text Message', $_SESSION['user_info']['notification'])) echo 'checked'; ?>>
+                                <div style="margin-left: 5px;">
+                                    Text Message
+                                </div>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="notification[]" value="Phone Call" <?php if (isset($_SESSION['user_info']['notification']) && in_array('Phone Call', $_SESSION['user_info']['notification'])) echo 'checked'; ?>>
+                                <div style="margin-left: 5px;">
+                                    Phone Call
+                                </div>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="notification[]" value="Email" <?php if (isset($_SESSION['user_info']['notification']) && in_array('Email', $_SESSION['user_info']['notification'])) echo 'checked'; ?>>
+                                <div style="margin-left: 5px;">
+                                    Email
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="account-information-body">
+                        <p class="account-information-subheader">Password</p>
+                        <div class="signup-password">
+                            <div class="left-password-section">
+                                <p>Please choose a strong password.</p>
+                                <input class="login-input" type="password" name="password" id="password" required placeholder="Password">
+                                <input class="login-input" type="password" name="confirm_password" id="confirm_password" required placeholder="Confirm Password">
+                            </div>
+                            <div class="right-password-section">
+                                <p>Your password should be</p>
+                                <ul>
+                                    <li><span class="circle red"></span>One number (0-9)</li>
+                                    <li><span class="circle red"></span>Between 8 and 20 characters long.</li>
+                                    <li><span class="circle red"></span>One lowercase letter (a-z)</li>
+                                    <li><span class="circle red"></span>One uppercase letter (A-Z)</li>
+                                    <li><span class="circle red"></span>One special character (e.g., !, @, #, $, %, etc.)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
                     <input type="submit" class="save-button" value="Next">
                     <input type="reset" class="reset-button" id="resetButton" value="Clear">
                     <!-- temp button -->
-                    <!-- <a class="save-button" href="signup_confirmation.php">Next</a> -->
+                    <a class="save-button" onclick="validateForm()">Test</a>
                     <br />
 
                 </div>

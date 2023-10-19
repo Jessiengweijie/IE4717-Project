@@ -814,7 +814,7 @@ td {
     margin-left: 5px;
     border: none;
     outline: none;
-    width: 60%;
+    width: 50%;
     font-size: 16px;
     font-family: var(--main-font);
 
@@ -896,6 +896,10 @@ td {
     margin-bottom: 30px;
 }
 
+.edit {
+    display: none;
+}
+
 /* ******************************************** Sign Up Page ******************************************** */
 .signup-header {
     font-size: 55px;
@@ -954,12 +958,11 @@ td {
 }
 
 .signup-information {
-    margin-left: 25px;
+    padding: 2%;
 }
 
-.signup-contact {
-    margin-bottom: 100px;
-}
+/* .signup-contact {
+} */
 
 .signup-password {
     display: flex;
@@ -971,14 +974,12 @@ td {
     width: 25%;
     display: flex;
     flex-direction: column;
-    padding: 20px;
 }
 
 .right-password-section {
     width: 40%;
     display: flex;
     flex-direction: column;
-    padding: 20px;
 }
 
 .right-password-section ul {

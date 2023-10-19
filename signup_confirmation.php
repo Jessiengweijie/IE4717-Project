@@ -6,39 +6,32 @@ include "assets/php/check_login.php";
 
 @session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the form data from the POST request
-    $surname = $_POST['surname'];
-    $firstname = $_POST['firstname'];
-    $nric = $_POST['nric'];
-    $dob = $_POST['dob'];
-    $license = $_POST['license'];
 
-    $mobile = $_POST['mobile'];
-    $email = $_POST['email'];
-    $languages = $_POST['languages'];
+if (!$_SESSION) {
+    // header('Location: signup.php');
+} else {
+    // Retrieve the user information from the session
+    $userInfo = $_SESSION['user_info'];
 
-    $address = $_POST['address'];
+    // Access individual elements of the array
+    $surname = $userInfo['surname'];
+    $firstname = $userInfo['firstname'];
+    $nric = $userInfo['nric'];
+    $dob = $userInfo['dob'];
+    $license = $userInfo['license'];
+    $mobile = $userInfo['mobile'];
+    $email = $userInfo['email'];
+    $languages = serialize($userInfo['languages']);
+    $address = $userInfo['address'];
+    $bank = $userInfo['bank'];
+    $bankacc = $userInfo['bankacc'];
+    $notification = serialize($userInfo['notification']);
+    $password = $userInfo['password'];
 
-    $bank = $_POST['bank'];
-    $bankacc = $_POST['bankacc'];
-    if (isset($_POST['notification']) && $_POST['notification'] != '') {
-        $notification = serialize($_POST['notification']);
-    }
-    $password = $_POST['password'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-
-    $queryDupe = "SELECT * FROM authorized_users WHERE username = '$email'";
-    $resultDupe = $db->query($queryDupe);
-    if ($resultDupe) {
-        // Check if any rows are returned
-        if ($resultDupe->num_rows > 0) {
-            // Duplicate found, display a warning
-            echo '<script>';
-            echo 'alert("Username already exists. Please choose a different username.");';
-            echo 'window.location.href = "signup.php";';
-            echo '</script>';
-        } else {
+        // Check if the checkbox is checked
+        if (isset($_POST['accept-terms-checkbox'])) {
             $query1 = "INSERT INTO authorized_users (username, password) VALUES ('$email', '$password')";
             $result1 = $db->query($query1);
 
@@ -58,6 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $resultLogin = $db->query($queryLogin);
                     if ($resultLogin->num_rows > 0) {
                         // if they are in the database register the user id
+                        // Clear the session variables if needed
+                        unset($_SESSION['user_info']);
                         $_SESSION['valid_user'] = $email;
                         header("Location: /ConviGo"); // Redirect to the home page 
                     }
@@ -65,48 +60,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "Sign up failed, please try again.";
                 }
             } else {
-                echo "An error has occured."; // Display the error message
+                echo "An error has occured.";
             }
+        } else {
+            // Checkbox is not checked
+            echo "<script>";
+            echo "alert('Please accept the terms and conditions to continue.')";
+            echo "</script>";
         }
     }
-} else {
-    if (!$_SESSION) {
-        header('Location: signup.php');
-    } else {
-        // Access the saved session variables
-        $surname = $_SESSION['surname'];
-        $firstname = $_SESSION['firstname'];
-        $nric = $_SESSION['nric'];
-        $dob = $_SESSION['dob'];
-        $license = $_SESSION['license'];
-
-        $mobile = $_SESSION['mobile'];
-        $email = $_SESSION['email'];
-        $languages = $_SESSION['languages'];
-
-        $address = $_SESSION['address'];
-
-        $bank = $_SESSION['bank'];
-        $bankacc = $_SESSION['bankacc'];
-
-        // Clear the session variables if needed
-        unset($_SESSION['surname']);
-        unset($_SESSION['firstname']);
-        unset($_SESSION['nric']);
-        unset($_SESSION['dob']);
-        unset($_SESSION['license']);
-
-        unset($_SESSION['mobile']);
-        unset($_SESSION['email']);
-        unset($_SESSION['languages']);
-
-        unset($_SESSION['address']);
-
-        unset($_SESSION['bank']);
-        unset($_SESSION['bankacc']);
-        session_destroy();
-    }
 }
+
 
 ?>
 
@@ -153,78 +117,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <form method="post" action="">
                 <div class="signup-confirmation">
-                    <div class="signup-box-scroll">
-                        <?php include('assets/text/tnc.txt') ?>
-                        <!-- Add your terms and conditions text here -->
-                    </div>
+
 
                     <div class="signup-box">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="accept-terms-checkbox">
-                            <div class="signup-box" style="width: 95%;">
-                                <?php include('assets/text/disclaimer.txt') ?>
-                            </div>
-                        </label>
+
                         <div class="signup-information">
-                            <div class="signup-contact">
-                                <p>Please send me marketing and promotional materials via the following mode(s):</p>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="notification[]" value="Text Message">
-                                    <div style="margin-left: 5px;">
-                                        Text Message
-                                    </div>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="notification[]" value="Phone Call">
-                                    <div style="margin-left: 5px;">
-                                        Phone Call
-                                    </div>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="notification[]" value="Email">
-                                    <div style="margin-left: 5px;">
-                                        Email
-                                    </div>
-                                </label>
+                            <div class="signup-box-scroll">
+                                <?php include('assets/text/tnc.txt') ?>
+                                <!-- Add your terms and conditions text here -->
                             </div>
-                            <div class="signup-password">
-                                <div class="left-password-section">
-                                    <p>Please choose a strong password.</p>
-                                    <input class="login-input" type="password" name="password" id="password" required placeholder="Password">
-                                    <input class="login-input" type="password" name="confirm_password" id="confirm_password" required placeholder="Confirm Password">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="accept-terms-checkbox" id="accept-terms-checkbox">
+                                <div class="signup-box-scroll" style="width: 95%;">
+                                    <?php include('assets/text/disclaimer.txt') ?>
                                 </div>
-                                <div class="right-password-section">
-                                    <p>Your password should be</p>
-                                    <ul>
-                                        <li><span class="circle red"></span>One number (0-9)</li>
-                                        <li><span class="circle red"></span>Between 8 and 20 characters long.</li>
-                                        <li><span class="circle red"></span>One lowercase letter (a-z)</li>
-                                        <li><span class="circle red"></span>One uppercase letter (A-Z)</li>
-                                        <li><span class="circle red"></span>One special character (e.g., !, @, #, $, %, etc.)</li>
-                                    </ul>
-                                </div>
-                            </div>
-
+                            </label>
                         </div>
-                        <input type="text" hidden name="surname" value="<?php echo $surname ?>">
-                        <input type="text" hidden name="firstname" value="<?php echo $firstname ?>">
-                        <input type="text" hidden name="nric" value="<?php echo $nric ?>">
-                        <input type="text" hidden name="dob" value="<?php echo $dob ?>">
-                        <input type="text" hidden name="license" value="<?php echo $license ?>">
-
-                        <input type="text" hidden name="mobile" value="<?php echo $mobile ?>">
-                        <input type="text" hidden name="email" value="<?php echo $email ?>">
-                        <input type="text" hidden name="languages" value="<?php echo htmlspecialchars($languages) ?>">
-
-                        <input type="text" hidden name="address" value="<?php echo $address ?>">
-
-                        <input type="text" hidden name="bank" value="<?php echo $bank ?>">
-                        <input type="text" hidden name="bankacc" value="<?php echo $bankacc ?>">
-
                         <input type="submit" class="save-button" value="Sign up!">
                     </div>
                 </div>
-
 
             </form>
         </div>
