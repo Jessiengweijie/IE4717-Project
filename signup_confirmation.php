@@ -51,9 +51,10 @@ if (!$_SESSION) {
                     $resultLogin = $db->query($queryLogin);
                     if ($resultLogin->num_rows > 0) {
                         // if they are in the database register the user id
-                        // Clear the session variables if needed
+                        $row = $resultLogin->fetch_assoc();
+                        $id = $row['id'];
                         unset($_SESSION['user_info']);
-                        $_SESSION['valid_user'] = $email;
+                        $_SESSION['valid_user'] = $id;
                         header("Location: /ConviGo"); // Redirect to the home page 
                     }
                 } else {

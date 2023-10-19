@@ -84,7 +84,6 @@ function filter(location, name, category, type, brand) {
     }
 
     // Navigate to the URL
-    console.log(url)
     window.location.href = url;
 }
 

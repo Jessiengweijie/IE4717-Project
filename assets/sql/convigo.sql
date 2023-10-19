@@ -474,7 +474,7 @@ CREATE TABLE IF NOT EXISTS user_info (
     FOREIGN KEY (id) REFERENCES authorized_users(id)
 );
 INSERT INTO authorized_users(id, username, password)
-VALUES (1, 'test', '123');
+VALUES (1, 'test@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
 INSERT INTO user_info(
         id,
         surname,
@@ -498,10 +498,10 @@ VALUES (
         '1999-7-13',
         '3',
         '91234567',
-        'test',
+        'test@gmail.com',
         'a:6:{i:0;s:7:"English";i:1;s:7:"Chinese";i:2;s:5:"Malay";i:3;s:5:"Tamil";i:4;s:5:"Hindi";i:5;s:6:"Others";}',
         'NTU South Spine Toilet',
         'DBS',
-        '1234567890',
+        '123456789',
         'a:3:{i:0;s:12:"Text Message";i:1;s:10:"Phone Call";i:2;s:5:"Email";}'
     )

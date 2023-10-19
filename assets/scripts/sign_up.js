@@ -232,7 +232,7 @@ function emailChk(event) {
 function languagesChk() {
     // Get the target node of the event
     var languages = document.querySelectorAll('input[name="languages[]"]:checked');
-    var languagesError = document.getElementById("languagesError"); console.log(languages, languages.length)
+    var languagesError = document.getElementById("languagesError");
     // Test
     if (languages.length === 0) {
         alert("Please select at least one language@@.");
@@ -364,35 +364,29 @@ function convertToUppercase(input) {
 
 // Edit button
 function toggleReadOnly() {
-    console.log('hi')
     const editContent = document.querySelectorAll('.edit');
     const originalContent = document.querySelectorAll('.original');
-    editableFields.forEach(function (input) {
-        input.readOnly = !input.readOnly;
-    });
 
-    if (editableFields[0].readOnly) {
+    if (toggleButton.value == 1) {
         toggleButton.textContent = "Enable Edit";
         editContent.forEach(function (element) {
             element.style.display = 'none';
         });
         originalContent.forEach(function (element) {
-            element.style.display = 'flex';
+            element.style.display = 'block';
         });
+        document.getElementById('submitButton').setAttribute('disabled', 'disabled');
+        toggleButton.value = 0;
     } else {
         toggleButton.textContent = "Disable Edit";
         editContent.forEach(function (element) {
-            element.style.display = 'flex';
+            element.style.display = 'block';
         });
         originalContent.forEach(function (element) {
             element.style.display = 'none';
         });
+        document.getElementById('submitButton').removeAttribute('disabled');
+        toggleButton.value = 1;
     }
-
-
-
-
-
-
 }
 

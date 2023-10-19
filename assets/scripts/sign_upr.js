@@ -45,8 +45,9 @@ if (resetButton) {
     });
 }
 
-toggleButton.addEventListener("click", toggleReadOnly);
-
+if (toggleButton) {
+    toggleButton.addEventListener("click", toggleReadOnly);
+}
 
 //***********************************************************************************************************************************//
 // Form validation

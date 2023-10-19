@@ -44,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'bank' => $bank,
         'bankacc' => $bankacc,
         'notification' => $notification,
-        'password' => md5($password),
-        'confirm_password' => md5($confirm_password)     
+        'password' => sha1($password),
+        'confirm_password' => sha1($confirm_password)     
     );
 
     // Store the array in the session
@@ -274,9 +274,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="submit" class="save-button" value="Next">
                     <input type="reset" class="reset-button" id="resetButton" value="Clear">
                     <!-- temp button -->
-                    <a class="save-button" onclick="validateForm()">Test</a>
-                    <br />
-
+                    <button type="button" class="save-button" onclick="validateForm()">Test</button>
                 </div>
             </form>
         </div>

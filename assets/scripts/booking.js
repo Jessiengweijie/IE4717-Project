@@ -27,8 +27,6 @@ function generateInfo() {
         window.location.href = 'cars.php';
     }
 
-    console.log('Location:', locationParam);
-    console.log('Car:', carParam,);
 }
 
 
@@ -112,5 +110,4 @@ function bookNow() {
     document.getElementById("booking-location").value = locationParam;
     document.getElementById("booking-car").value = carParam;
 
-    console.log(locationParam, carParam)
 }

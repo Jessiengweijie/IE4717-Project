@@ -1,7 +1,7 @@
 <?php
 @$loggedInUserID = $_SESSION['valid_user'];
 
-$query = "SELECT * FROM user_info WHERE email = '$loggedInUserID'";
+$query = "SELECT * FROM user_info WHERE id = '$loggedInUserID'";
 
 $result = $db->query($query);
 
@@ -48,5 +48,4 @@ if ($result) {
     echo "Error executing the query: " . $db->error;
 }
 
-var_dump($_SESSION['user_info'],$userInfo);
 ?>
