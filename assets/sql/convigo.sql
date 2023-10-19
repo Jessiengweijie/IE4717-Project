@@ -37,8 +37,7 @@ INSERT INTO car (
         description,
         price
     )
-VALUES 
--- ************************************************* AUDI *************************************************
+VALUES -- ************************************************* AUDI *************************************************
     (
         'Audi Q3',
         'Premium',
@@ -294,7 +293,7 @@ VALUES
         'Block 85 Bedok North Road, Level 6; Block 402 Punggol Place, Level 2',
         22.00
     ),
-     -- ************************************************* Honda *************************************************
+    -- ************************************************* Honda *************************************************
     (
         'Honda Civic Sedan',
         'Standard',
@@ -368,7 +367,7 @@ VALUES
         23.00
     );
 INSERT INTO location(name)
-VALUES('Ang Mo Kio'), 
+VALUES('Ang Mo Kio'),
     ('Bedok'),
     ('Bukit Batok'),
     ('Harbourfront'),
@@ -419,7 +418,7 @@ VALUES -- Car x is available at Location y
     (12, 9),
     (13, 8),
     (13, 10),
-    (14, 7), 
+    (14, 7),
     (14, 8),
     (15, 5),
     (15, 6),
@@ -453,13 +452,11 @@ VALUES -- Car x is available at Location y
     (26, 10),
     (27, 5),
     (27, 9);
-
 CREATE TABLE IF NOT EXISTS authorized_users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL
 );
-
 CREATE TABLE IF NOT EXISTS user_info (
     id INT UNSIGNED NOT NULL PRIMARY KEY,
     surname VARCHAR(255) NOT NULL,
@@ -476,5 +473,35 @@ CREATE TABLE IF NOT EXISTS user_info (
     notification VARCHAR(255) NOT NULL,
     FOREIGN KEY (id) REFERENCES authorized_users(id)
 );
-INSERT INTO authorized_users(username, password)
-VALUES ('test', '123')
+INSERT INTO authorized_users(id, username, password)
+VALUES (1, 'test', '123');
+INSERT INTO user_info(
+        id,
+        surname,
+        firstname,
+        nric,
+        dob,
+        license,
+        mobile,
+        email,
+        languages,
+        address,
+        bank,
+        bankacc,
+        notification
+    )
+VALUES (
+        1,
+        'test',
+        'test',
+        'S1234567J',
+        '1999-7-13',
+        '3',
+        '91234567',
+        'test',
+        'a:6:{i:0;s:7:"English";i:1;s:7:"Chinese";i:2;s:5:"Malay";i:3;s:5:"Tamil";i:4;s:5:"Hindi";i:5;s:6:"Others";}',
+        'NTU South Spine Toilet',
+        'DBS',
+        '1234567890',
+        'a:3:{i:0;s:12:"Text Message";i:1;s:10:"Phone Call";i:2;s:5:"Email";}'
+    )
