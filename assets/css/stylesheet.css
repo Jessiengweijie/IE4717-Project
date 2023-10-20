@@ -599,6 +599,21 @@ footer {
     margin-bottom: 20px;
 }
 
+.booking input,
+select {
+    border-radius: 10px;
+    padding: 2px 5px;
+    border: 1px;
+}
+
+.booking input {
+    cursor: text;
+}
+
+.booking select {
+    cursor: pointer;
+}
+
 .car-info-selected {
     display: flex;
     flex-direction: row;

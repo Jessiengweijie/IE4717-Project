@@ -474,7 +474,11 @@ CREATE TABLE IF NOT EXISTS user_info (
     FOREIGN KEY (id) REFERENCES authorized_users(id)
 );
 INSERT INTO authorized_users(id, username, password)
-VALUES (1, 'test@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
+VALUES (
+        1,
+        'test@gmail.com',
+        '40bd001563085fc35165329ea1ff5c5ecbdbbeef'
+    );
 INSERT INTO user_info(
         id,
         surname,
@@ -504,4 +508,8 @@ VALUES (
         'DBS',
         '123456789',
         'a:3:{i:0;s:12:"Text Message";i:1;s:10:"Phone Call";i:2;s:5:"Email";}'
-    )
+    );
+CREATE TABLE IF NOT EXISTS newsletter (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE
+)
