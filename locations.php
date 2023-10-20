@@ -58,7 +58,7 @@ if ($resultLocation->num_rows > 0) {
 
             <div class="location-query">
                 <form method="post" action="assets/php/mail.php">
-                    <p class="location-query-subheader">Need more cars in your location? Submit our form below.</p>
+                    <p class="location-query-subheader">Need more cars in your location? Submit your request below.</p>
                     <textarea class="location-query-form" name="location-query-form" id="location-query-form" required></textarea>
                     <input type="submit" class="submit-button" value="Submit">
                 </form>

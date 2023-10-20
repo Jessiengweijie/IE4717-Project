@@ -8,7 +8,7 @@ include "assets/php/fetch_user_info.php";
         </h1>
     </a>
     <?php if (isset($userInfo['firstname'])) {
-        echo 'Welcome ' . $userInfo['firstname'] . ' ' . $userInfo['surname'] . '';
+        echo 'Welcome, ' . $userInfo['firstname'] . ' ' . $userInfo['surname'] . '!';
     } ?>
     <nav class="navbar">
         <b>

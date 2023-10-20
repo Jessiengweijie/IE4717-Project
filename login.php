@@ -40,7 +40,6 @@ include "assets/php/fetch_user_info.php";
                     </div>
                 </div>
 
-
                 <!-- <a class="book-now-button" href="cars.php">Book Now</a>  -->
             </div>
 
