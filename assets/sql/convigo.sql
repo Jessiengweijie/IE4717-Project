@@ -496,8 +496,8 @@ INSERT INTO user_info(
     )
 VALUES (
         1,
-        'test',
-        'test',
+        'Budidharma',
+        'Alessandro',
         'S1234567J',
         '1999-7-13',
         '3',
