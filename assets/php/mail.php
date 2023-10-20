@@ -1,8 +1,8 @@
 <?php
 include "dbconnect.php";
 @$newsletter = $_POST['newsletter'];
-@$faq = $_POST['faq-query-form'];
 @$location = $_POST['location-query-form'];
+@$faq = $_POST['faq-query-form'];
 
 if ($newsletter) {
     // Check Duplicate
@@ -65,6 +65,34 @@ if ($newsletter) {
     }
 }
 
+if ($location) {
+    $to      = 'ConviGo@localhost';
+    $subject = 'Location Feedback';
+    $message = $location;
+    $headers = 'From: noreply@convigo.com' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $subject, $message, $headers);
+    echo '<script>';
+    echo 'alert("Thank you for your valuable feedback! We appreciate your input. Our team will review your request, and we\'ll work towards adding more cars in your location. We aim to provide the best car rental experience for our customers.");';
+    echo 'window.history.back();';
+    echo '</script>';
+}
+
+if ($faq) {
+    $to      = 'ConviGo@localhost';
+    $subject = 'FAQ Feedback';
+    $message = $faq;
+    $headers = 'From: noreply@convigo.com' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $subject, $message, $headers);
+    echo '<script>';
+    echo 'alert("Thank you for your question! We couldn\'t find an answer in our existing FAQ, but we appreciate your input. Our team will review your question, and we will work to provide a response as soon as possible. Your questions help us improve and expand our knowledge base. We value your curiosity and aim to offer the best answers to our customers.");';
+    echo 'window.history.back();';
+    echo '</script>';
+}
+
 
 
 // Format
@@ -77,5 +105,4 @@ if ($newsletter) {
 
 // mail($to, $subject, $message, $headers);
 // echo ("mail sent to : " . $to);
-
 ?>

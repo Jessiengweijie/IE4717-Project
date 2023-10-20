@@ -24,18 +24,18 @@ include "assets/php/fetch_user_info.php";
                 <p class="faq-header">FAQ</p>
                 <div class="faq-body">
                     <a class="faq-subheader" id="faq-getting_started" onclick="toggleContent('faq-getting_started-content')">Getting Started</a>
-                        <!-- <div class="faq-getting_started-content hidden" id="faq-getting_started-content"> -->
-                        <div class="faq-getting_started-content " id="faq-getting_started-content">
-                            <ul>
-                                <li class="faq-list" onclick="toggleContent('answer1')">
-                                    How do I sign up?
-                                    <div class="hidden faq-answer" id="answer1"><br>Simply click on the 'Sign Up' option in the navigation bar at the top. Follow the prompts to provide necessary details like your name, IC, email, and more.</div><br>
-                                </li>
-                                <li class="faq-list" onclick="toggleContent('answer2')"> What are the requirements to register?
-                                    <div class="hidden faq-answer" id="answer2"><br>You'll need a valid Class 3 or 3A driving license.</div>
-                                </li>
-                            </ul>
-                        </div>
+                    <!-- <div class="faq-getting_started-content hidden" id="faq-getting_started-content"> -->
+                    <div class="faq-getting_started-content " id="faq-getting_started-content">
+                        <ul>
+                            <li class="faq-list" onclick="toggleContent('answer1')">
+                                How do I sign up?
+                                <div class="hidden faq-answer" id="answer1"><br>Simply click on the 'Sign Up' option in the navigation bar at the top. Follow the prompts to provide necessary details like your name, IC, email, and more.</div><br>
+                            </li>
+                            <li class="faq-list" onclick="toggleContent('answer2')"> What are the requirements to register?
+                                <div class="hidden faq-answer" id="answer2"><br>You'll need a valid Class 3 or 3A driving license.</div>
+                            </li>
+                        </ul>
+                    </div>
 
                 </div>
                 <div class="faq-body">
@@ -118,10 +118,11 @@ include "assets/php/fetch_user_info.php";
             </div>
 
             <div class="faq-query center">
-                <!-- <p class="faq-query-header">Your question is not here?</p> -->
-                <p class="faq-query-subheader">Your question is not here? Submit your request form below.</p>
-                <textarea class="faq-query-form" name="faq-query-form" id="faq-query-form"></textarea>
-                <input type="submit" class="submit-button" value="Submit">
+                <form method="post" action="assets/php/mail.php">
+                    <p class="faq-query-subheader">Your question is not here? Submit your request form below.</p>
+                    <textarea class="faq-query-form" name="faq-query-form" id="faq-query-form"></textarea>
+                    <input type="submit" class="submit-button" value="Submit">
+                </form>
             </div>
 
         </div>
