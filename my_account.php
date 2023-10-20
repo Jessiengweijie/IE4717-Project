@@ -352,7 +352,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <button type="button" class="edit-button" id="toggleButton" value="0">Enable Edit</button>
                         <input type="submit" class="save-button" value="Save" id="submitButton" disabled>
                         <!-- temp button -->
-                        <button type="button" class="save-button" onclick="validateForm()">Test</button>
+                        <!-- <button type="button" class="save-button" onclick="validateForm()">Test</button> -->
                     </div>
 
                 </div>

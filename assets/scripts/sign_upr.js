@@ -62,6 +62,9 @@ var languagesNode = document.querySelectorAll('input[name="languages[]"]');
 var addressNode = document.getElementById("address");
 var bankNode = document.getElementById("bank");
 var bankaccNode = document.getElementById("bankacc");
+var passwordNode = document.getElementById("password");
+var confirm_passwordNode = document.getElementById("confirm_password");
+
 
 surnameNode.addEventListener("change", surnameChk, false);
 firstnameNode.addEventListener("change", firstnameChk, false);
@@ -76,6 +79,17 @@ languagesNode.forEach(function (checkbox) {
 addressNode.addEventListener("change", addressChk, false);
 bankNode.addEventListener("change", bankChk, false);
 bankaccNode.addEventListener("change", bankaccChk, false);
+
+// Create an array of your password check functions
+const passwordCheckFunctions = [passwordChk1, passwordChk2, passwordChk3, passwordChk4, passwordChk5];
+// Add the event listener for each function in the array
+passwordCheckFunctions.forEach(function (checkFunction) {
+    passwordNode.addEventListener("input", checkFunction, false);
+});
+confirm_passwordNode.addEventListener("change", confirm_passwordChk, false);
+
+
+
 
 //***********************************************************************************************************************************//
 

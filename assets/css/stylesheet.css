@@ -160,10 +160,11 @@ body {
     padding: 5px 15px;
     background-color: var(--red);
     color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     text-decoration: none;
     cursor: pointer;
     width: max-content;
+    border-width: 1px;
 }
 
 .reset-button:hover {
@@ -1000,12 +1001,5 @@ td {
     border-radius: 50%;
     margin-right: 5px;
     display: inline-block;
-}
-
-.green {
-    background-color: green;
-}
-
-.red {
-    background-color: red;
+    background-color: #cccccc;
 }

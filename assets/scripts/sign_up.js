@@ -6,20 +6,16 @@ var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 var addressRegex = /^[\w\d\s\.,#\-]{10,}$/;
 var bankaccRegex = /^\d{7,9}$/;
 
-var surnameChecker = 0;
-var firstnameChecker = 0;
-var nricChecker = 0;
-var dobChecker = 0;
-var licenseChecker = 0;
-
-var mobileChecker = 0;
-var emailChecker = 0;
-var languagesChecker = 0;
-
-var addressChecker = 0;
-
-var bankChecker = 0;
-var bankaccChecker = 0;
+// At least one digit (0-9):
+var passwordRegex1 = /^(?=.*\d).+/;
+// At least one lowercase letter (a-z):
+var passwordRegex2 = /^(?=.*[a-z]).+/;
+// At least one uppercase letter (A-Z):
+var passwordRegex3 = /^(?=.*[A-Z]).+/;
+// At least one special character (e.g., !, @, #, $, %, etc.):
+var passwordRegex4 = /^(?=.*[!@#\$%\^&\*]).+/;
+// Between 8 and 20 characters long:
+var passwordRegex5 = /^.{8,20}$/;
 
 function surnameChk(event) {
     if (event == 'check') {
@@ -321,6 +317,161 @@ function bankaccChk(event) {
     }
 }
 
+function passwordChk1(event) {
+    const circleElement = document.getElementById('passwordRegex1');
+    if (event == 'check') {
+        var password = document.getElementById("password");
+    } else {
+        // Get the target node of the event
+        var password = event.currentTarget;
+    }
+
+    // Test the Regex
+    var pos = password.value.search(passwordRegex1);
+    if (pos != 0) {
+
+        circleElement.style.backgroundColor = 'red';
+        return false;
+    } else {
+        circleElement.style.backgroundColor = 'green';
+        return true;
+    }
+}
+
+function passwordChk2(event) {
+    const circleElement = document.getElementById('passwordRegex2');
+    if (event == 'check') {
+        var password = document.getElementById("password");
+    } else {
+        // Get the target node of the event
+        var password = event.currentTarget;
+    }
+
+    // Test the Regex
+    var pos = password.value.search(passwordRegex2);
+    if (pos != 0) {
+
+        circleElement.style.backgroundColor = 'red';
+        return false;
+    } else {
+        circleElement.style.backgroundColor = 'green';
+        return true;
+    }
+}
+
+function passwordChk3(event) {
+    const circleElement = document.getElementById('passwordRegex3');
+    if (event == 'check') {
+        var password = document.getElementById("password");
+    } else {
+        // Get the target node of the event
+        var password = event.currentTarget;
+    }
+
+    // Test the Regex
+    var pos = password.value.search(passwordRegex3);
+    if (pos != 0) {
+
+        circleElement.style.backgroundColor = 'red';
+        return false;
+    } else {
+        circleElement.style.backgroundColor = 'green';
+        return true;
+    }
+}
+
+function passwordChk4(event) {
+    const circleElement = document.getElementById('passwordRegex4');
+    if (event == 'check') {
+        var password = document.getElementById("password");
+    } else {
+        // Get the target node of the event
+        var password = event.currentTarget;
+    }
+
+    // Test the Regex
+    var pos = password.value.search(passwordRegex4);
+    if (pos != 0) {
+
+        circleElement.style.backgroundColor = 'red';
+        return false;
+    } else {
+        circleElement.style.backgroundColor = 'green';
+        return true;
+    }
+}
+
+function passwordChk5(event) {
+    const circleElement = document.getElementById('passwordRegex5');
+    if (event == 'check') {
+        var password = document.getElementById("password");
+    } else {
+        // Get the target node of the event
+        var password = event.currentTarget;
+    }
+
+    // Test the Regex
+    var pos = password.value.search(passwordRegex5);
+    if (pos != 0) {
+        circleElement.style.backgroundColor = 'red';
+        return false;
+    } else {
+        circleElement.style.backgroundColor = 'green';
+        return true;
+    }
+}
+
+function passwordChk() {
+    const passwordError = "The Password you entered (" + password.value +
+        ") is not in the correct format. \n" +
+        "Please ensure it follows this format: \n" +
+        "- At least one number (0-9). \n" +
+        "- At least one lowercase letter (a-z). \n" +
+        "- At least one uppercase letter (A-Z). \n" +
+        "- At least one special character (e.g., !, @, #, $, %, etc.). \n" +
+        "- At least 8 and at most 20 characters long.";
+    const passwordCheckFunctions = [passwordChk1, passwordChk2, passwordChk3, passwordChk4, passwordChk5];
+    let allChecksPassed = true;
+
+    for (const checkFunction of passwordCheckFunctions) {
+        if (!checkFunction('check')) {
+            allChecksPassed = false;
+            break;
+        }
+    }
+
+    if (!allChecksPassed) {
+        alert(passwordError);
+        password.focus();
+        password.select();
+        return false;
+    } else {
+        return true;
+    }
+
+}
+
+function confirm_passwordChk() {
+    var password = document.getElementById("password");
+    var confirm_password = document.getElementById("confirm_password");
+    var confirm_passwordError = document.getElementById("confirm_passwordError");
+
+    // Test
+    if (confirm_password.value !== password.value) { console.log(confirm_password.value,password.value)
+        alert("Your passwords do not match.");
+        confirm_passwordError.textContent = 'Your passwords do not match.';
+        confirm_password.focus();
+        confirm_password.select();
+        return false;
+    } else {
+        confirm_passwordError.textContent = '';
+        return true;
+    }
+}
+
+
+
+
 function validateForm() {
     if (!surnameChk("check")) {
         return false;
@@ -353,6 +504,12 @@ function validateForm() {
         return false;
     }
     if (!bankaccChk("check")) {
+        return false;
+    }
+    if (!passwordChk()) {
+        return false;
+    }
+    if (!confirm_passwordChk()) {
         return false;
     }
     return true;

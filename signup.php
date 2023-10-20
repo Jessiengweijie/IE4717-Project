@@ -256,15 +256,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <p>Please choose a strong password.</p>
                                 <input class="login-input" type="password" name="password" id="password" required placeholder="Password">
                                 <input class="login-input" type="password" name="confirm_password" id="confirm_password" required placeholder="Confirm Password">
+                                <span class="error" id="confirm_passwordError" style="width: 100%;"></span>
                             </div>
                             <div class="right-password-section">
-                                <p>Your password should be</p>
+                                <p>Your password should meet the following criteria:</p>
                                 <ul>
-                                    <li><span class="circle red"></span>One number (0-9)</li>
-                                    <li><span class="circle red"></span>Between 8 and 20 characters long.</li>
-                                    <li><span class="circle red"></span>One lowercase letter (a-z)</li>
-                                    <li><span class="circle red"></span>One uppercase letter (A-Z)</li>
-                                    <li><span class="circle red"></span>One special character (e.g., !, @, #, $, %, etc.)</li>
+                                    <li><span class="circle" id="passwordRegex1"></span>At least one number (0-9).</li>
+                                    <li><span class="circle" id="passwordRegex2"></span>At least one lowercase letter (a-z).</li>
+                                    <li><span class="circle" id="passwordRegex3"></span>At least one uppercase letter (A-Z).</li>
+                                    <li><span class="circle" id="passwordRegex4"></span>At least one special character (e.g., !, @, #, $, %, etc.).</li>
+                                    <li><span class="circle" id="passwordRegex5"></span>At least 8 and at most 20 characters long.</li>
                                 </ul>
                             </div>
                         </div>
@@ -274,7 +275,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="submit" class="save-button" value="Next">
                     <input type="reset" class="reset-button" id="resetButton" value="Clear">
                     <!-- temp button -->
-                    <button type="button" class="save-button" onclick="validateForm()">Test</button>
+                    <!-- <button type="button" class="save-button" onclick="validateForm()">Test</button> -->
                 </div>
             </form>
         </div>
