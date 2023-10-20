@@ -173,10 +173,7 @@ body {
 
 /* ******************************************** Style the header ******************************************** */
 header {
-    /* position: fixed;
-    top: 0; */
-    /*future development: to make top navbar stick to top*/
-
+    position: relative;
     width: 100%;
     background-color: var(--header-footer-color);
     color: #fff;
@@ -187,7 +184,6 @@ header {
     z-index: 1000;
     font-family: 'georgia';
     font-style: italic;
-    /* Set a high z-index to ensure it appears above other content */
 }
 
 .logo {
@@ -632,14 +628,15 @@ footer {
 }
 
 .hourly {
-    background-color: var(--background-color);;
+    background-color: var(--background-color);
+    ;
     border-radius: 5px;
     font-size: 20px;
 }
 
 .hourly table,
 td {
-    border: none;    
+    border: none;
 }
 
 /* ******************************************** Locations page ******************************************** */

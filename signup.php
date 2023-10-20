@@ -3,8 +3,14 @@
 $authRequired = 0;
 include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
+include "assets/php/fetch_user_info.php";
 
 @session_start();
+
+if ($_SESSION['valid_user']) {
+    // Check if logged in and redirect to home
+    header('Location: /Convigo');
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the form data from the POST request
@@ -45,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'bankacc' => $bankacc,
         'notification' => $notification,
         'password' => sha1($password),
-        'confirm_password' => sha1($confirm_password)     
+        'confirm_password' => sha1($confirm_password)
     );
 
     // Store the array in the session
@@ -166,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                             <div class="row line">
                                 <p class="account-information-content">Email:</p>
-                                <input class="account-information-input" type="text" name="email" id="email" value="<?php echo isset($_SESSION['user_info']['email'] ) ? $_SESSION['user_info']['email'] : ''; ?>" required>
+                                <input class="account-information-input" type="text" name="email" id="email" value="<?php echo isset($_SESSION['user_info']['email']) ? $_SESSION['user_info']['email'] : ''; ?>" required>
                                 <span class="error" id="emailError"></span>
                             </div>
                             <div class="row line">

@@ -5,6 +5,7 @@ $authRequired = 0;
 
 include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
+include "assets/php/fetch_user_info.php";
 // Fetch car data from the database
 if (isset($_GET['location_name']) && $_GET['location_name'] != '') {
     $locationName = $_GET['location_name'];

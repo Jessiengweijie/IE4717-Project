@@ -5,6 +5,7 @@ $authRequired = 0;
 
 include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
+include "assets/php/fetch_user_info.php";
 // Fetch location data from the database
 $queryLocation = "SELECT * FROM location";
 $resultLocation = $db->query($queryLocation);

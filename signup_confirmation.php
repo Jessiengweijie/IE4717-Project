@@ -3,12 +3,18 @@
 $authRequired = 0;
 include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
+include "assets/php/fetch_user_info.php";
 
 @session_start();
 
 
+if ($_SESSION['valid_user']) {
+    // Check if logged in and redirect to home
+    header('Location: /Convigo');
+}
+
 if (!$_SESSION) {
-    // header('Location: signup.php');
+    header('Location: signup.php');
 } else {
     // Retrieve the user information from the session
     $userInfo = $_SESSION['user_info'];

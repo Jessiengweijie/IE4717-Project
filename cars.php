@@ -5,6 +5,7 @@ $authRequired = 0;
 // create short variable names
 include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
+include "assets/php/fetch_user_info.php";
 // Fetch car data from the database
 
 // Initialize the base query
