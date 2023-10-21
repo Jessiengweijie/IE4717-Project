@@ -20,7 +20,7 @@ include "assets/php/fetch_user_info.php";
     <div class="center home">
       <div class="center home-header">
         <?php if (isset($userInfo['firstname'])) {
-          echo '<h1>Welcome, ' . $userInfo['firstname'] . ' ' . $userInfo['surname'] . '!</h1>';
+          echo '<h1 style="height:300px; color:black;">Welcome, ' . $userInfo['firstname'] . ' ' . $userInfo['surname'] . '!</h1>';
         } ?>
         <?php if (!isset($_SESSION['valid_user'])) {
           include "assets/html/login.html";

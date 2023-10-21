@@ -1,9 +1,9 @@
 <?php
 include "assets/php/fetch_user_info.php";
 ?>
-<header>
+<header style="color:var(--secondary-color);">
     <a href="/ConviGo" style="text-decoration: none; color: inherit;">
-        <h1 class="logo">ConviGo
+        <h1 style="color:var(--secondary-color);" class="logo">ConviGo
             <img src="assets/images/Logo/finallogo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
         </h1>
     </a>
