@@ -32,7 +32,7 @@ if ($resultLocation->num_rows > 0) {
 
 <body>
     <div id="wrapper">
-        <?php include "header.php"; ?>
+        <?php include "assets/php/header.php"; ?>
         <div class="center location">
             <p class="location-header">Pick a Location!</p>
             <p class="location-subheader">ConviGo has cars island-wide</p>
@@ -67,7 +67,7 @@ if ($resultLocation->num_rows > 0) {
 
         </div>
 
-        <?php include('footer.html'); ?>
+        <?php include "assets/html/footer.html"; ?>
     </div>
 </body>
 

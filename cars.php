@@ -231,7 +231,7 @@ if ($resultCountAudiCars) {
 
 <body>
     <div id="wrapper">
-        <?php include "header.php"; ?>
+        <?php include "assets/php/header.php"; ?>
         <div class="car">
             <div class="left-section">
                 <div class="car-location-filter-container">
@@ -338,7 +338,7 @@ if ($resultCountAudiCars) {
         </div>
 
 
-        <?php include('footer.html'); ?>
+        <?php include "assets/html/footer.html"; ?>
     </div>
     <script type="text/javascript" src="assets/scripts/carsr.js"></script>
 </body>

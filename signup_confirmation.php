@@ -92,7 +92,7 @@ if (!$_SESSION) {
 
 <body>
     <div id="wrapper">
-        <?php include "header.php"; ?>
+        <?php include "assets/php/header.php"; ?>
         <div class="account">
             <div class="center" style="background-color: var(--backgroundcolor);">
                 <p class="signup-header" style="color:#fdf8e3;">You're almost there!</p>
@@ -122,7 +122,7 @@ if (!$_SESSION) {
 
             </form>
         </div>
-        <?php include('footer.html'); ?>
+        <?php include "assets/html/footer.html"; ?>
     </div>
 </body>
 

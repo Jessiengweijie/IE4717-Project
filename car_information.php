@@ -67,7 +67,7 @@ if ($resultAvailableLocations) {
 
 <body>
     <div id="wrapper">
-        <?php include "header.php"; ?>
+        <?php include "assets/php/header.php"; ?>
 
         <div class="car-info">
             <div class="car-info-selected">
@@ -135,7 +135,7 @@ if ($resultAvailableLocations) {
         </div>
 
 
-        <?php include('footer.html'); ?>
+        <?php include "assets/html/footer.html"; ?>
     </div>
     <script type="text/javascript" src="assets/scripts/car_informationr.js"></script>
 </body>

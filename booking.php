@@ -47,7 +47,7 @@ if ($resultCarCheck->num_rows <= 0) {
 
 <body>
     <div id="wrapper">
-        <?php include "header.php"; ?>
+        <?php include "assets/php/header.php"; ?>
         <div class="car-info">
             <form action="assets/php/processorder.php" method="post">
                 <div class="car-info-selected">
@@ -167,7 +167,7 @@ if ($resultCarCheck->num_rows <= 0) {
         </div>
 
 
-        <?php include('footer.html'); ?>
+        <?php include "assets/html/footer.html"; ?>
     </div>
     <script type="text/javascript" src="assets/scripts/bookingr.js"></script>
 </body>

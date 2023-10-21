@@ -12,16 +12,16 @@ include "assets/php/fetch_user_info.php";
     } ?>
     <nav class="navbar">
         <b>
-            <a href="about.php">About</a> &nbsp;
-            <a href="cars.php">Cars</a> &nbsp;
-            <a href="locations.php">Locations</a> &nbsp;
-            <a href="faqs.php">FAQs</a> &nbsp;
+            <a href="/ConviGo/about.php">About</a> &nbsp;
+            <a href="/ConviGo/cars.php">Cars</a> &nbsp;
+            <a href="/ConviGo/locations.php">Locations</a> &nbsp;
+            <a href="/ConviGo/faqs.php">FAQs</a> &nbsp;
             <?php
             if ($loggedInUserID) {
-                echo "<a href='my_account.php'>My Account</a>";
-                echo "<a href='assets/php/logout.php'>Log Out</a>";
+                echo "<a href='/ConviGo/my_account.php'>My Account</a>";
+                echo "<a href='/ConviGo/assets/php/logout.php'>Log Out</a>";
             } else {
-                echo "<a href='signup.php'>Sign Up</a>";
+                echo "<a href='/ConviGo/signup.php'>Sign Up</a>";
                 echo "<a href='/ConviGo'>Login</a>";
             }
             ?>

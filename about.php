@@ -16,7 +16,7 @@ include "assets/php/fetch_user_info.php";
 
 <body>
     <div id="wrapper">
-        <?php include "header.php"; ?>
+        <?php include "assets/php/header.php"; ?>
 
         <div class="about-photo">
             <h1 style="padding-left:150px;padding-bottom:150px;">About Us</h1>
@@ -86,7 +86,7 @@ include "assets/php/fetch_user_info.php";
             <br />
         </div>
 
-        <?php include('footer.html'); ?>
+        <?php include "assets/html/footer.html"; ?>
     </div>
 </body>
 
