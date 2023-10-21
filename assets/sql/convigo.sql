@@ -459,6 +459,7 @@ CREATE TABLE IF NOT EXISTS authorized_users (
 );
 CREATE TABLE IF NOT EXISTS user_info (
     id INT UNSIGNED NOT NULL PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
     surname VARCHAR(255) NOT NULL,
     firstname VARCHAR(255) NOT NULL,
     nric VARCHAR(9) NOT NULL,
@@ -471,16 +472,18 @@ CREATE TABLE IF NOT EXISTS user_info (
     bank VARCHAR(255) NOT NULL,
     bankacc VARCHAR(15) NOT NULL,
     notification VARCHAR(255) NOT NULL,
-    FOREIGN KEY (id) REFERENCES authorized_users(id)
+    FOREIGN KEY (id) REFERENCES authorized_users(id),
+    FOREIGN KEY (username) REFERENCES authorized_users(username)
 );
 INSERT INTO authorized_users(id, username, password)
 VALUES (
         1,
-        'test@gmail.com',
+        'test',
         '40bd001563085fc35165329ea1ff5c5ecbdbbeef'
     );
 INSERT INTO user_info(
         id,
+        username,
         surname,
         firstname,
         nric,
@@ -496,6 +499,7 @@ INSERT INTO user_info(
     )
 VALUES (
         1,
+        'test',
         'Budidharma',
         'Alessandro',
         'S1234567J',

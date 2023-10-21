@@ -32,27 +32,28 @@ if (!$_SESSION) {
     $bank = $userInfo['bank'];
     $bankacc = $userInfo['bankacc'];
     $notification = serialize($userInfo['notification']);
+    $username = $userInfo['username'];
     $password = $userInfo['password'];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Check if the checkbox is checked
         if (isset($_POST['accept-terms-checkbox'])) {
-            $query1 = "INSERT INTO authorized_users (username, password) VALUES ('$email', '$password')";
+            $query1 = "INSERT INTO authorized_users (username, password) VALUES ('$username', '$password')";
             $result1 = $db->query($query1);
 
             if ($result1) {
                 $userId = $db->insert_id;
 
                 // Step 2: Insert data into the "user_info" table
-                $query2 = "INSERT INTO user_info (id, surname, firstname, nric, dob, license, mobile, email, languages, address, bank, bankacc, notification)
-        VALUES ($userId, '$surname', '$firstname', '$nric', '$dob', '$license', '$mobile', '$email', '$languages', '$address', '$bank', '$bankacc', '$notification');";
+                $query2 = "INSERT INTO user_info (id, username, surname, firstname, nric, dob, license, mobile, email, languages, address, bank, bankacc, notification)
+        VALUES ($userId, '$username','$surname', '$firstname', '$nric', '$dob', '$license', '$mobile', '$email', '$languages', '$address', '$bank', '$bankacc', '$notification');";
                 $result2 = $db->query($query2);
 
                 if ($result2) {
                     echo "Sign up is successful.";
                     $queryLogin = 'select * from authorized_users '
-                        . "where username='$email' "
+                        . "where username='$username' "
                         . " and password='$password'";
                     $resultLogin = $db->query($queryLogin);
                     if ($resultLogin->num_rows > 0) {

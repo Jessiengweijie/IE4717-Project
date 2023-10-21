@@ -5,6 +5,7 @@ var mobileRegex = /^[89]\d{7}$/;
 var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 var addressRegex = /^[\w\d\s\.,#\-]{10,}$/;
 var bankaccRegex = /^\d{7,9}$/;
+var usernameRegex = /^[a-zA-Z0-9]{3,20}$/;
 
 // At least one digit (0-9):
 var passwordRegex1 = /^(?=.*\d).+/;
@@ -317,6 +318,35 @@ function bankaccChk(event) {
     }
 }
 
+function usernameChk(event) {
+    if (event == 'check') {
+        var username = document.getElementById("username");
+    } else {
+        // Get the target node of the event
+        var username = event.currentTarget;
+    }
+
+    var usernameError = document.getElementById("usernameError");
+
+    // Test the Regex
+    var pos = username.value.search(usernameRegex);
+
+    if (pos != 0) {
+        alert("The username you entered (" + username.value +
+            ") is not in the correct format. \n" +
+            "Please ensure it follows this format: \n" +
+            "- Only alphabet characters and numbers are allowed. \n" +
+            "- Between 3 and 20 characters in length.");
+        usernameError.textContent = "Invalid username";
+        username.focus();
+        username.select();
+        return false;
+    } else {
+        usernameError.textContent = '';
+        return true;
+    }
+}
+
 function passwordChk1(event) {
     const circleElement = document.getElementById('passwordRegex1');
     if (event == 'check') {
@@ -504,6 +534,9 @@ function validateForm() {
         return false;
     }
     if (!bankaccChk("check")) {
+        return false;
+    }
+    if (!usernameChk("check")) {
         return false;
     }
     if (!passwordChk()) {
