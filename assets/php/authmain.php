@@ -9,7 +9,7 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
 
     // $password = sha1($password);
     $query = 'select * from authorized_users '
-        . "where username='$userid' "
+        . "where LOWER(username) = LOWER('$userid')"
         . " and password='$password'";
     $result = $db->query($query);
     if ($result->num_rows > 0) {
