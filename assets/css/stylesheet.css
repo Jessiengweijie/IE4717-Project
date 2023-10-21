@@ -1,7 +1,7 @@
 /* Define colors for standardization */
 :root {
     /* Theme layout */
-    --header-footer-color: rgb(13, 13, 18);
+    --header-footer-color: rgb(13, 13, 18);    
     --background-color: #105670;
     --primary-color: dodgerblue;
     --secondary-color: #fdf8e3;
@@ -160,10 +160,11 @@ body {
     padding: 5px 15px;
     background-color: var(--red);
     color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     text-decoration: none;
     cursor: pointer;
     width: max-content;
+    border-width: 1px;
 }
 
 .reset-button:hover {
@@ -172,10 +173,7 @@ body {
 
 /* ******************************************** Style the header ******************************************** */
 header {
-    /* position: fixed;
-    top: 0; */
-    /*future development: to make top navbar stick to top*/
-
+    position: relative;
     width: 100%;
     background-color: var(--header-footer-color);
     color: #fff;
@@ -186,7 +184,6 @@ header {
     z-index: 1000;
     font-family: 'georgia';
     font-style: italic;
-    /* Set a high z-index to ensure it appears above other content */
 }
 
 .logo {
@@ -272,6 +269,7 @@ footer {
     background-position: center center;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     min-height: 610px;
 }
@@ -602,6 +600,21 @@ footer {
     margin-bottom: 20px;
 }
 
+.booking input,
+select {
+    border-radius: 10px;
+    padding: 2px 5px;
+    border: 1px;
+}
+
+.booking input {
+    cursor: text;
+}
+
+.booking select {
+    cursor: pointer;
+}
+
 .car-info-selected {
     display: flex;
     flex-direction: row;
@@ -631,14 +644,15 @@ footer {
 }
 
 .hourly {
-    background-color: var(--background-color);;
+    background-color: var(--background-color);
+    ;
     border-radius: 5px;
     font-size: 20px;
 }
 
 .hourly table,
 td {
-    border: none;    
+    border: none;
 }
 
 /* ******************************************** Locations page ******************************************** */
@@ -816,7 +830,7 @@ td {
     margin-left: 5px;
     border: none;
     outline: none;
-    width: 60%;
+    width: 50%;
     font-size: 16px;
     font-family: var(--main-font);
 
@@ -898,6 +912,10 @@ td {
     margin-bottom: 30px;
 }
 
+.edit {
+    display: none;
+}
+
 /* ******************************************** Sign Up Page ******************************************** */
 .signup-header {
     font-size: 55px;
@@ -956,12 +974,11 @@ td {
 }
 
 .signup-information {
-    margin-left: 25px;
+    padding: 2%;
 }
 
-.signup-contact {
-    margin-bottom: 100px;
-}
+/* .signup-contact {
+} */
 
 .signup-password {
     display: flex;
@@ -973,14 +990,12 @@ td {
     width: 25%;
     display: flex;
     flex-direction: column;
-    padding: 20px;
 }
 
 .right-password-section {
     width: 40%;
     display: flex;
     flex-direction: column;
-    padding: 20px;
 }
 
 .right-password-section ul {
@@ -999,12 +1014,5 @@ td {
     border-radius: 50%;
     margin-right: 5px;
     display: inline-block;
-}
-
-.green {
-    background-color: green;
-}
-
-.red {
-    background-color: red;
+    background-color: #cccccc;
 }

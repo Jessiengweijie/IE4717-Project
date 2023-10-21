@@ -6,27 +6,25 @@ var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 var addressRegex = /^[\w\d\s\.,#\-]{10,}$/;
 var bankaccRegex = /^\d{7,9}$/;
 
-var surnameChecker = 0;
-var firstnameChecker = 0;
-var nricChecker = 0;
-var dobChecker = 0;
-var licenseChecker = 0;
-
-var mobileChecker = 0;
-var emailChecker = 0;
-var languagesChecker = 0;
-
-var addressChecker = 0;
-
-var bankChecker = 0;
-var bankaccChecker = 0;
+// At least one digit (0-9):
+var passwordRegex1 = /^(?=.*\d).+/;
+// At least one lowercase letter (a-z):
+var passwordRegex2 = /^(?=.*[a-z]).+/;
+// At least one uppercase letter (A-Z):
+var passwordRegex3 = /^(?=.*[A-Z]).+/;
+// At least one special character (e.g., !, @, #, $, %, etc.):
+var passwordRegex4 = /^(?=.*[!@#\$%\^&\*]).+/;
+// Between 8 and 20 characters long:
+var passwordRegex5 = /^.{8,20}$/;
 
 function surnameChk(event) {
-    // set checker to false
-    surnameChecker = 0;
+    if (event == 'check') {
+        var surname = document.getElementById("surname");
+    } else {
+        // Get the target node of the event
+        var surname = event.currentTarget;
+    }
 
-    // Get the target node of the event
-    var surname = event.currentTarget;
     var surnameError = document.getElementById("surnameError");
 
     // Test the Regex
@@ -43,18 +41,19 @@ function surnameChk(event) {
         surname.select();
         return false;
     } else {
-        // set checker to true when pass regex
-        surnameChecker = 1;
         surnameError.textContent = '';
+        return true;
     }
 }
 
 function firstnameChk(event) {
-    // set checker to false
-    firstnameChecker = 0;
+    if (event == 'check') {
+        var firstname = document.getElementById("firstname");
+    } else {
+        // Get the target node of the event
+        var firstname = event.currentTarget;
+    }
 
-    // Get the target node of the event
-    var firstname = event.currentTarget;
     var firstnameError = document.getElementById("firstnameError");
 
     // Test the Regex
@@ -71,18 +70,19 @@ function firstnameChk(event) {
         firstname.select();
         return false;
     } else {
-        // set checker to true when pass regex
-        firstnameChecker = 1;
         firstnameError.textContent = '';
+        return true;
     }
 }
 
 function nricChk(event) {
-    // set checker to false
-    nricChecker = 0;
+    if (event == 'check') {
+        var nric = document.getElementById("nric");
+    } else {
+        // Get the target node of the event
+        var nric = event.currentTarget;
+    }
 
-    // Get the target node of the event
-    var nric = event.currentTarget;
     var nricError = document.getElementById("nricError");
 
     // Test the Regex
@@ -101,18 +101,19 @@ function nricChk(event) {
         nric.select();
         return false;
     } else {
-        // set checker to true when pass regex
-        nricChecker = 1;
         nricError.textContent = '';
+        return true;
     }
 }
 
 function dobChk(event) {
-    // set checker to false
-    dobChecker = 0;
+    if (event == 'check') {
+        var dob = document.getElementById("dob");
+    } else {
+        // Get the target node of the event
+        var dob = event.currentTarget;
+    }
 
-    // Get the target node of the event
-    var dob = event.currentTarget;
     var dateError = document.getElementById("dobError");
 
     // Get the selected date
@@ -128,6 +129,7 @@ function dobChk(event) {
             // set checker to true when pass regex
             dobChecker = 1;
             dateError.textContent = "";
+            return true;
         } else {
             alert("You must be at least 18 years old to proceed.");
             dateError.textContent = "You must be at least 18 years old to proceed.";
@@ -146,9 +148,6 @@ function dobChk(event) {
 }
 
 function licenseChk() {
-    // set checker to false
-    licenseChecker = 0;
-
     // Get the target node of the event
     var license = document.getElementById("license").value;
     var licenseError = document.getElementById("licenseError");
@@ -161,18 +160,19 @@ function licenseChk() {
         license.select();
         return false;
     } else {
-        // set checker to true when pass regex
-        licenseChecker = 1;
         licenseError.textContent = '';
+        return true;
     }
 }
 
 function mobileChk(event) {
-    // set checker to false
-    mobileChecker = 0;
+    if (event == 'check') {
+        var mobile = document.getElementById("mobile");
+    } else {
+        // Get the target node of the event
+        var mobile = event.currentTarget;
+    }
 
-    // Get the target node of the event
-    var mobile = event.currentTarget;
     var mobileError = document.getElementById("mobileError");
 
     // Test the Regex
@@ -189,18 +189,19 @@ function mobileChk(event) {
         mobile.select();
         return false;
     } else {
-        // set checker to true when pass regex
-        mobileChecker = 1;
         mobileError.textContent = '';
+        return true;
     }
 }
 
 function emailChk(event) {
-    // set checker to false
-    emailChecker = 0;
+    if (event == 'check') {
+        var email = document.getElementById("email");
+    } else {
+        // Get the target node of the event
+        var email = event.currentTarget;
+    }
 
-    // Get the target node of the event
-    var email = event.currentTarget;
     var emailError = document.getElementById("emailError");
 
     // Test the Regex
@@ -219,26 +220,23 @@ function emailChk(event) {
         email.select();
         return false;
     } else {
-        // set checker to true when pass regex
-        emailChecker = 1;
         emailError.textContent = '';
+        return true;
     }
 }
 
 function languagesChk() {
-    // set checker to false
-    languagesChecker = 0;
-
     // Get the target node of the event
     var languages = document.querySelectorAll('input[name="languages[]"]:checked');
-    var languagesError = document.getElementById("languagesError"); console.log(languages, languages.length)
+    var languagesError = document.getElementById("languagesError");
     // Test
     if (languages.length === 0) {
-        languagesError.textContent = "Please select at least one language.";
+        alert("Please select at least one language@@.");
+        languagesError.textContent = "Please select at least one language@@@@@@@@@@@@.";
+        const multiselectContainer = document.getElementById("multiselectContainer");
+        multiselectContainer.focus();
         return false;
     } else {
-        // set checker to true when pass regex
-        languagesChecker = 1;
         languagesError.textContent = '';
         return true;
     }
@@ -246,11 +244,13 @@ function languagesChk() {
 
 
 function addressChk(event) {
-    // set checker to false
-    addressChecker = 0;
+    if (event == 'check') {
+        var address = document.getElementById("address");
+    } else {
+        // Get the target node of the event
+        var address = event.currentTarget;
+    }
 
-    // Get the target node of the event
-    var address = event.currentTarget;
     var addressError = document.getElementById("addressError");
 
     // Test the Regex
@@ -266,16 +266,12 @@ function addressChk(event) {
         address.select();
         return false;
     } else {
-        // set checker to true when pass regex
-        addressChecker = 1;
         addressError.textContent = '';
+        return true;
     }
 }
 
 function bankChk() {
-    // set checker to false
-    bankChecker = 0;
-
     // Get the target node of the event
     var bank = document.getElementById("bank").value;
     var bankError = document.getElementById("bankError");
@@ -288,18 +284,19 @@ function bankChk() {
         bank.select();
         return false;
     } else {
-        // set checker to true when pass regex
-        bankChecker = 1;
         bankError.textContent = '';
+        return true;
     }
 }
 
 function bankaccChk(event) {
-    // set checker to false
-    bankaccChecker = 0;
+    if (event == 'check') {
+        var bankacc = document.getElementById("bankacc");
+    } else {
+        // Get the target node of the event
+        var bankacc = event.currentTarget;
+    }
 
-    // Get the target node of the event
-    var bankacc = event.currentTarget;
     var bankaccError = document.getElementById("bankaccError");
 
     // Test the Regex
@@ -315,68 +312,204 @@ function bankaccChk(event) {
         bankacc.select();
         return false;
     } else {
-        // set checker to true when pass regex
-        bankaccChecker = 1;
         bankaccError.textContent = '';
+        return true;
     }
 }
 
-function validateForm() {
-    if (!surnameChecker) {
-        alert("Invalid Surname, please enter a valid surname.");
-        surname.focus();
-        surname.select();
-        return false;
+function passwordChk1(event) {
+    const circleElement = document.getElementById('passwordRegex1');
+    if (event == 'check') {
+        var password = document.getElementById("password");
+    } else {
+        // Get the target node of the event
+        var password = event.currentTarget;
     }
-    if (!firstnameChecker) {
-        alert("Invalid First name, please enter a valid first name.");
-        firstname.focus();
-        firstname.select();
-        return false;
-    }
-    if (!nricChecker) {
-        alert("Invalid NRIC, please enter a valid NRIC.");
-        nric.focus();
-        nric.select();
-        return false;
-    }
-    if (!dobChecker) {
-        alert("Invalid Date of birth, please enter a valid Date of birth.");
-        dob.focus();
-        dob.select();
-        return false;
-    }
-    licenseChk();
 
-    if (!mobileChecker) {
-        alert("Invalid Mobile number, please enter a valid Mobile number.");
-        mobile.focus();
-        mobile.select();
+    // Test the Regex
+    var pos = password.value.search(passwordRegex1);
+    if (pos != 0) {
+
+        circleElement.style.backgroundColor = 'red';
+        return false;
+    } else {
+        circleElement.style.backgroundColor = 'green';
+        return true;
+    }
+}
+
+function passwordChk2(event) {
+    const circleElement = document.getElementById('passwordRegex2');
+    if (event == 'check') {
+        var password = document.getElementById("password");
+    } else {
+        // Get the target node of the event
+        var password = event.currentTarget;
+    }
+
+    // Test the Regex
+    var pos = password.value.search(passwordRegex2);
+    if (pos != 0) {
+
+        circleElement.style.backgroundColor = 'red';
+        return false;
+    } else {
+        circleElement.style.backgroundColor = 'green';
+        return true;
+    }
+}
+
+function passwordChk3(event) {
+    const circleElement = document.getElementById('passwordRegex3');
+    if (event == 'check') {
+        var password = document.getElementById("password");
+    } else {
+        // Get the target node of the event
+        var password = event.currentTarget;
+    }
+
+    // Test the Regex
+    var pos = password.value.search(passwordRegex3);
+    if (pos != 0) {
+
+        circleElement.style.backgroundColor = 'red';
+        return false;
+    } else {
+        circleElement.style.backgroundColor = 'green';
+        return true;
+    }
+}
+
+function passwordChk4(event) {
+    const circleElement = document.getElementById('passwordRegex4');
+    if (event == 'check') {
+        var password = document.getElementById("password");
+    } else {
+        // Get the target node of the event
+        var password = event.currentTarget;
+    }
+
+    // Test the Regex
+    var pos = password.value.search(passwordRegex4);
+    if (pos != 0) {
+
+        circleElement.style.backgroundColor = 'red';
+        return false;
+    } else {
+        circleElement.style.backgroundColor = 'green';
+        return true;
+    }
+}
+
+function passwordChk5(event) {
+    const circleElement = document.getElementById('passwordRegex5');
+    if (event == 'check') {
+        var password = document.getElementById("password");
+    } else {
+        // Get the target node of the event
+        var password = event.currentTarget;
+    }
+
+    // Test the Regex
+    var pos = password.value.search(passwordRegex5);
+    if (pos != 0) {
+        circleElement.style.backgroundColor = 'red';
+        return false;
+    } else {
+        circleElement.style.backgroundColor = 'green';
+        return true;
+    }
+}
+
+function passwordChk() {
+    const passwordError = "The Password you entered (" + password.value +
+        ") is not in the correct format. \n" +
+        "Please ensure it follows this format: \n" +
+        "- At least one number (0-9). \n" +
+        "- At least one lowercase letter (a-z). \n" +
+        "- At least one uppercase letter (A-Z). \n" +
+        "- At least one special character (e.g., !, @, #, $, %, etc.). \n" +
+        "- At least 8 and at most 20 characters long.";
+    const passwordCheckFunctions = [passwordChk1, passwordChk2, passwordChk3, passwordChk4, passwordChk5];
+    let allChecksPassed = true;
+
+    for (const checkFunction of passwordCheckFunctions) {
+        if (!checkFunction('check')) {
+            allChecksPassed = false;
+            break;
+        }
+    }
+
+    if (!allChecksPassed) {
+        alert(passwordError);
+        password.focus();
+        password.select();
+        return false;
+    } else {
+        return true;
+    }
+
+}
+
+function confirm_passwordChk() {
+    var password = document.getElementById("password");
+    var confirm_password = document.getElementById("confirm_password");
+    var confirm_passwordError = document.getElementById("confirm_passwordError");
+
+    // Test
+    if (confirm_password.value !== password.value) { console.log(confirm_password.value,password.value)
+        alert("Your passwords do not match.");
+        confirm_passwordError.textContent = 'Your passwords do not match.';
+        confirm_password.focus();
+        confirm_password.select();
+        return false;
+    } else {
+        confirm_passwordError.textContent = '';
+        return true;
+    }
+}
+
+
+
+
+function validateForm() {
+    if (!surnameChk("check")) {
         return false;
     }
-    if (!emailChecker) {
-        alert("Invalid Email, please enter a valid Email.");
-        email.focus();
-        email.select();
+    if (!firstnameChk("check")) {
+        return false;
+    }
+    if (!nricChk("check")) {
+        return false;
+    }
+    if (!dobChk("check")) {
+        return false;
+    }
+    if (!licenseChk()) {
+        return false;
+    }
+    if (!mobileChk("check")) {
+        return false;
+    }
+    if (!emailChk("check")) {
         return false;
     }
     if (!languagesChk()) {
-        alert("Please select at least one language.");
-        const multiselectContainer = document.getElementById("multiselectContainer");
-        multiselectContainer.focus();
         return false;
     }
-    if (!addressChecker) {
-        alert("Invalid Address, please enter a valid address.");
-        address.focus();
-        address.select();
+    if (!addressChk("check")) {
         return false;
     }
-    bankChk();
-    if (!bankaccChecker) {
-        alert("Invalid Bank account number, please enter a valid Bank Account number.");
-        bankacc.focus();
-        bankacc.select();
+    if (!bankChk()) {
+        return false;
+    }
+    if (!bankaccChk("check")) {
+        return false;
+    }
+    if (!passwordChk()) {
+        return false;
+    }
+    if (!confirm_passwordChk()) {
         return false;
     }
     return true;
@@ -384,5 +517,33 @@ function validateForm() {
 
 function convertToUppercase(input) {
     input.value = input.value.toUpperCase();
+}
+
+// Edit button
+function toggleReadOnly() {
+    const editContent = document.querySelectorAll('.edit');
+    const originalContent = document.querySelectorAll('.original');
+
+    if (toggleButton.value == 1) {
+        toggleButton.textContent = "Enable Edit";
+        editContent.forEach(function (element) {
+            element.style.display = 'none';
+        });
+        originalContent.forEach(function (element) {
+            element.style.display = 'block';
+        });
+        document.getElementById('submitButton').setAttribute('disabled', 'disabled');
+        toggleButton.value = 0;
+    } else {
+        toggleButton.textContent = "Disable Edit";
+        editContent.forEach(function (element) {
+            element.style.display = 'block';
+        });
+        originalContent.forEach(function (element) {
+            element.style.display = 'none';
+        });
+        document.getElementById('submitButton').removeAttribute('disabled');
+        toggleButton.value = 1;
+    }
 }
 

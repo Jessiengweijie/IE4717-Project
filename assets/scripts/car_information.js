@@ -21,9 +21,6 @@ function generateInfo() {
         document.getElementById('preset-options').value = '';
     }
 
-    console.log('Location:', locationParam);
-    console.log('Car:', carParam);
-
 }
 
 function bookNow() {
