@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $notification = $_POST['notification'];
     }
 
+    $username = $_POST['username'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
@@ -49,7 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'address' => $address,
         'bank' => $bank,
         'bankacc' => $bankacc,
+        'username' => $username,
         'notification' => $notification,
+        'username' => strtolower($username),
         'password' => sha1($password),
         'confirm_password' => sha1($confirm_password)
     );
@@ -58,17 +61,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['user_info'] = $userInfo;
 
     // Check Duplicate
-    $queryDupe = "SELECT * FROM authorized_users WHERE username = '$email'";
+    $queryDupe = "SELECT * FROM authorized_users WHERE username = '$username'";
     $resultDupe = $db->query($queryDupe);
-    if ($resultDupe) {
-        // Check if any rows are returned
-        if ($resultDupe->num_rows > 0) {
-            unset($_SESSION['user_info']['email']);
-            // Duplicate found, display a warning
-            echo '<script>';
-            echo 'alert("Username already exists. Please choose a different username.");';
-            echo 'window.location.href = "signup.php";';
-            echo '</script>';
+
+    $queryDupe2 = "SELECT * FROM user_info WHERE email = '$email'";
+    $resultDupe2 = $db->query($queryDupe2);
+
+    $isDupe = $resultDupe->num_rows > 0;
+    $isDupe2 = $resultDupe2->num_rows > 0;
+
+    if ($resultDupe && $resultDupe2) {
+        if ($isDupe || $isDupe2) {
+            if ($isDupe) {
+                unset($_SESSION['user_info']['username']);
+                // Duplicate found, display a warning
+                echo '<script>';
+                echo 'alert("Username already exists. Please choose a different username.");';
+                echo '</script>';
+            }
+            if ($isDupe2) {
+                unset($_SESSION['user_info']['email']);
+                // Duplicate found, display a warning
+                echo '<script>';
+                echo 'alert("Email already exists. Please choose a different email.");';
+                echo '</script>';
+            }
         } else {
             // Redirect to the 2nd page
             header('Location: signup_confirmation.php');
@@ -232,12 +249,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                     </div>
                     <div class="account-information-body">
-                        <p class="account-information-subheader">Password</p>
+                        <p class="account-information-subheader">Login Details</p>
+                        <div class="signup-username">
+                            <div class="left-username-section">
+                                <p>Please choose a Username.</p>
+                                <input class="login-input" type="text" name="username" id="username" value="<?php echo isset($_SESSION['user_info']['username']) ? $_SESSION['user_info']['username'] : ''; ?>" required placeholder="Username">
+                                <span class="error" id="usernameError" style="width: 100%;"></span>
+                            </div>
+                        </div>
                         <div class="signup-password">
                             <div class="left-password-section">
                                 <p>Please choose a strong password.</p>
                                 <input class="login-input" type="password" name="password" id="password" required placeholder="Password">
                                 <input class="login-input" type="password" name="confirm_password" id="confirm_password" required placeholder="Confirm Password">
+                                <button type="button" id="showPassword">Show Password</button>
                                 <span class="error" id="confirm_passwordError" style="width: 100%;"></span>
                             </div>
                             <div class="right-password-section">

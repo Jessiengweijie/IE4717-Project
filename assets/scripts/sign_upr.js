@@ -62,6 +62,7 @@ var languagesNode = document.querySelectorAll('input[name="languages[]"]');
 var addressNode = document.getElementById("address");
 var bankNode = document.getElementById("bank");
 var bankaccNode = document.getElementById("bankacc");
+var usernameNode = document.getElementById("username");
 var passwordNode = document.getElementById("password");
 var confirm_passwordNode = document.getElementById("confirm_password");
 
@@ -79,6 +80,7 @@ languagesNode.forEach(function (checkbox) {
 addressNode.addEventListener("change", addressChk, false);
 bankNode.addEventListener("change", bankChk, false);
 bankaccNode.addEventListener("change", bankaccChk, false);
+usernameNode.addEventListener("change", usernameChk, false);
 
 // Create an array of your password check functions
 const passwordCheckFunctions = [passwordChk1, passwordChk2, passwordChk3, passwordChk4, passwordChk5];
@@ -93,3 +95,18 @@ confirm_passwordNode.addEventListener("change", confirm_passwordChk, false);
 
 //***********************************************************************************************************************************//
 
+const passwordInput = document.getElementById('password');
+const passwordInput2 = document.getElementById('confirm_password');
+const showPasswordButton = document.getElementById('showPassword');
+
+showPasswordButton.addEventListener('click', function () {
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordInput2.type = 'text';
+        showPasswordButton.textContent = 'Hide Password';
+    } else {
+        passwordInput.type = 'password';
+        passwordInput2.type = 'password';
+        showPasswordButton.textContent = 'Show Password';
+    }
+});

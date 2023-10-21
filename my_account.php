@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['user_info'] = $userInfo;
 
     // Check Duplicate
-    $queryDupe = "SELECT * FROM authorized_users WHERE username = '$email' AND id != $loggedInUserID";
+    $queryDupe = "SELECT * FROM user_info WHERE email = '$email' AND id != $loggedInUserID";
     $resultDupe = $db->query($queryDupe);
     if ($resultDupe) {
         // Check if any rows are returned
@@ -54,15 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             unset($_SESSION['user_info']['email']);
             // Duplicate found, display a warning
             echo '<script>';
-            echo 'alert("Username already exists. Please choose a different username.");';
+            echo 'alert("Email already exists. Please choose a different email.");';
             echo 'window.location.href = "my_account.php";';
             echo '</script>';
         } else {
-            $query = "UPDATE authorized_users SET username = '$email' WHERE id = $loggedInUserID";
-            $result = $db->query($query);
-
-            if ($result) {
-                $query2 = "UPDATE user_info SET 
+            $query = "UPDATE user_info SET 
                 surname = '$surname', 
                 firstname = '$firstname', 
                 nric = '$nric', 
@@ -76,13 +72,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 bankacc = '$bankacc', 
                 notification = '$notification' 
                 WHERE id = $loggedInUserID";
-                $result2 = $db->query($query2);
-                if ($result2) {
-                    header("Location: " . $_SERVER['PHP_SELF']);
-                    exit;
-                } else {
-                    echo "An error has occured.";
-                }
+            $result = $db->query($query);
+            if ($result) {
+                header("Location: " . $_SERVER['PHP_SELF']);
+                exit;
             } else {
                 echo "An error has occured.";
             }
@@ -334,7 +327,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </form>
         </div>
-
         <?php include "assets/html/footer.html"; ?>
     </div>
     <script type="text/javascript" src="assets/scripts/sign_upr.js"></script>
