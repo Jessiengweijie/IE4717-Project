@@ -100,12 +100,8 @@ if (!$_SESSION) {
             </div>
             <form method="post" action="">
                 <div class="signup-confirmation">
-<<<<<<< HEAD
-                    <div class="signup-box-scroll">
-=======
 
 
->>>>>>> refs/remotes/origin/main
                     <div class="signup-box">
 
                         <div class="signup-information">
@@ -123,76 +119,6 @@ if (!$_SESSION) {
                         <input type="submit" class="save-button" value="Sign up!">
                     </div>
                 </div>
-                        <?php include('assets/text/tnc.txt') ?>
-                        <!-- Add your terms and conditions text here -->
-                    </div>
-
-                    <!-- <div class="signup-box">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="accept-terms-checkbox">
-                            <div class="signup-box" style="width: 95%;">
-                                <?php include('assets/text/disclaimer.txt') ?>
-                            </div>
-                        </label>
-                        <div class="signup-information">
-                            <div class="signup-contact">
-                                <p>Please send me marketing and promotional materials via the following mode(s):</p>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="notification[]" value="Text Message">
-                                    <div style="margin-left: 5px;">
-                                        Text Message
-                                    </div>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="notification[]" value="Phone Call">
-                                    <div style="margin-left: 5px;">
-                                        Phone Call
-                                    </div>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="notification[]" value="Email">
-                                    <div style="margin-left: 5px;">
-                                        Email
-                                    </div>
-                                </label>
-                            </div>
-                            <div class="signup-password">
-                                <div class="left-password-section">
-                                    <p>Please choose a strong password.</p>
-                                    <input class="login-input" type="password" name="password" id="password" required placeholder="Password">
-                                    <input class="login-input" type="password" name="confirm_password" id="confirm_password" required placeholder="Confirm Password">
-                                </div>
-                                <div class="right-password-section">
-                                    <p>Your password should be</p>
-                                    <ul>
-                                        <li><span class="circle red"></span>One number (0-9)</li>
-                                        <li><span class="circle red"></span>Between 8 and 20 characters long.</li>
-                                        <li><span class="circle red"></span>One lowercase letter (a-z)</li>
-                                        <li><span class="circle red"></span>One uppercase letter (A-Z)</li>
-                                        <li><span class="circle red"></span>One special character (e.g., !, @, #, $, %, etc.)</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                        <input type="text" hidden name="surname" value="<?php echo $surname ?>">
-                        <input type="text" hidden name="firstname" value="<?php echo $firstname ?>">
-                        <input type="text" hidden name="nric" value="<?php echo $nric ?>">
-                        <input type="text" hidden name="dob" value="<?php echo $dob ?>">
-                        <input type="text" hidden name="license" value="<?php echo $license ?>">
-
-                        <input type="text" hidden name="mobile" value="<?php echo $mobile ?>">
-                        <input type="text" hidden name="email" value="<?php echo $email ?>">
-                        <input type="text" hidden name="languages" value="<?php echo htmlspecialchars($languages) ?>">
-
-                        <input type="text" hidden name="address" value="<?php echo $address ?>">
-
-                        <input type="text" hidden name="bank" value="<?php echo $bank ?>">
-                        <input type="text" hidden name="bankacc" value="<?php echo $bankacc ?>">
-
-                        <input type="submit" class="save-button" value="Sign up!">
-                    </div>
-                </div> -->
 
             </form>
         </div>
