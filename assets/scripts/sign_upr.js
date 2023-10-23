@@ -80,33 +80,38 @@ languagesNode.forEach(function (checkbox) {
 addressNode.addEventListener("change", addressChk, false);
 bankNode.addEventListener("change", bankChk, false);
 bankaccNode.addEventListener("change", bankaccChk, false);
-usernameNode.addEventListener("change", usernameChk, false);
 
-// Create an array of your password check functions
-const passwordCheckFunctions = [passwordChk1, passwordChk2, passwordChk3, passwordChk4, passwordChk5];
-// Add the event listener for each function in the array
-passwordCheckFunctions.forEach(function (checkFunction) {
-    passwordNode.addEventListener("input", checkFunction, false);
-});
-confirm_passwordNode.addEventListener("change", confirm_passwordChk, false);
+if (usernameNode) {
+    usernameNode.addEventListener("change", usernameChk, false);
+}
 
-
+if (passwordNode) {
+    // Create an array of your password check functions
+    const passwordCheckFunctions = [passwordChk1, passwordChk2, passwordChk3, passwordChk4, passwordChk5];
+    // Add the event listener for each function in the array
+    passwordCheckFunctions.forEach(function (checkFunction) {
+        passwordNode.addEventListener("input", checkFunction, false);
+    });
+    confirm_passwordNode.addEventListener("change", confirm_passwordChk, false);
+}
 
 
 //***********************************************************************************************************************************//
 
-const passwordInput = document.getElementById('password');
-const passwordInput2 = document.getElementById('confirm_password');
-const showPasswordButton = document.getElementById('showPassword');
+if (passwordNode) {
+    const passwordInput = document.getElementById('password');
+    const passwordInput2 = document.getElementById('confirm_password');
+    const showPasswordButton = document.getElementById('showPassword');
 
-showPasswordButton.addEventListener('click', function () {
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        passwordInput2.type = 'text';
-        showPasswordButton.textContent = 'Hide Password';
-    } else {
-        passwordInput.type = 'password';
-        passwordInput2.type = 'password';
-        showPasswordButton.textContent = 'Show Password';
-    }
-});
+    showPasswordButton.addEventListener('click', function () {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            passwordInput2.type = 'text';
+            showPasswordButton.textContent = 'Hide Password';
+        } else {
+            passwordInput.type = 'password';
+            passwordInput2.type = 'password';
+            showPasswordButton.textContent = 'Show Password';
+        }
+    });
+}

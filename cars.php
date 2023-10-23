@@ -246,7 +246,7 @@ if ($resultCountAudiCars) {
                     </select>
                     <a class="center reset-button" onclick="reset()">Reset</a>
                 </div>
-                <h1 style= "font-size:30px" >Our Cars</h1>
+                <h1 style="font-size:30px">Our Cars</h1>
                 <div class="car-filter">
                     <h1>Vehicle Category</h1>
                     <label>
@@ -328,10 +328,9 @@ if ($resultCountAudiCars) {
                                     <img src="assets/images/Cars/Brands/<?php echo $car['brand']; ?>/<?php echo $car['type']; ?>/<?php echo $car['imageURL']; ?>" height="auto" width="100%" alt="<?php echo $car['name']; ?>">
                                 </div>
                             </div>
-                            <a class="center book-now-button" onclick="bookNow('<?php echo $car['id']; ?>');">Book Now</a>
+                            <a class="center book-now-button" onclick="bookNow('<?php echo $car['id'];?>');">Book Now</a>
                         </div>
                     <?php endforeach; ?>
-
                 </div>
             </div>
 

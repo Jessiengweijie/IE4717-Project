@@ -1,14 +1,18 @@
 <?php
 // Set auth for page
 $authRequired = 1;
-// create short variable names
+
+$carId = $_GET['car_id'];
+$locationName = $_GET['location_name'];
+
+@session_start();
+$_SESSION['cart']['car'] = $carId;
+$_SESSION['cart']['location'] = $locationName;
 
 include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
 include "assets/php/fetch_user_info.php";
 // Fetch car data from the database
-
-$locationName = $_GET['location_name'];
 
 // Query to fetch the location_id based on location_name
 $queryLocationId = "SELECT id FROM location WHERE name = '$locationName'";
@@ -18,7 +22,6 @@ $resultLocationId = $db->query($queryLocationId);
 $locationIdArray = $resultLocationId->fetch_assoc();
 $locationId = $locationIdArray['id'];
 
-$carId = $_GET['car_id'];
 $queryCar = "SELECT * FROM car WHERE id = $carId";
 $resultCar = $db->query($queryCar);
 $carData = $resultCar->fetch_assoc();
