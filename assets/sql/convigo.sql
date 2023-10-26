@@ -531,4 +531,70 @@ CREATE TABLE IF NOT EXISTS order_history (
     FOREIGN KEY (user_id) REFERENCES authorized_users(id),
     FOREIGN KEY (car_id) REFERENCES car(id),
     FOREIGN KEY (location_id) REFERENCES location(id)
-)
+);
+INSERT INTO order_history (
+        user_id,
+        start_date,
+        end_date,
+        order_date,
+        duration,
+        rate,
+        fee,
+        car_id,
+        location_id
+    )
+VALUES (
+        1,
+        1698256380,
+        1698259980,
+        1698252816,
+        1,
+        30.00,
+        30.00,
+        6,
+        4
+    ),
+    (
+        1,
+        1698264540,
+        1698311340,
+        1698253757,
+        13,
+        18.00,
+        234.00,
+        17,
+        10
+    ),
+    (
+        1,
+        1698265320,
+        1698279720,
+        1698254554,
+        4,
+        28.00,
+        112.00,
+        5,
+        10
+    ),
+    (
+        1,
+        1699602840,
+        1699671240,
+        1698263540,
+        19,
+        25.00,
+        475.00,
+        11,
+        8
+    ),
+    (
+        1,
+        1698330960,
+        1698341760,
+        1698330955,
+        3,
+        30.00,
+        90.00,
+        6,
+        4
+    );

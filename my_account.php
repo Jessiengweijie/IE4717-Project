@@ -100,8 +100,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div id="wrapper">
         <?php include "assets/php/header.php"; ?>
         <div class="account">
-            <div class="center" style="background-color: var(--backgroundcolor);">
-            </div>
             <form method="post" action="" autocomplete="off" onsubmit="return validateForm()">
 
                 <div class="account-information">

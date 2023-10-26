@@ -87,6 +87,10 @@ body {
     margin-left: auto;
 }
 
+.rotated-text {
+    transform: rotate(90deg);
+}
+
 /* ******************************************** Buttons ******************************************** */
 .book-now-button {
     padding: 5px 25px;
@@ -1066,8 +1070,20 @@ select {
 /* Order History page */
 .order {
     background-color: var(--background-color);
-    padding: 5% 10%;
     min-height: 600px;
+    padding: 35px 110px 35px 110px;
+}
+
+.order-body {
+    /* background-color: var(--secondary-color); */
+    background-color: var(--secondary-color);
+    color: black;
+    padding: 5% 5%;
+}
+
+.order-content {
+    position: relative;
+    padding: 5% 0;
 }
 
 .order table,
@@ -1079,8 +1095,9 @@ select {
 .order table {
     width: 100%;
     border-collapse: collapse;
-    border-bottom: 1px solid black;
     font-size: 30px;
+    border: 1px solid black;
+    background-color: white;
 }
 
 /* .order table:hover {
@@ -1088,16 +1105,36 @@ select {
     cursor: pointer;
 } */
 
-.order-content {
-    border: 3px solid black;
-    border-radius: 5px;
+.order-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
 }
 
-.order-image {
-    width: 0;
+.order-car {
+    font-size: 40px;
+    margin: 3%;
+    margin-block: 0;
+    margin-block-end: 10px;
 }
+
 .order-location {
+    width: 30%;
+}
+
+.order-date {
     width: 20%;
+}
+
+.order-cost {
+    width: 15%;
+}
+
+.order-view {
+    background-color: rgb(6, 6, 190);
+    text-align: center;
 }
 
 .order-button {
@@ -1109,8 +1146,70 @@ select {
     cursor: pointer;
     text-decoration: underline;
     color: #ccc;
+    position: relative;
+    z-index: 1;
 }
 
 .order-button:hover {
     color: #eee;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.popup-content {
+    background-color: #fff;
+    width: 60%;
+    height: 60%;
+    margin: 100px auto;
+    padding: 5%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.popup-content img {
+    height: 200px;
+    width: 400px;
+    object-fit: cover;
+}
+
+.popup-content table,
+.popup-content th,
+.popup-content tr,
+.popup-content td {
+    border: none;
+    font-size: 16px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.order-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }

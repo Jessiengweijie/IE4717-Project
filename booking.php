@@ -52,7 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $db->query($query);
     if ($result) {
         unset($_SESSION['cart']);
-        $_SESSION['form'] = $_POST;
         header("Location: order_history.php");
     } else {
         echo 'an error has occured';
