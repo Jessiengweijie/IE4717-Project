@@ -36,6 +36,29 @@ if ($resultCarCheck->num_rows <= 0) {
     echo "</script>";
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // create short variable names
+    $timezoneOffset = "+08:00";
+    $start = strtotime($_POST['booking-date'] . $timezoneOffset); //need to offset because html date input does not have timezone
+    $duration = $_POST['booking-duration'];
+    $rate = $_POST['rental-rate'];
+    $fee = $_POST['booking-fee'];
+    $end = strtotime($_POST['booking-end']);
+    $car = $_POST['booking-car'];
+    $location = $_POST['booking-location'];
+    $today = time();
+
+    $query = "INSERT INTO order_history (user_id,start_date,end_date,order_date,duration,rate,fee,car_id,location_id) VALUES ($loggedInUserID,$start,$end,$today,$duration,$rate,$fee,$car,$location);";
+    $result = $db->query($query);
+    if ($result) {
+        unset($_SESSION['cart']);
+        $_SESSION['form'] = $_POST;
+        header("Location: order_history.php");
+    } else {
+        echo 'an error has occured';
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +75,7 @@ if ($resultCarCheck->num_rows <= 0) {
     <div id="wrapper">
         <?php include "assets/php/header.php"; ?>
         <div class="car-info">
-            <form action="assets/php/processorder.php" method="post">
+            <form action="" method="post" onsubmit="return validateForm();">
                 <div class="car-info-selected">
                     <div class="car-info-head">
                         <div>
@@ -115,21 +138,13 @@ if ($resultCarCheck->num_rows <= 0) {
                     <div class="hourly">
                         <table>
                             <tr>
-                                <td>Pickup Date:&nbsp;</td>
-                                <td><input type="date" name="booking-date" id="booking-date" required></td>
-                            </tr>
-                            <tr>
-                                <td>Time:&nbsp;</td>
+                                <td>Select a Date and Time:&nbsp;</td>
                                 <td>
-                                    <select name="booking-time" id="booking-time" required>
-                                        <option value="" hidden disabled selected>Select Time</option>
-                                        <?php for ($i = 0; $i < 24; $i++) { ?>
-                                            <?php $hour = str_pad($i, 2, "0", STR_PAD_LEFT); ?>
-                                            <option value="<?php echo $hour; ?>:00"><?php echo $hour; ?>:00</option>
-                                        <?php } ?>
-                                    </select>
+                                    <input type="datetime-local" name="booking-date" id="booking-date" required>
                                 </td>
+                                <td><span class="error" id="dateError"></span></td>
                             </tr>
+
                             <tr>
                                 <td>Duration (in hours):&nbsp;</td>
                                 <td>
@@ -158,14 +173,13 @@ if ($resultCarCheck->num_rows <= 0) {
                 </div>
 
                 <div style="margin-left: auto; margin-bottom: 20px; width: 55%;">
-                    <input type="submit" class="center book-now-button-big" onclick="bookNow();" value="Book Now">
+                    <input type="submit" class="center book-now-button-big" value="Book Now">
                     <br />
                 </div>
-                <input type="hidden" name="booking-location" id="booking-location">
-                <input type="hidden" name="booking-car" id="booking-car">
+                <input type="hidden" name="booking-location" id="booking-location" value="<?php echo $locationId ?>">
+                <input type="hidden" name="booking-car" id="booking-car" value="<?php echo $carId ?>">
                 <input type="hidden" name="booking-fee" id="booking-fee-final">
                 <input type="hidden" name="booking-end" id="booking-end-final">
-
             </form>
         </div>
 

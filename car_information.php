@@ -7,6 +7,12 @@ include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
 include "assets/php/fetch_user_info.php";
 // Fetch car data from the database
+// Query to fetch the entire row from the 'car' table based on 'car_id'
+$carId = $_GET['car_id'];
+$queryCar = "SELECT * FROM car WHERE id = $carId";
+$resultCar = $db->query($queryCar);
+$carData = $resultCar->fetch_assoc();
+
 if (isset($_GET['location_name']) && $_GET['location_name'] != '') {
     $locationName = $_GET['location_name'];
 
@@ -28,11 +34,6 @@ if (isset($_GET['location_name']) && $_GET['location_name'] != '') {
         echo "</script>";
     }
 }
-// Query to fetch the entire row from the 'car' table based on 'car_id'
-$carId = $_GET['car_id'];
-$queryCar = "SELECT * FROM car WHERE id = $carId";
-$resultCar = $db->query($queryCar);
-$carData = $resultCar->fetch_assoc();
 
 // Query to fetch available locations for the selected car_id from the car_location table
 $queryAvailableLocations = "SELECT location.id, location.name

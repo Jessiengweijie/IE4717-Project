@@ -1,12 +1,12 @@
 <?php
 if (isset($_SESSION['valid_user'])) { 
-    $query = "SELECT * FROM user_info WHERE id = '$loggedInUserID'";
-    $result = $db->query($query);
+    $queryUser = "SELECT * FROM user_info WHERE id = '$loggedInUserID'";
+    $resultUser = $db->query($queryUser);
     
-    if ($result) {
-        if ($result->num_rows > 0) {
+    if ($resultUser) {
+        if ($resultUser->num_rows > 0) {
             // Fetch and use the data
-            while ($row = $result->fetch_assoc()) {
+            while ($row = $resultUser->fetch_assoc()) {
                 $surname = $row['surname'];
                 $firstname = $row['firstname'];
                 $nric = $row['nric'];

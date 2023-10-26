@@ -2,7 +2,6 @@
 //   Note: This document does not work with IE8
 
 // ********************************************************** //
-
 function generateInfo() {
     // Get the URL search parameters
     const urlParams = new URLSearchParams(window.location.search);
@@ -53,61 +52,61 @@ function toggleContent(view) {
 function calculateFeeAndEndTime() {
     const rentalRate = document.getElementById("rental-rate").value;
     const dateSelect = document.getElementById("booking-date");
-    const timeSelect = document.getElementById("booking-time");
     const durationSelect = document.getElementById("booking-duration");
     const feeDisplay = document.getElementById("booking-fee");
     const endDisplay = document.getElementById("booking-end");
 
     // Get the selected time and duration values
-    const selectedDate = dateSelect.value;
-    const selectedTime = timeSelect.value;
+    const selectedDate = new Date(dateSelect.value); console.log(dateSelect.value)
     const selectedDuration = durationSelect.value;
 
-    // Split the date into its components
-    const [year, month, day] = selectedDate.split("-");
-
-    // Calculate the end time based on the selected time and duration
-    const [hours, minutes] = selectedTime.split(":");
-    const endTime = new Date(year, month - 1, day, parseInt(hours), parseInt(minutes));
-    endTime.setHours(endTime.getHours() + parseInt(selectedDuration));
+    // Calculate the end time
+    const endTime = new Date(selectedDate.getTime() + selectedDuration * 60 * 60 * 1000);
 
     // Calculate the fee
     const fee = selectedDuration * rentalRate;
 
-    // Format the date and time components separately
-    const endDay = endTime.getDate().toString().padStart(2, "0");
-    const endMonth = (endTime.getMonth() + 1).toString().padStart(2, "0");
-    const endYear = endTime.getFullYear().toString().slice(2);
-    const endHours = endTime.getHours().toString().padStart(2, "0");
-    const endMinutes = endTime.getMinutes().toString().padStart(2, "0");
-
-    // Combine the formatted components into the desired format
-    const formattedEndTime = `${endDay}/${endMonth}/${endYear} ${endHours}:${endMinutes}`;
-
-
     // Display the calculated fee and end time only if all 3 parameters are true
-    if (selectedDate && selectedTime && selectedDuration) {
+    if (dateChk('check') && selectedDuration) {
         document.getElementById("booking-fee-final").value = fee;
-        document.getElementById("booking-end-final").value = formattedEndTime;
-
+        // "YYYY-MM-DDTHH:MM" Format
+        document.getElementById("booking-end-final").value = endTime.toISOString(); console.log(endTime.toISOString())
         feeDisplay.textContent = "$" + fee.toFixed(2); // Format as currency
-        endDisplay.textContent = formattedEndTime;
+        endDisplay.textContent = endTime;
+    }
+}
+
+function dateChk(event) {
+    if (event == 'check') {
+        var date = document.getElementById("booking-date");
+    } else {
+        // Get the target node of the event
+        var date = event.currentTarget;
     }
 
+    var today = new Date();
+    var dateError = document.getElementById("dateError");
+
+    // Get the selected date
+    var dateselect = new Date(date.value);
+    console.log(dateselect.getTime(), today.getTime(),dateselect,today)
+    // Check if selected date is greater than or equal to the current time
+    if (dateselect >= today) {
+        dateError.textContent = "";
+        return true;
+    } else {
+        alert("Please choose a future date.");
+        dateError.textContent = "Please choose a future date.";
+        date.focus();
+        date.select();
+        return false;
+    }
 }
 
-function bookNow() {
-    // Get the URL search parameters
-    const urlParams = new URLSearchParams(window.location.search);
-
-    // Retrieve the 'location' parameter
-    const locationParam = urlParams.get('location_name');
-
-    // Retrieve the 'car' parameter
-    const carParam = urlParams.get('car_id');
-
-    // Set the location and car
-    document.getElementById("booking-location").value = locationParam;
-    document.getElementById("booking-car").value = carParam;
-
+function validateForm() {
+    if (!dateChk("check")) {
+        return false;
+    }
+    return true;
 }
+

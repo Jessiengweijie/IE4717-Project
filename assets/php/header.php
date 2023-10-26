@@ -30,7 +30,7 @@ include "assets/php/fetch_user_info.php";
                     <a href="/ConviGo/my_account.php">My Account</a>
                     <div class="dropdown-content">
                         <a href="/ConviGo/my_account.php">Profile</a>
-                        <a href="#">Order History</a>
+                        <a href="/ConviGo/order_history.php">Order History</a>
                     </div>
                 </div>
                 ';

@@ -516,4 +516,19 @@ VALUES (
 CREATE TABLE IF NOT EXISTS newsletter (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE
+);
+CREATE TABLE IF NOT EXISTS order_history (
+    order_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id INT UNSIGNED NOT NULL,
+    start_date INT NOT NULL,
+    end_date INT NOT NULL,
+    order_date INT NOT NULL,
+    duration INT NOT NULL,
+    rate DECIMAL(10, 2) NOT NULL,
+    fee DECIMAL(10, 2) NOT NULL,
+    car_id INT UNSIGNED NOT NULL,
+    location_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES authorized_users(id),
+    FOREIGN KEY (car_id) REFERENCES car(id),
+    FOREIGN KEY (location_id) REFERENCES location(id)
 )
