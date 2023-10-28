@@ -3,6 +3,7 @@
 include "assets/php/dbconnect.php";
 include "assets/php/check_login.php";
 include "assets/php/fetch_user_info.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -12,13 +13,38 @@ include "assets/php/fetch_user_info.php";
   <title>Home</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="assets/css/stylesheet.css">
+  <script type="text/JavaScript">
+    var message="     ConviGo is excited to announce our special opening promotion.";
+    message += " We are waiving GST costs until further notice!";
+    message += " Get ready to enjoy a fantastic ride with ConviGo.";
+    var space="\u{1F6A6} \u{1F697}\u{2728}     \u{1F699}\u{2728}     \u{1F695}\u{2728}     \u{1F690}\u{2728}     ";
+    // get unicode from https://www.w3schools.com/charsets/ref_emoji_transport.asp
+    var position=0;
+    function scroller(){
+          var newtext = message.substring(position,message.length)+
+          space + message.substring(0,position);
+          var td = document.getElementById("tabledata");
+          td.firstChild.nodeValue = newtext;
+          position++;
+          if (position > message.length){position=0;}
+          window.setTimeout("scroller()",200);
+    }
+  </script>
 </head>
 
-<body>
+<body onload="scroller();">
   <div id="wrapper">
     <?php include "assets/php/header.php"; ?>
     <div class="center home">
       <div class="center home-header">
+        <table>
+          <tr>
+            <td>
+              <img src="assets/images/Icons/bell.png" height="16px" width="16px">
+            </td>
+            <td id="tabledata">message goes here</td>
+          </tr>
+        </table>
         <?php if (isset($userInfo['firstname'])) {
           echo '<h1 style="height:300px; color:black;">Welcome, ' . $userInfo['firstname'] . ' ' . $userInfo['surname'] . '!</h1>';
         } ?>
@@ -26,6 +52,7 @@ include "assets/php/fetch_user_info.php";
           include "assets/html/login.html";
         } ?>
       </div>
+
 
 
       <div class="center">
@@ -48,7 +75,7 @@ include "assets/php/fetch_user_info.php";
           <!--   --------------------------  Easy Access Across the City ---------------------------->
           <div class="home-content">
             <img src="assets/images/Icons/easyaccess_icon.png">
-            <h2>Easy Access<br>  Across the City</h2>
+            <h2>Easy Access<br> Across the City</h2>
           </div>
 
           <!--   --------------------------  24/7 Availability ---------------------------->

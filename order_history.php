@@ -33,31 +33,59 @@ while ($rowOrder = $resultOrder->fetch_assoc()) {
 		<div class="order">
 			<div class="order-body">
 				<h1 style="font-size: 30px;">Order History</h1>
+				<div class="legends">
+					<div class="legend">
+						<div class="color-box" style="background-color: #FF6F4A;"></div>
+						<div class="label">Past</div>
+					</div>
+					<div class="legend">
+						<div class="color-box" style="background-color: #FFD700;"></div>
+						<div class="label">Ongoing</div>
+					</div>
+					<div class="legend">
+						<div class="color-box" style="background-color: #66CDAA;"></div>
+						<div class="label">Future</div>
+					</div>
+				</div>
+
 
 				<?php if (!empty($orderData)) : ?>
 					<?php foreach ($orderData as $order) : ?>
 
 						<?php if (time() > $order['start_date'] && time() > $order['end_date']) {
 							$check = 'Past Booking';
-							$color = '#CCCCCC';
+							$color = '#FF6F4A';
 						} elseif (time() > $order['start_date'] && time() < $order['end_date']) {
 							$check = 'Ongoing Booking';
-							$color = '#A2E16D';
+							$color = '#FFD700';
 						} elseif (time() < $order['start_date'] && time() < $order['end_date']) {
 							$check = 'Future Booking';
-							$color = '#FDFD96';
+							$color = '#66CDAA';
 						}
 						?>
 						<div class="order-content">
-							<p  class="order-number">Order #<?php echo $order['order_id'];?></p>
-							
-							<table>
+							<p class="order-number">Order #<?php echo $order['order_id']; ?></p>
+							<table style="background-color: <?php echo $color ?>;">
 								<tr>
 									<td class="order-location"><?php echo $order['location_name']; ?></td>
 									<td class="order-date"><?php echo date('H:i', $order['start_date']); ?></td>
 									<td rowspan="2" style="width: 5%;">></td>
 									<td class="order-date"><?php echo date('H:i', $order['end_date']); ?></td>
-									<td></td>
+									<td>
+										<?php
+										if ($order['duration'] > 24) {
+											$days = $order['duration'] / 24;
+											echo $days . " Days";
+										} else {
+											echo $order['duration'];
+											if ($order['duration'] == 1) {
+												echo " Hour";
+											} else {
+												echo " Hours";
+											}
+										}
+										?>
+									</td>
 									<td rowspan="2" class="order-view">
 										<a class="order-button" onclick="openPopup('<?php echo $order['order_id']; ?>');">
 											View Order
@@ -73,6 +101,8 @@ while ($rowOrder = $resultOrder->fetch_assoc()) {
 
 							</table>
 							<img class="order-image" src="assets/images/Cars/Brands/<?php echo $order['car_brand']; ?>/<?php echo $order['car_type']; ?>/<?php echo $order['car_imageURL']; ?>" alt="<?php echo $order['car_name']; ?>">
+
+
 						</div>
 						<div id="popup<?php echo $order['order_id']; ?>" class="popup">
 							<div class="popup-content">
@@ -105,7 +135,14 @@ while ($rowOrder = $resultOrder->fetch_assoc()) {
 
 								<div class="order-row line">
 									<h3>Booking Duration</h3>
-									<?php echo $order['duration']; ?>:00:00 Hours
+									<?php
+									if ($order['duration'] > 24) {
+										$days = $order['duration'] / 24;
+										echo $days . " Days";
+									} else {
+										echo $order['duration'] . ":00:00 Hours";
+									}
+									?>
 								</div>
 
 								<div class="order-row line">
@@ -118,7 +155,16 @@ while ($rowOrder = $resultOrder->fetch_assoc()) {
 										<p>$<?php echo $order['fee']; ?></p>
 									</div>
 									<div class="order-row">
-										Booking Rate @ $<?php echo $order['rate']; ?>/Hour x <?php echo $order['duration']; ?> Hours
+										<?php
+										if ($order['duration'] > 24) {
+											$days = $order['duration'] / 24;
+											$rate = $order['rate'] * 24;
+											echo "Booking Rate @ $" . $rate . "/Day x " . $days . " Days";
+										} else {
+											echo "Booking Rate @ $" . $order['rate'] . "/Hour x " . $order['duration'] . " Hours";
+										}
+										?>
+
 										<p>$<?php echo $order['fee']; ?></p>
 									</div>
 								</div>

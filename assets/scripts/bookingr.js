@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // Add event listeners to the select elements
 const datetimeInput = document.getElementById("booking-date");
 const durationSelect = document.getElementById("booking-duration");
+const durationSelectDay = document.getElementById("booking-duration-day");
 
 datetimeInput.addEventListener("change", calculateFeeAndEndTime);
 durationSelect.addEventListener("change", calculateFeeAndEndTime);
+durationSelectDay.addEventListener("change", calculateFeeAndEndTime);

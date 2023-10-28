@@ -36,11 +36,15 @@ if ($resultCarCheck->num_rows <= 0) {
     echo "</script>";
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { var_dump($_POST);
     // create short variable names
     $timezoneOffset = "+08:00";
     $start = strtotime($_POST['booking-date'] . $timezoneOffset); //need to offset because html date input does not have timezone
-    $duration = $_POST['booking-duration'];
+    if (isset($_POST['booking-duration-day'])) {
+        $duration = $_POST['booking-duration-day'] * 24; echo $duration;
+    } else {
+        $duration = $_POST['booking-duration'];
+    }
     $rate = $_POST['rental-rate'];
     $fee = $_POST['booking-fee'];
     $end = strtotime($_POST['booking-end']);
@@ -134,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <a class="toggle-button active" id="hourly-button" onclick="toggleContent('hourly')">Hourly</a>
                         <a class="toggle-button" id="daily-button" onclick="toggleContent('daily')">Daily</a>
                     </div>
-                    <div class="hourly">
+                    <div class="booking-form">
                         <table>
                             <tr>
                                 <td>Select a Date and Time:&nbsp;</td>
@@ -144,30 +148,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <td><span class="error" id="dateError"></span></td>
                             </tr>
 
-                            <tr>
+                            <tr class="hourly">
                                 <td>Duration (in hours):&nbsp;</td>
                                 <td>
-                                    <select name="booking-duration" id="booking-duration" required>
+                                    <select name="booking-duration" id="booking-duration">
                                         <option value="" hidden disabled selected>Select Duration</option>
                                         <?php for ($i = 1; $i <= 24; $i++) { ?>
                                             <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                                         <?php } ?>
                                     </select>
                                 </td>
+                                <td></td>
+                            </tr>
+                            <tr class="daily" style="display: none;">
+                                <td>Duration (in days):&nbsp;</td>
+                                <td>
+                                    <select name="booking-duration-day" id="booking-duration-day">
+                                        <option value="" hidden disabled selected>Select Duration</option>
+                                        <?php for ($i = 1; $i <= 30; $i++) { ?>
+                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </td>
+                                <td></td>
                             </tr>
                             <br />
                             <tr>
                                 <td>Approx Fee:&nbsp;</td>
                                 <td id="booking-fee"></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Return by:&nbsp;</td>
                                 <td id="booking-end"></td>
+                                <td></td>
                             </tr>
                         </table>
-                    </div>
-
-                    <div class="daily" style="display: none;">DAILY
                     </div>
                 </div>
 

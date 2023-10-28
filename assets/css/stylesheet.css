@@ -326,6 +326,31 @@ footer {
     color: var(--background-color);
 }
 
+.home-header table {
+    color: black;
+    position: absolute;
+    width: 30%;
+    top: 70px;
+    border: none;
+
+}
+
+.home-header table img {
+    display: flex;
+}
+
+.home-header td {
+    border: none;
+    padding: 0;
+}
+
+td#tabledata {
+    padding: 3px;
+    max-width: 400px;
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+
 /* ******************************************** Login Panel ******************************************** */
 .login {
     /* background-color: var(--secondary-color); */
@@ -682,15 +707,13 @@ select {
     color: white;
 }
 
-.hourly {
+.booking-form {
     background-color: var(--background-color);
-    ;
-    border-radius: 5px;
     font-size: 20px;
 }
 
-.hourly table,
-.hourly td {
+.booking-form table,
+.booking-form td {
     border: none;
 }
 
@@ -836,7 +859,7 @@ select {
 .account {
     background-color: var(--background-color);
     padding: 35px 110px 35px 110px;
-    
+
 }
 
 .account-information {
@@ -1098,8 +1121,7 @@ select {
     border-collapse: collapse;
     font-size: 20px;
     border: 1px solid black;
-    background-color: #e68c3a;
-    color:white;
+    color: black;
 }
 
 /* .order table:hover {
@@ -1109,9 +1131,8 @@ select {
 
 .order-image {
     position: absolute;
-    top: 50px;
-    right: 0px;
-    /* left: 0px; */
+    top: 0;
+    right: 0;
     width: 150px;
     height: 150px;
 }
@@ -1135,7 +1156,8 @@ select {
 }
 
 .order-view {
-    background-color: rgb(6, 6, 190);
+    /* background-color: rgb(6, 6, 190); */
+    background-color: var(--background-color);
     text-align: center;
 }
 
@@ -1214,4 +1236,25 @@ select {
     display: flex;
     flex-direction: column;
     text-align: left;
+}
+
+.legends {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.legend {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.color-box {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.label {
+    font-size: 14px;
 }
