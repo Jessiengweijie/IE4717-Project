@@ -36,31 +36,31 @@ include "assets/php/fetch_user_info.php";
           <!--   --------------------------  Instant Verification, Zero Delays ---------------------------->
           <div class="home-content">
             <img src="assets/images/Icons/verification_icon.png">
-            <h2>Instant Verification, Zero Delays</h2>
+            <h2>Instant Verification, <br> Zero Delays</h2>
           </div>
 
           <!--   --------------------------  Transparent Pricing ---------------------------->
           <div class="home-content">
             <img src="assets/images/Icons/price_icon.png">
-            <h2>Transparent Pricing</h2>
+            <h2>Transparent <br> Pricing</h2>
           </div>
 
           <!--   --------------------------  Easy Access Across the City ---------------------------->
           <div class="home-content">
             <img src="assets/images/Icons/easyaccess_icon.png">
-            <h2>Easy Access Across the City</h2>
+            <h2>Easy Access<br>  Across the City</h2>
           </div>
 
           <!--   --------------------------  24/7 Availability ---------------------------->
           <div class="home-content">
             <img src="assets/images/Icons/daynight_icon.png">
-            <h2>24/7 Availability</h2>
+            <h2>24/7 <br>Availability</h2>
           </div>
 
           <!--   --------------------------  Cleanliness in Every Drive ---------------------------->
           <div class="home-content">
             <img src="assets/images/Icons/clean_icon.png">
-            <h2>Cleanliness in Every Drive</h2>
+            <h2>Cleanliness in <br>Every Drive</h2>
           </div>
         </div>
         <!----------------------------------------------------------------------------------->

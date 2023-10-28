@@ -32,7 +32,7 @@ while ($rowOrder = $resultOrder->fetch_assoc()) {
 		<?php include "assets/php/header.php"; ?>
 		<div class="order">
 			<div class="order-body">
-				<h1 style="font-size: 50px;">Order History</h1>
+				<h1 style="font-size: 30px;">Order History</h1>
 
 				<?php if (!empty($orderData)) : ?>
 					<?php foreach ($orderData as $order) : ?>
@@ -49,8 +49,8 @@ while ($rowOrder = $resultOrder->fetch_assoc()) {
 						}
 						?>
 						<div class="order-content">
-							<p class="order-car"><?php echo $order['car_name']; ?></p>
-
+							<p  class="order-number">Order #<?php echo $order['order_id'];?></p>
+							
 							<table>
 								<tr>
 									<td class="order-location"><?php echo $order['location_name']; ?></td>
@@ -65,7 +65,7 @@ while ($rowOrder = $resultOrder->fetch_assoc()) {
 									</td>
 								</tr>
 								<tr>
-									<td class="order-number">Order #<?php echo $order['order_id']; ?></td>
+									<td class="order-car"><?php echo $order['car_name']; ?></td>
 									<td class="order-date"><?php echo date('d M Y', $order['start_date']); ?></td>
 									<td class="order-date"><?php echo date('d M Y', $order['end_date']); ?></td>
 									<td class="order-cost">$<?php echo $order['fee']; ?></td>
