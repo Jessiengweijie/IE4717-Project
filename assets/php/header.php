@@ -12,30 +12,30 @@ include "assets/php/fetch_user_info.php";
     } ?>
     <nav class="navbar">
         <b>
-            <a href="/ConviGo/about.php">About</a> &nbsp;
+            <a href="about.php">About</a> &nbsp;
             <div class="dropdown">
-                <a href="/ConviGo/cars.php">Cars</a>
+                <a href="cars.php">Cars</a>
                 <div class="dropdown-content">
-                    <a href="/ConviGo/cars.php?category=Standard">Standard</a>
-                    <a href="/ConviGo/cars.php?category=Premium">Premium</a>
+                    <a href="cars.php?category=Standard">Standard</a>
+                    <a href="cars.php?category=Premium">Premium</a>
                 </div>
             </div>
-            <a href="/ConviGo/locations.php">Locations</a> &nbsp;
-            <a href="/ConviGo/faqs.php">FAQs</a> &nbsp;
+            <a href="locations.php">Locations</a> &nbsp;
+            <a href="faqs.php">FAQs</a> &nbsp;
             <?php
             if ($loggedInUserID) {
                 echo '
                 <div class="dropdown">
-                    <a href="/ConviGo/my_account.php">My Account</a>
+                    <a href="my_account.php">My Account</a>
                     <div class="dropdown-content">
-                        <a href="/ConviGo/my_account.php">Profile</a>
-                        <a href="/ConviGo/order_history.php">Order History</a>
+                        <a href="my_account.php">Profile</a>
+                        <a href="order_history.php">Order History</a>
                     </div>
                 </div>
                 ';
-                echo '<a href="/ConviGo/assets/php/logout.php">Log Out</a>';
+                echo '<a href="assets/php/logout.php">Log Out</a>';
             } else {
-                echo '<a href="/ConviGo/signup.php">Sign Up</a>';
+                echo '<a href="signup.php">Sign Up</a>';
                 echo '<a href="/ConviGo">Login</a>';
             }
             ?>

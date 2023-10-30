@@ -9,7 +9,7 @@ include "assets/php/fetch_user_info.php";
 
 if (isset($_SESSION['valid_user'])) {
     // Check if logged in and redirect to home
-    header('Location: /Convigo');
+    header("Location:" . $baseURL . "/ConviGo");
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

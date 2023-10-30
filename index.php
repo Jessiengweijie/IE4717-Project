@@ -97,21 +97,21 @@ include "assets/php/fetch_user_info.php";
           <div class="home-how">
             <img src="assets/images/Cars/Sample/home_search.png" width="100%">
             <div class="home-how-content">
-              <h2><a href="/ConviGo/locations.php">Search</a></h2>
+              <h2><a href="locations.php">Search</a></h2>
               <p>Discover a Convigo vehicle just moments away</p>
             </div>
           </div>
           <div class="home-how">
             <img src="assets/images/Cars/Sample/home_book.png" width="100%">
             <div class="home-how-content">
-              <h2><a href="/ConviGo/cars.php">Book</a></h2>
+              <h2><a href="cars.php">Book</a></h2>
               <p>Select the perfect car to your liking</p>
             </div>
           </div>
           <div class="home-how">
             <img src="assets/images/Cars/Sample/home_drive.png" width="100%">
             <div class="home-how-content">
-              <h2><a href="/ConviGo/cars.php">Drive</a></h2>
+              <h2><a href="cars.php">Drive</a></h2>
               <p>Activate your ride with the ConviGo app</p>
             </div>
           </div>

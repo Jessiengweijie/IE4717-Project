@@ -5,5 +5,5 @@
   $old_user = $_SESSION['valid_user'];  
   unset($_SESSION['valid_user']);
   session_destroy();
-  header("Location: /ConviGo"); // Redirect to the login page
+  header("Location:" . $baseURL . "/ConviGo"); // Redirect to the login page
 ?>

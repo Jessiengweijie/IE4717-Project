@@ -10,7 +10,7 @@ include "assets/php/fetch_user_info.php";
 
 if (isset($_SESSION['valid_user'])) {
     // Check if logged in and redirect to home
-    header('Location: /Convigo');
+    header("Location:" . $baseURL . "/ConviGo");
 }
 
 if (!$_SESSION) {
@@ -62,7 +62,7 @@ if (!$_SESSION) {
                         $id = $row['id'];
                         unset($_SESSION['user_info']);
                         $_SESSION['valid_user'] = $id;
-                        header("Location: /ConviGo"); // Redirect to the home page 
+                        header("Location:" . $baseURL . "/ConviGo"); // Redirect to the home page 
                     }
                 } else {
                     echo "Sign up failed, please try again.";

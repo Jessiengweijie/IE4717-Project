@@ -19,14 +19,14 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
         $_SESSION['valid_user'] = $id;
 
         if (isset($_SESSION['cart'])) {
-            header("Location: /ConviGo/booking.php?location_name=" . $_SESSION['cart']['location'] . "&car_id=" . $_SESSION['cart']['car']);
+            header("Location:" . $baseURL . "/ConviGo/booking.php?location_name=" . $_SESSION['cart']['location'] . "&car_id=" . $_SESSION['cart']['car']);
         } else {
-            header("Location: /ConviGo"); // Redirect to the home page
+            header("Location:" . $baseURL . "/ConviGo"); // Redirect to the home page
         }
     } else {
         // User entered wrong ID/password, display an alert and redirect with JavaScript
         echo '<script>alert("Wrong username or password. Please try again.");';
-        echo 'window.location.href = "/ConviGo";</script>';
+        echo "window.location.href = '$baseURL/ConviGo';</script>";
     }
 }
 ?>
