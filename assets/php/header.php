@@ -2,7 +2,7 @@
 include "assets/php/fetch_user_info.php";
 ?>
 <header>
-    <a href="/ConviGo">
+    <a href="<?php echo $baseURL; ?>/ConviGo">
         <h1 style="color:var(--secondary-color);" class="logo">ConviGo
             <img src="assets/images/Logo/finallogo.png" height="40px" width="40px" alt="ConviGo_Logo" style="margin-left: 5px;">
         </h1>
@@ -36,7 +36,7 @@ include "assets/php/fetch_user_info.php";
                 echo '<a href="assets/php/logout.php">Log Out</a>';
             } else {
                 echo '<a href="signup.php">Sign Up</a>';
-                echo '<a href="/ConviGo">Login</a>';
+                echo "<a href='$baseURL/ConviGo'>Login</a>";
             }
             ?>
         </b>
