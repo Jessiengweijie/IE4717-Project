@@ -1,4 +1,5 @@
 <?php
+include "dbconnect.php";
 if (isset($_SESSION['valid_user'])) { 
     $queryUser = "SELECT * FROM user_info WHERE id = '$loggedInUserID'";
     $resultUser = $db->query($queryUser);

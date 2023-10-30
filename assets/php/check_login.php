@@ -1,4 +1,5 @@
 <?php
+include "dbconnect.php";
 @session_start(); // Start the session if it hasn't already been started
 
 if (!isset($_SESSION['valid_user']) && @$authRequired) {
