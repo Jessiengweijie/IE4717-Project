@@ -1190,7 +1190,8 @@ select {
 }
 
 .popup-content {
-    background-color: #fff;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
     width: 60%;
     height: 60%;
     margin: 100px auto;
