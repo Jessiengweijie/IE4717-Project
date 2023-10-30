@@ -52,8 +52,6 @@ if ($resultAvailableLocations) {
     }
 }
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -121,7 +119,6 @@ if ($resultAvailableLocations) {
                     <h1>Location Available:&nbsp;</h1>
                     <select id="preset-options">
 
-                        <!-- php -->
                         <?php foreach ($availableLocations as $location) : ?>
                             <option value="<?php echo $location['name']; ?>" <?php if (isset($_GET['location_name']) && $_GET['location_name'] == $location['name']) echo 'selected'; ?>><?php echo $location['name']; ?></option>
                         <?php endforeach; ?>
@@ -132,10 +129,7 @@ if ($resultAvailableLocations) {
             <div style="margin-left: auto; margin-bottom: 20px; width: 55%;">
                 <a class="center book-now-button-big" onclick="bookNow();">Book Now</a> <br />
             </div>
-
         </div>
-
-
         <?php include "assets/html/footer.html"; ?>
     </div>
     <script type="text/javascript" src="assets/scripts/car_informationr.js"></script>

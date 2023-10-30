@@ -39,8 +39,6 @@ if ($resultLocation->num_rows > 0) {
             <div class="car-location-filter-container">
                 <select id="car-location-filter" name="location_name">
                     <option value="">All Locations</option>
-
-                    <!-- php -->
                     <?php foreach ($locationData as $location) : ?>
                         <option value="<?php echo $location['name']; ?>"><?php echo $location['name']; ?></option>
                     <?php endforeach; ?>
@@ -49,22 +47,18 @@ if ($resultLocation->num_rows > 0) {
                 <a class="center search-button" onclick="searchLocation()">Search</a>
             </div>
             <br />
-
             <div class="map-info">
                 <p class="map-header">ConviGo Locations</p>
                 <img src="assets/images/Map/sg_map.png" height="auto" width="100%" alt="map">
                 <!-- image retrieved from google maps -->
             </div>
-
             <div class="location-query">
-                <form method="post" action="assets/php/mail.php">
+                <form method="post" action="assets/php/mail.php" autocomplete="off">
                     <p class="location-query-subheader">Need more cars in your location? Submit your request below.</p>
                     <textarea class="location-query-form" name="location-query-form" id="location-query-form" required></textarea>
                     <input type="submit" class="submit-button" value="Submit">
                 </form>
             </div>
-
-
         </div>
 
         <?php include "assets/html/footer.html"; ?>

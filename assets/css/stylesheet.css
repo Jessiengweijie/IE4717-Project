@@ -38,7 +38,6 @@ body {
     font-family: var(--main-font);
 }
 
-
 .center {
     text-align: center;
 }
@@ -85,10 +84,6 @@ body {
     color: var(--red);
     width: 30%;
     margin-left: auto;
-}
-
-.rotated-text {
-    transform: rotate(90deg);
 }
 
 /* ******************************************** Buttons ******************************************** */
@@ -353,13 +348,10 @@ td#tabledata {
 
 /* ******************************************** Login Panel ******************************************** */
 .login {
-    /* background-color: var(--secondary-color); */
     background-color: none;
     height: 70%;
     width: 25%;
     margin: 0 50px 0 auto;
-    /* border: 1px solid rgb(97, 172, 233); */
-    /* border: 1px solid var(--primary-color); */
     border: none;
     border-radius: 10px;
     padding: 30px;
@@ -448,7 +440,6 @@ td#tabledata {
 
 .about-body .about-why strong {
     font-size: 20px;
-    /* Adjust this value to change the font size of the bold text within the 'about-why' class */
 }
 
 /* ******************************************** Split page *********************************************/
@@ -1030,9 +1021,7 @@ select {
 
 #accept-terms-checkbox {
     width: 20px;
-    /* Adjust the width as needed */
     height: 20px;
-    /* Adjust the height as needed */
     margin: 10px 5px 0 0;
 }
 
@@ -1099,7 +1088,6 @@ select {
 }
 
 .order-body {
-    /* background-color: var(--secondary-color); */
     background-color: var(--secondary-color);
     color: black;
     padding: 5% 5%;
@@ -1123,11 +1111,6 @@ select {
     border: 1px solid black;
     color: black;
 }
-
-/* .order table:hover {
-    background-color: var(--primary-color);
-    cursor: pointer;
-} */
 
 .order-image {
     position: absolute;
@@ -1156,7 +1139,6 @@ select {
 }
 
 .order-view {
-    /* background-color: rgb(6, 6, 190); */
     background-color: var(--background-color);
     text-align: center;
 }

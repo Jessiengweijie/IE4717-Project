@@ -36,7 +36,7 @@ if ($resultCarCheck->num_rows <= 0) {
     echo "</script>";
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') { var_dump($_POST);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // create short variable names
     $timezoneOffset = "+08:00";
     $start = strtotime($_POST['booking-date'] . $timezoneOffset); //need to offset because html date input does not have timezone
