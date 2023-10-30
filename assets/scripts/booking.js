@@ -62,14 +62,14 @@ function calculateFeeAndEndTime() {
 
     // Get the selected time and duration values
     const selectedDate = new Date(dateSelect.value);
-    var selectedDuration = 0; console.log(checker, 'chcker val')
+    var selectedDuration = 0;
     if (checker == 0) {
         selectedDuration = durationSelect.value;
         document.getElementById("booking-duration-day").value = null;
     } else if (checker == 1) {
         selectedDuration = durationSelectDay.value * 24;
         document.getElementById("booking-duration").value = null;
-    } console.log(selectedDuration, 'checkkk')
+    }
 
 
     // Calculate the end time
@@ -80,7 +80,6 @@ function calculateFeeAndEndTime() {
 
     // Display the calculated fee and end time only if all parameters are true
     if (dateChk('check') && selectedDuration) {
-        console.log('change')
         document.getElementById("booking-fee-final").value = fee;
         // "YYYY-MM-DDTHH:MM" Format
         document.getElementById("booking-end-final").value = endTime.toISOString();
@@ -127,17 +126,13 @@ function validateForm() {
     }
     var hour = document.getElementById("booking-duration");
     var day = document.getElementById("booking-duration-day");
-    console.log('hour:',hour.value,'day:', day.value)
     if (!hour.value && !day.value) {
-        console.log('no hour no day')
         alert("Please choose a duration.");
         if (checker == 0) {
-            console.log('hour hour')
             hour.focus();
-            
-            
+
+
         } else if (checker == 1) {
-            console.log('day day')
             day.focus();
 
         }
@@ -150,7 +145,6 @@ function validateForm() {
     if (hour.value && !day.value) {
         hour.removeAttribute("required");
     }
-    console.log('submit');console.log('hour:',hour.value,'day:', day.value)
     return true;
 }
 

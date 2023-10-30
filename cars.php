@@ -311,7 +311,6 @@ if ($resultCountAudiCars) {
             <div class="right-section">
                 <input type="text" class="car-search-filter" name="car_name" id="car-name" placeholder="Search for cars" value="<?php if (isset($_GET['car_name']) && $_GET['car_name']) echo $carName; ?>">
                 <div class="car-container" id="car-container">
-                    <!-- php -->
                     <?php foreach ($carData as $car) : ?>
                         <div class="car-template">
                             <div class="car-body">
@@ -328,15 +327,12 @@ if ($resultCountAudiCars) {
                                     <img src="assets/images/Cars/Brands/<?php echo $car['brand']; ?>/<?php echo $car['type']; ?>/<?php echo $car['imageURL']; ?>" height="auto" width="100%" alt="<?php echo $car['name']; ?>">
                                 </div>
                             </div>
-                            <a class="center book-now-button" onclick="bookNow('<?php echo $car['id'];?>');">Book Now</a>
+                            <a class="center book-now-button" onclick="bookNow('<?php echo $car['id']; ?>');">Book Now</a>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
-
         </div>
-
-
         <?php include "assets/html/footer.html"; ?>
     </div>
     <script type="text/javascript" src="assets/scripts/carsr.js"></script>

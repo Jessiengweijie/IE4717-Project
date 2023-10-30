@@ -24,7 +24,6 @@ include "assets/php/fetch_user_info.php";
                 <p class="faq-header">FAQ</p>
                 <div class="faq-body">
                     <a class="faq-subheader" id="faq-getting_started" onclick="toggleContent('faq-getting_started-content')">Getting Started</a>
-                    <!-- <div class="faq-getting_started-content hidden" id="faq-getting_started-content"> -->
                     <div class="faq-getting_started-content " id="faq-getting_started-content">
                         <ul>
                             <li class="faq-list" onclick="toggleContent('answer1')">
@@ -118,16 +117,13 @@ include "assets/php/fetch_user_info.php";
             </div>
 
             <div class="faq-query center">
-                <form method="post" action="assets/php/mail.php">
+                <form method="post" action="assets/php/mail.php" autocomplete="off">
                     <p class="faq-query-subheader">Your question is not here? Submit your request form below.</p>
                     <textarea class="faq-query-form" name="faq-query-form" id="faq-query-form"></textarea>
                     <input type="submit" class="submit-button" value="Submit">
                 </form>
             </div>
-
         </div>
-
-
         <?php include "assets/html/footer.html"; ?>
     </div>
 </body>

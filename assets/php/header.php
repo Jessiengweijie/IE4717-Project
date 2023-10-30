@@ -13,7 +13,6 @@ include "assets/php/fetch_user_info.php";
     <nav class="navbar">
         <b>
             <a href="/ConviGo/about.php">About</a> &nbsp;
-            <!-- <a href="/ConviGo/cars.php">Cars</a> &nbsp; -->
             <div class="dropdown">
                 <a href="/ConviGo/cars.php">Cars</a>
                 <div class="dropdown-content">

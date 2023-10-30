@@ -281,8 +281,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <input type="submit" class="save-button" value="Next">
                     <input type="reset" class="reset-button" id="resetButton" value="Clear">
-                    <!-- temp button -->
-                    <!-- <button type="button" class="save-button" onclick="validateForm()">Test</button> -->
                 </div>
             </form>
         </div>

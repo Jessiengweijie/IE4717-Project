@@ -487,7 +487,7 @@ function confirm_passwordChk() {
     var confirm_passwordError = document.getElementById("confirm_passwordError");
 
     // Test
-    if (confirm_password.value !== password.value) { console.log(confirm_password.value,password.value)
+    if (confirm_password.value !== password.value) {
         alert("Your passwords do not match.");
         confirm_passwordError.textContent = 'Your passwords do not match.';
         confirm_password.focus();
