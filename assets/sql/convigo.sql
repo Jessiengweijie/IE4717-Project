@@ -46,7 +46,7 @@ VALUES -- ************************************************* AUDI ***************
         'Audi_Q3.png',
         5,
         'Petrol/Diesel',
-        '2 large luggagess',
+        '2 large luggages',
         'Block 315 Ang Mo Kio Avenue 1; Level 4 Block 209 Bedok North Street 1; Block 290 Bukit Batok East Avenue 3, Level 4; Block 962 Jurong West Street 91, Level 3',
         23.00
     ),
@@ -58,7 +58,7 @@ VALUES -- ************************************************* AUDI ***************
         'S3_Sedan.png',
         5,
         'Petrol/Diesel',
-        '2 large luggagess',
+        '2 large luggages',
         'Block 556 Ang Mo Kio Avenue 10, Level 5; Block 85 Bedok North Road, Level 6; 3 HarbourFront Place, HarbourFront Tower Two, Level 6; Block 612D Punggol Drive, Level 3',
         23.00
     ),
@@ -82,7 +82,7 @@ VALUES -- ************************************************* AUDI ***************
         'A6_Sedan.png',
         5,
         'Petrol/Diesel',
-        '3 large luggagess',
+        '3 large luggages',
         'Block 512 Bukit Batok Street 52, Level 5; 176 Orchard Road, The Centrepoint, Level 3; Block 144 Tampines Street 12, Level 5',
         26.00
     ),
