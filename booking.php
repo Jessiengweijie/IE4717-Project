@@ -41,7 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $timezoneOffset = "+08:00";
     $start = strtotime($_POST['booking-date'] . $timezoneOffset); //need to offset because html date input does not have timezone
     if (isset($_POST['booking-duration-day'])) {
-        $duration = $_POST['booking-duration-day'] * 24; echo $duration;
+        $duration = $_POST['booking-duration-day'] * 24;
+        echo $duration;
     } else {
         $duration = $_POST['booking-duration'];
     }
@@ -52,13 +53,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $location = $_POST['booking-location'];
     $today = time();
 
-    $query = "INSERT INTO order_history (user_id,start_date,end_date,order_date,duration,rate,fee,car_id,location_id) VALUES ($loggedInUserID,$start,$end,$today,$duration,$rate,$fee,$car,$location);";
-    $result = $db->query($query);
-    if ($result) {
-        unset($_SESSION['cart']);
-        header("Location: order_history.php");
+    // Check if car is booked
+    $queryBooked = "SELECT * FROM order_history 
+        WHERE car_id = $car
+        AND location_id = $location
+        AND NOT (
+            start_date >= $end 
+            OR end_date <= $start
+        )";
+    $resultBooked = $db->query($queryBooked);
+    if ($resultBooked->num_rows > 0) {
+        // Clash detected, return an error
+        echo '<script>alert("This car is already booked for the selected time period. Please choose another time period.");</script>';
     } else {
-        echo 'an error has occured';
+        // Check for existing booking
+        $queryBooked = "SELECT * FROM order_history 
+        WHERE user_id = $loggedInUserID
+        AND NOT (
+            start_date >= $end 
+            OR end_date <= $start
+        )";
+        $resultBooked = $db->query($queryBooked);
+        if ($resultBooked->num_rows > 0) {
+            // Clash detected, return an error
+            echo '<script>alert("You already have a booking at this timing. You are not allowed to have multiple bookings concurrently.");</script>';
+        } else {
+            // No clash, proceed with the booking
+            $query = "INSERT INTO order_history (user_id,start_date,end_date,order_date,duration,rate,fee,car_id,location_id) VALUES ($loggedInUserID,$start,$end,$today,$duration,$rate,$fee,$car,$location);";
+            $result = $db->query($query);
+            if ($result) {
+                unset($_SESSION['cart']);
+                header("Location: order_history.php");
+            } else {
+                echo 'an error has occured';
+            }
+        }
     }
 }
 
